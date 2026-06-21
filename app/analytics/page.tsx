@@ -1,0 +1,297 @@
+import AppLayout from "@/components/layout/AppLayout";
+import Link from "next/link";
+
+export default function Page() {
+  return (
+    <AppLayout title="CIVICSETU - USAGE ANALYTICS" showBackButton={true}>
+      <div className="w-full h-full relative">
+        {/* Extracted from Stitch HTML */}
+        {/* NavigationDrawer (Hidden on Mobile) */}
+<aside className="hidden md:flex flex-col h-full bg-primary dark:bg-on-primary-fixed text-on-primary dark:text-primary-fixed font-label-md text-label-md fixed left-0 top-0 w-[240px] border-r border-outline z-40">
+<div className="p-margin-desktop border-b border-outline/30">
+<h2 className="font-headline-lg text-headline-lg text-on-primary mb-2">CITIZEN-09241</h2>
+<p className="font-label-sm text-label-sm text-on-primary/70 mb-1">Verified Profile</p>
+<div className="flex items-center gap-2">
+<span className="w-2 h-2 rounded-full bg-success"></span>
+<span className="font-data-sm text-data-sm text-on-primary/70 uppercase">SYSTEM ACTIVE</span>
+</div>
+</div>
+<nav className="flex-1 overflow-y-auto py-stack-md">
+<ul className="flex flex-col">
+<li>
+<a className="flex items-center gap-3 px-margin-desktop py-stack-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span className="material-symbols-outlined">dashboard</span>
+                        Payments Hub
+                    </a>
+</li>
+<li>
+<a className="flex items-center gap-3 px-margin-desktop py-stack-sm bg-secondary-container text-on-secondary-container border-l-4 border-secondary font-bold hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span className="material-symbols-outlined" data-weight="fill">analytics</span>
+                        Usage Analytics
+                    </a>
+</li>
+<li>
+<a className="flex items-center gap-3 px-margin-desktop py-stack-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span className="material-symbols-outlined">receipt_long</span>
+                        Bill History
+                    </a>
+</li>
+<li>
+<a className="flex items-center gap-3 px-margin-desktop py-stack-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span className="material-symbols-outlined">account_balance_wallet</span>
+                        Payment Methods
+                    </a>
+</li>
+<li>
+<a className="flex items-center gap-3 px-margin-desktop py-stack-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span className="material-symbols-outlined">settings</span>
+                        Settings
+                    </a>
+</li>
+</ul>
+</nav>
+</aside>
+{/* Main Content Area */}
+<div className="flex-1 flex flex-col md:ml-[240px] min-h-screen">
+{/* TopAppBar */}
+
+{/* Main Canvas */}
+<main className="flex-1 p-margin-mobile md:p-margin-desktop mt-16 pb-24 md:pb-margin-desktop bg-background overflow-y-auto">
+{/* Page Header & Filters */}
+<div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-stack-lg gap-4">
+<div>
+<h2 className="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Usage Analytics</h2>
+<p className="font-body-md text-body-md text-text-muted mt-1">Detailed consumption data and efficiency metrics.</p>
+</div>
+<div className="flex flex-wrap items-center gap-2">
+<select className="bg-surface border border-border text-on-surface font-label-md text-label-md py-2 px-3 rounded-none focus:border-primary focus:ring-0 cursor-pointer shadow-[0_1px_2px_rgba(17,24,39,0.06)] h-[40px] appearance-none pr-8 relative">
+<option>Electricity</option>
+<option>Water</option>
+<option>Gas</option>
+</select>
+<select className="bg-surface border border-border text-on-surface font-label-md text-label-md py-2 px-3 rounded-none focus:border-primary focus:ring-0 cursor-pointer shadow-[0_1px_2px_rgba(17,24,39,0.06)] h-[40px] appearance-none pr-8">
+<option>Last 6 Months</option>
+<option>Year to Date</option>
+<option>Last 12 Months</option>
+</select>
+<button className="bg-primary-container text-on-primary font-label-md text-label-md font-bold px-4 h-[40px] rounded-none hover:bg-primary transition-colors flex items-center gap-2">
+<span className="material-symbols-outlined text-[18px]">download</span>
+                        Export PDF
+                    </button>
+</div>
+</div>
+{/* Dashboard Grid */}
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-stack-lg">
+{/* Main Chart Area */}
+<div className="lg:col-span-8 bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] flex flex-col">
+<div className="p-stack-md border-b border-border flex justify-between items-center bg-surface-bright">
+<h3 className="font-label-md text-label-md text-on-surface uppercase tracking-wider">Consumption Trend (kWh)</h3>
+<span className="font-data-sm text-data-sm text-text-muted uppercase">Data Sync: 2 Hours Ago</span>
+</div>
+<div className="p-stack-md flex-1">
+{/* Simulated Bar Graph */}
+<div className="relative w-full">
+{/* Y-axis labels */}
+<div className="absolute left-0 top-0 bottom-8 w-8 flex flex-col justify-between font-data-sm text-data-sm text-text-muted text-right pr-2 border-r border-border">
+<span>800</span>
+<span>600</span>
+<span>400</span>
+<span>200</span>
+<span>0</span>
+</div>
+{/* Graph Area */}
+<div className="ml-10">
+<div className="bar-graph border-b border-border border-l">
+{/* Bars (Heights represent data) */}
+<div className="bar" data-value="480" style={{ height: "60%", }}></div>
+<div className="bar" data-value="360" style={{ height: "45%", }}></div>
+<div className="bar" data-value="600" style={{ height: "75%", }}></div>
+<div className="bar" data-value="680" style={{ height: "85%", }}></div>
+<div className="bar" data-value="400" style={{ height: "50%", }}></div>
+<div className="bar" data-value="520" style={{ height: "65%", }}></div>
+</div>
+<div className="x-axis mt-2">
+<span className="x-label">JAN</span>
+<span className="x-label">FEB</span>
+<span className="x-label">MAR</span>
+<span className="x-label">APR</span>
+<span className="x-label">MAY</span>
+<span className="x-label">JUN</span>
+</div>
+</div>
+</div>
+</div>
+{/* Status Rail */}
+<div className="h-rail-height bg-surface border-t border-border flex items-center px-stack-md">
+<span className="font-data-sm text-data-sm text-text-muted uppercase flex items-center gap-1">
+<span className="material-symbols-outlined text-[14px]">info</span>
+                            Projected usage for current month is 12% below average.
+                        </span>
+</div>
+</div>
+{/* KPI Cards Side Panel */}
+<div className="lg:col-span-4 flex flex-col gap-gutter">
+{/* KPI 1 */}
+<div className="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md flex flex-col justify-between h-full">
+<h4 className="font-label-sm text-label-sm text-text-muted uppercase tracking-wider mb-2">Avg. Monthly Usage</h4>
+<div className="flex items-end gap-2 mb-2">
+<span className="font-data-lg text-data-lg text-on-surface font-bold leading-none">482</span>
+<span className="font-data-sm text-data-sm text-text-muted mb-1">kWh</span>
+</div>
+<div className="flex items-center gap-1 text-danger">
+<span className="material-symbols-outlined text-[16px]">trending_up</span>
+<span className="font-data-sm text-data-sm">+4.2% vs. peer average</span>
+</div>
+</div>
+{/* KPI 2 */}
+<div className="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md flex flex-col justify-between h-full">
+<h4 className="font-label-sm text-label-sm text-text-muted uppercase tracking-wider mb-2">Year-over-Year Change</h4>
+<div className="flex items-end gap-2 mb-2">
+<span className="font-data-lg text-data-lg text-on-surface font-bold leading-none">-12.5</span>
+<span className="font-data-sm text-data-sm text-text-muted mb-1">%</span>
+</div>
+<div className="flex items-center gap-1 text-success">
+<span className="material-symbols-outlined text-[16px]">trending_down</span>
+<span className="font-data-sm text-data-sm">Significant reduction</span>
+</div>
+</div>
+{/* KPI 3 */}
+<div className="bg-primary dark:bg-primary-container border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md flex flex-col justify-between h-full relative overflow-hidden">
+{/* Abstract overlay for premium feel without image */}
+<div className="absolute right-[-20px] top-[-20px] w-24 h-24 bg-white/5 rounded-full blur-xl pointer-events-none"></div>
+<h4 className="font-label-sm text-label-sm text-on-primary/80 uppercase tracking-wider mb-2 relative z-10">Efficiency Score</h4>
+<div className="flex items-end gap-2 mb-2 relative z-10">
+<span className="font-data-lg text-data-lg text-on-primary font-bold leading-none">A-</span>
+</div>
+<div className="flex items-center gap-1 text-on-primary/80 relative z-10">
+<span className="material-symbols-outlined text-[16px]">verified</span>
+<span className="font-data-sm text-data-sm">Top 15% of municipality</span>
+</div>
+</div>
+</div>
+</div>
+{/* Secondary Analytics Row */}
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+{/* Breakdown List */}
+<div className="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+<div className="p-stack-md border-b border-border bg-surface-bright">
+<h3 className="font-label-md text-label-md text-on-surface uppercase tracking-wider">Device Breakdown Estimate</h3>
+</div>
+<ul className="divide-y divide-border">
+<li className="p-stack-md flex items-center justify-between hover:bg-background transition-colors">
+<div className="flex items-center gap-3">
+<div className="w-8 h-8 bg-surface-container flex items-center justify-center border border-border">
+<span className="material-symbols-outlined text-[18px] text-primary">ac_unit</span>
+</div>
+<div>
+<p className="font-label-md text-label-md text-on-surface">HVAC Systems</p>
+<p className="font-data-sm text-data-sm text-text-muted">Primary Load</p>
+</div>
+</div>
+<div className="text-right">
+<p className="font-data-md text-data-md text-on-surface font-bold">45%</p>
+<p className="font-data-sm text-data-sm text-text-muted">~216 kWh</p>
+</div>
+</li>
+<li className="p-stack-md flex items-center justify-between hover:bg-background transition-colors">
+<div className="flex items-center gap-3">
+<div className="w-8 h-8 bg-surface-container flex items-center justify-center border border-border">
+<span className="material-symbols-outlined text-[18px] text-primary">water_heater</span>
+</div>
+<div>
+<p className="font-label-md text-label-md text-on-surface">Water Heating</p>
+<p className="font-data-sm text-data-sm text-text-muted">Secondary Load</p>
+</div>
+</div>
+<div className="text-right">
+<p className="font-data-md text-data-md text-on-surface font-bold">25%</p>
+<p className="font-data-sm text-data-sm text-text-muted">~120 kWh</p>
+</div>
+</li>
+<li className="p-stack-md flex items-center justify-between hover:bg-background transition-colors">
+<div className="flex items-center gap-3">
+<div className="w-8 h-8 bg-surface-container flex items-center justify-center border border-border">
+<span className="material-symbols-outlined text-[18px] text-primary">kitchen</span>
+</div>
+<div>
+<p className="font-label-md text-label-md text-on-surface">Appliances</p>
+<p className="font-data-sm text-data-sm text-text-muted">Base Load</p>
+</div>
+</div>
+<div className="text-right">
+<p className="font-data-md text-data-md text-on-surface font-bold">20%</p>
+<p className="font-data-sm text-data-sm text-text-muted">~96 kWh</p>
+</div>
+</li>
+<li className="p-stack-md flex items-center justify-between hover:bg-background transition-colors">
+<div className="flex items-center gap-3">
+<div className="w-8 h-8 bg-surface-container flex items-center justify-center border border-border">
+<span className="material-symbols-outlined text-[18px] text-primary">lightbulb</span>
+</div>
+<div>
+<p className="font-label-md text-label-md text-on-surface">Lighting &amp; Misc</p>
+<p className="font-data-sm text-data-sm text-text-muted">Variable Load</p>
+</div>
+</div>
+<div className="text-right">
+<p className="font-data-md text-data-md text-on-surface font-bold">10%</p>
+<p className="font-data-sm text-data-sm text-text-muted">~48 kWh</p>
+</div>
+</li>
+</ul>
+</div>
+{/* Peak Hours Heatmap / Grid */}
+<div className="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] flex flex-col">
+<div className="p-stack-md border-b border-border bg-surface-bright flex justify-between items-center">
+<h3 className="font-label-md text-label-md text-on-surface uppercase tracking-wider">Peak Usage Hours</h3>
+<span className="font-data-sm text-data-sm text-warning bg-warning/10 px-2 py-1 rounded-sm border border-warning/20">HIGH ALERT: 4PM - 8PM</span>
+</div>
+<div className="p-stack-md flex-1 grid grid-cols-4 gap-2">
+{/* Simplistic Heatmap representation */}
+<div className="bg-surface border border-border p-2 flex flex-col items-center justify-center">
+<span className="font-data-sm text-data-sm text-text-muted">00:00</span>
+<div className="w-full h-2 bg-success/20 mt-2"></div>
+</div>
+<div className="bg-surface border border-border p-2 flex flex-col items-center justify-center">
+<span className="font-data-sm text-data-sm text-text-muted">06:00</span>
+<div className="w-full h-2 bg-warning/50 mt-2"></div>
+</div>
+<div className="bg-surface border border-border p-2 flex flex-col items-center justify-center">
+<span className="font-data-sm text-data-sm text-text-muted">08:00</span>
+<div className="w-full h-2 bg-danger/60 mt-2"></div>
+</div>
+<div className="bg-surface border border-border p-2 flex flex-col items-center justify-center">
+<span className="font-data-sm text-data-sm text-text-muted">12:00</span>
+<div className="w-full h-2 bg-warning/40 mt-2"></div>
+</div>
+<div className="bg-surface border border-border p-2 flex flex-col items-center justify-center">
+<span className="font-data-sm text-data-sm text-text-muted">16:00</span>
+<div className="w-full h-2 bg-danger mt-2"></div>
+</div>
+<div className="bg-surface border border-border p-2 flex flex-col items-center justify-center">
+<span className="font-data-sm text-data-sm text-text-muted">18:00</span>
+<div className="w-full h-2 bg-danger mt-2"></div>
+</div>
+<div className="bg-surface border border-border p-2 flex flex-col items-center justify-center">
+<span className="font-data-sm text-data-sm text-text-muted">20:00</span>
+<div className="w-full h-2 bg-danger/80 mt-2"></div>
+</div>
+<div className="bg-surface border border-border p-2 flex flex-col items-center justify-center">
+<span className="font-data-sm text-data-sm text-text-muted">22:00</span>
+<div className="w-full h-2 bg-success/40 mt-2"></div>
+</div>
+</div>
+<div className="p-stack-md bg-background border-t border-border">
+<p className="font-body-md text-body-md text-text-muted text-sm">
+                            Shifting heavy appliance usage to off-peak hours (10PM - 6AM) could reduce your bill by an estimated <strong>$14.50/month</strong> based on current Time-of-Use rates.
+                        </p>
+</div>
+</div>
+</div>
+</main>
+</div>
+{/* BottomNavBar (Mobile Only) */}
+      </div>
+    </AppLayout>
+  );
+}
