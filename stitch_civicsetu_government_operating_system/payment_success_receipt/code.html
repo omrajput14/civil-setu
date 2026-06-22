@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Success - CivicSetu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdcc3",
+                        "primary": "#002444",
+                        "on-secondary-fixed": "#2f1500",
+                        "on-primary-fixed": "#001c37",
+                        "on-tertiary-container": "#c49b5f",
+                        "surface-dim": "#d3daef",
+                        "error-container": "#ffdad6",
+                        "text-muted": "#6B7280",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#1a3a5c",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "inverse-primary": "#abc9f2",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#291800",
+                        "on-primary-container": "#87a4cc",
+                        "outline-variant": "#c3c6cf",
+                        "border": "#E5E7EB",
+                        "on-secondary-container": "#663500",
+                        "inverse-on-surface": "#edf0ff",
+                        "secondary": "#904d00",
+                        "warning": "#F59E0B",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "tertiary": "#331f00",
+                        "surface-tint": "#436084",
+                        "primary-fixed-dim": "#abc9f2",
+                        "surface-container": "#e9edff",
+                        "tertiary-container": "#4f3300",
+                        "surface-container-low": "#f1f3ff",
+                        "background": "#F4F6F8",
+                        "primary-fixed": "#d2e4ff",
+                        "secondary-container": "#fe932c",
+                        "success": "#16A34A",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "surface-container-high": "#e1e8fd",
+                        "on-surface-variant": "#43474e",
+                        "outline": "#73777f",
+                        "danger": "#DC2626",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#141b2b",
+                        "inverse-surface": "#293040",
+                        "error": "#ba1a1a",
+                        "on-background": "#141b2b",
+                        "surface-bright": "#f9f9ff",
+                        "surface-variant": "#dce2f7",
+                        "surface": "#FFFFFF",
+                        "surface-container-highest": "#dce2f7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "gutter": "16px",
+                        "margin-desktop": "32px",
+                        "stack-sm": "8px",
+                        "stack-lg": "24px",
+                        "rail-height": "32px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "data-sm": ["IBM Plex Mono"],
+                        "data-lg": ["IBM Plex Mono"],
+                        "body-md": ["IBM Plex Sans"],
+                        "data-md": ["IBM Plex Mono"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Overrides for specific strict style guidance */
+        * {
+            border-radius: 0 !important; /* Force 0px corner radii per prompt */
+        }
+        .shadow-elevation {
+            box-shadow: 0 1px 2px rgba(17,24,39,0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col pb-[64px]">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-primary text-primary dark:text-primary-fixed fixed top-0 w-full z-50 border-b border-border dark:border-outline-variant flat no shadows">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop w-full">
+<button class="text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-primary-container transition-colors active:opacity-80 p-2">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed uppercase tracking-tighter">MISSION CONTROL</h1>
+<button class="text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-primary-container transition-colors active:opacity-80 p-2">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pt-16 px-margin-mobile md:px-margin-desktop py-stack-lg max-w-4xl mx-auto w-full flex flex-col gap-gutter">
+<!-- Status Rail (Top) -->
+<div class="h-rail-height bg-surface border-b border-border flex items-center px-gutter font-data-sm text-data-sm text-text-muted uppercase w-full">
+<span>SYS.STATUS: ONLINE</span>
+<span class="mx-2">|</span>
+<span>NODE: DEL-SEC-09</span>
+<span class="mx-2">|</span>
+<span class="text-success ml-auto flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">lock</span> SECURE CONNECTION</span>
+</div>
+<!-- Success Banner -->
+<section class="bg-surface border border-border shadow-elevation p-stack-lg flex flex-col items-center justify-center text-center">
+<div class="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mb-stack-md">
+<span class="material-symbols-outlined text-[40px] text-success" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-light mb-stack-sm text-primary">Payment Success</h2>
+<div class="font-data-lg text-data-lg text-on-surface mb-stack-md tracking-tight">₹ 4,250.00</div>
+<p class="font-body-md text-body-md text-text-muted max-w-md">Your payment has been successfully processed and verified by the civic ledger.</p>
+</section>
+<!-- Receipt Details Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Left Column: Details -->
+<div class="bg-surface border border-border shadow-elevation flex flex-col">
+<div class="border-b border-border p-stack-md bg-surface-container-lowest">
+<h3 class="font-label-md text-label-md text-primary uppercase tracking-wider">Payment Receipt</h3>
+</div>
+<div class="p-stack-md flex flex-col gap-stack-sm flex-grow">
+<div class="flex justify-between border-b border-border pb-2 last:border-0 last:pb-0">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Service Type</span>
+<span class="font-label-md text-label-md text-on-surface">Property Tax</span>
+</div>
+<div class="flex justify-between border-b border-border pb-2 last:border-0 last:pb-0">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Reference ID</span>
+<span class="font-data-md text-data-md text-primary">PTX-2324-9982-A</span>
+</div>
+<div class="flex justify-between border-b border-border pb-2 last:border-0 last:pb-0">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Transaction ID</span>
+<span class="font-data-md text-data-md text-on-surface">TXN-8834-XCV-91</span>
+</div>
+<div class="flex justify-between border-b border-border pb-2 last:border-0 last:pb-0">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Date / Time</span>
+<span class="font-data-sm text-data-sm text-on-surface">2023-10-27 14:32:45 IST</span>
+</div>
+<div class="flex justify-between pb-2">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Payment Method</span>
+<span class="font-label-md text-label-md text-on-surface">ACH Bank Transfer</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Verification -->
+<div class="bg-surface border border-border shadow-elevation flex flex-col">
+<div class="border-b border-border p-stack-md bg-surface-container-lowest">
+<h3 class="font-label-md text-label-md text-primary uppercase tracking-wider">Digital Verification</h3>
+</div>
+<div class="p-stack-md flex flex-col items-center justify-center flex-grow text-center relative overflow-hidden">
+<!-- Subtle watermark pattern -->
+<div class="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiMwMDAiLz48L3N2Zz4=')]"></div>
+<div class="w-24 h-24 rounded-full border-2 border-primary/20 flex items-center justify-center mb-stack-md relative z-10">
+<span class="material-symbols-outlined text-[48px] text-primary/40">local_police</span>
+</div>
+<div class="font-data-md text-data-md text-primary italic mb-1 z-10 border-b border-primary/20 px-4 inline-block">
+                        J. K. Ramanathan
+                    </div>
+<div class="font-label-sm text-label-sm text-text-muted uppercase z-10">
+                        Municipal Commissioner
+                    </div>
+<div class="font-data-sm text-data-sm text-success mt-4 z-10 flex items-center gap-1 bg-success/10 px-2 py-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> OFFICIALLY SEALED
+                    </div>
+</div>
+</div>
+</section>
+<!-- Technical Metadata -->
+<section class="bg-surface border border-border shadow-elevation flex flex-col">
+<div class="border-b border-border p-stack-sm px-stack-md bg-surface-container-lowest">
+<h4 class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">System Log Metadata</h4>
+</div>
+<div class="p-stack-md font-data-sm text-data-sm text-text-muted grid grid-cols-1 md:grid-cols-2 gap-stack-sm">
+<div>
+<span class="uppercase font-bold block mb-1">Transaction Hash (SHA-256)</span>
+<span class="break-all text-xs opacity-80">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</span>
+</div>
+<div>
+<span class="uppercase font-bold block mb-1">Server Node / Env</span>
+<span class="block text-xs opacity-80">PROD-DEL-CS-09.2 / K8S-CLUSTER-A</span>
+<span class="uppercase font-bold block mt-2 mb-1">Encryption Protocol</span>
+<span class="block text-xs opacity-80">TLS 1.3 / AES-256-GCM</span>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<section class="flex flex-col md:flex-row gap-stack-md mt-stack-md">
+<button class="flex-1 bg-surface border border-border text-primary font-label-md text-label-md h-12 flex items-center justify-center hover:bg-surface-container-low transition-colors uppercase tracking-wider">
+<span class="material-symbols-outlined mr-2">download</span>
+                Download PDF Receipt
+            </button>
+<button class="flex-1 bg-primary-container text-white font-label-md text-label-md h-12 flex items-center justify-center hover:bg-primary transition-colors uppercase tracking-wider shadow-elevation">
+                Return to Dashboard
+                <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 border-t border-border dark:border-outline-variant flat no shadows fixed bottom-0 left-0 w-full h-[64px] flex justify-around items-stretch bg-surface dark:bg-on-primary">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline h-full w-full hover:bg-surface-container-lowest dark:hover:bg-primary-container transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-sm text-label-sm">DASHBOARD</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim border-l-4 border-secondary dark:border-secondary-fixed-dim h-full w-full bg-surface-container-low dark:bg-primary-container hover:bg-surface-container-lowest dark:hover:bg-primary-container transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-sm text-label-sm">REPORTS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline h-full w-full hover:bg-surface-container-lowest dark:hover:bg-primary-container transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined mb-1">inventory_2</span>
+<span class="font-label-sm text-label-sm">ASSETS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline h-full w-full hover:bg-surface-container-lowest dark:hover:bg-primary-container transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined mb-1">settings</span>
+<span class="font-label-sm text-label-sm">SETTINGS</span>
+</button>
+</nav>
+</body></html>

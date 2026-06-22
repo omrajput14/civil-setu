@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment History - CivicSetu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "outline": "#73777f",
+                      "tertiary-fixed": "#ffddb1",
+                      "success": "#16A34A",
+                      "outline-variant": "#c3c6cf",
+                      "danger": "#DC2626",
+                      "on-secondary": "#ffffff",
+                      "background": "#F4F6F8",
+                      "on-tertiary-container": "#c49b5f",
+                      "primary-fixed": "#d2e4ff",
+                      "on-background": "#141b2b",
+                      "on-secondary-fixed-variant": "#6e3900",
+                      "surface-container-low": "#f1f3ff",
+                      "primary": "#002444",
+                      "on-primary-fixed-variant": "#2a486b",
+                      "inverse-surface": "#293040",
+                      "warning": "#F59E0B",
+                      "inverse-primary": "#abc9f2",
+                      "primary-fixed-dim": "#abc9f2",
+                      "tertiary": "#331f00",
+                      "surface-variant": "#dce2f7",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface": "#141b2b",
+                      "on-primary-container": "#87a4cc",
+                      "surface": "#FFFFFF",
+                      "text-muted": "#6B7280",
+                      "inverse-on-surface": "#edf0ff",
+                      "surface-tint": "#436084",
+                      "secondary-fixed": "#ffdcc3",
+                      "surface-container-high": "#e1e8fd",
+                      "tertiary-container": "#4f3300",
+                      "tertiary-fixed-dim": "#ecbf80",
+                      "secondary": "#904d00",
+                      "on-tertiary-fixed-variant": "#5f410c",
+                      "on-secondary-container": "#663500",
+                      "surface-dim": "#d3daef",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#f9f9ff",
+                      "border": "#E5E7EB",
+                      "secondary-container": "#fe932c",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed": "#2f1500",
+                      "on-tertiary-fixed": "#291800",
+                      "on-surface-variant": "#43474e",
+                      "on-primary-fixed": "#001c37",
+                      "surface-container": "#e9edff",
+                      "secondary-fixed-dim": "#ffb77d",
+                      "primary-container": "#1a3a5c",
+                      "surface-container-highest": "#dce2f7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "0px"
+              },
+              "spacing": {
+                      "stack-lg": "24px",
+                      "margin-desktop": "32px",
+                      "margin-mobile": "16px",
+                      "gutter": "16px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "rail-height": "32px"
+              },
+              "fontFamily": {
+                      "label-sm": ["IBM Plex Sans"],
+                      "headline-md": ["IBM Plex Sans"],
+                      "data-sm": ["IBM Plex Mono"],
+                      "body-lg": ["IBM Plex Sans"],
+                      "data-lg": ["IBM Plex Mono"],
+                      "label-md": ["IBM Plex Sans"],
+                      "data-md": ["IBM Plex Mono"],
+                      "headline-lg": ["IBM Plex Sans"],
+                      "body-md": ["IBM Plex Sans"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                      "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                      "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                      "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                      "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                      "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                      "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                      "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                      "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-elevation-1 {
+            box-shadow: 0 1px 2px rgba(17,24,39,0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-primary selection:text-on-primary md:pl-[240px]">
+<!-- NavigationDrawer (Desktop) -->
+<nav class="hidden md:flex flex-col h-full bg-primary text-on-primary font-label-md fixed left-0 top-0 w-[240px] border-r border-outline z-40">
+<div class="h-16 flex items-center px-margin-desktop border-b border-on-primary/10">
+<span class="font-headline-md text-headline-md text-on-primary font-bold tracking-tight">CITIZEN PORTAL</span>
+</div>
+<div class="p-stack-md flex items-center gap-stack-md border-b border-on-primary/10">
+<div class="w-10 h-10 bg-on-primary/10 flex items-center justify-center border border-on-primary/20">
+<span class="material-symbols-outlined text-on-primary">person</span>
+</div>
+<div>
+<div class="font-data-md text-data-md text-on-primary">CITIZEN-09241</div>
+<div class="font-label-sm text-label-sm text-on-primary/70">Verified Profile</div>
+</div>
+</div>
+<div class="flex-1 py-stack-md overflow-y-auto">
+<a class="flex items-center gap-stack-md px-margin-desktop py-stack-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Payments Hub</span>
+</a>
+<a class="flex items-center gap-stack-md px-margin-desktop py-stack-sm bg-secondary-container text-on-secondary-container border-l-4 border-secondary font-bold hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span>Bill History</span>
+</a>
+<a class="flex items-center gap-stack-md px-margin-desktop py-stack-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span>Payment Methods</span>
+</a>
+<a class="flex items-center gap-stack-md px-margin-desktop py-stack-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="h-rail-height bg-on-primary/5 flex items-center px-margin-desktop border-t border-on-primary/10">
+<span class="font-data-sm text-data-sm text-on-primary/50 uppercase tracking-widest">SYSTEM ACTIVE</span>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="bg-surface text-primary font-headline-md font-bold w-full top-0 border-b border-outline-variant fixed top-0 w-full z-30 flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 md:hidden">
+<button class="material-symbols-outlined text-primary cursor-pointer active:opacity-80 hover:bg-surface-container-low transition-colors p-2 -ml-2">account_balance</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary truncate">CITIZEN PORTAL</h1>
+<button class="material-symbols-outlined text-primary cursor-pointer active:opacity-80 hover:bg-surface-container-low transition-colors p-2 -mr-2">notifications</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[80px] md:pt-margin-desktop px-margin-mobile md:px-margin-desktop pb-[100px] md:pb-margin-desktop max-w-5xl mx-auto space-y-stack-lg">
+<!-- Page Header & Actions -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Payment History</h2>
+<p class="font-body-md text-body-md text-text-muted mt-1">Archive of all processed civic transactions.</p>
+</div>
+<div class="flex items-center gap-stack-sm w-full md:w-auto">
+<div class="relative w-full md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">search</span>
+<input class="w-full bg-surface border border-border text-on-surface font-body-md text-body-md pl-10 pr-4 py-2 focus:outline-none focus:ring-0 focus:border-primary placeholder:text-text-muted transition-colors" placeholder="Search by ID or service..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Filters & Summary Rail -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-stack-md bg-surface border border-border shadow-elevation-1 p-stack-sm">
+<div class="flex overflow-x-auto no-scrollbar gap-2 pb-2 lg:pb-0">
+<button class="px-4 py-1.5 bg-primary text-on-primary font-label-md text-label-md border border-primary whitespace-nowrap transition-colors">All Services</button>
+<button class="px-4 py-1.5 bg-surface text-primary font-label-md text-label-md border border-border hover:bg-surface-container-low whitespace-nowrap transition-colors">Water</button>
+<button class="px-4 py-1.5 bg-surface text-primary font-label-md text-label-md border border-border hover:bg-surface-container-low whitespace-nowrap transition-colors">Electricity</button>
+<button class="px-4 py-1.5 bg-surface text-primary font-label-md text-label-md border border-border hover:bg-surface-container-low whitespace-nowrap transition-colors">Taxes</button>
+</div>
+<div class="flex items-center justify-between lg:justify-end gap-stack-md px-2 border-t lg:border-t-0 lg:border-l border-border pt-2 lg:pt-0 lg:pl-stack-md">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">This Month</span>
+<span class="font-data-lg text-data-lg text-on-surface leading-none">₹12,450</span>
+</div>
+</div>
+<!-- High-Density Transaction List -->
+<div class="bg-surface border border-border shadow-elevation-1">
+<div class="h-rail-height bg-surface flex items-center px-stack-md border-b border-border">
+<span class="font-data-sm text-data-sm text-text-muted uppercase w-12 hidden md:block">TYPE</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase flex-1">SERVICE DETAILS</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase w-32 hidden sm:block">STATUS</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase w-32 text-right">AMOUNT</span>
+<span class="w-10"></span>
+</div>
+<div class="divide-y divide-border">
+<!-- Item 1 -->
+<div class="group flex items-center p-stack-md hover:bg-surface-container-lowest transition-colors cursor-pointer">
+<div class="w-12 hidden md:flex">
+<div class="w-8 h-8 bg-surface-container-high border border-border flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">water_drop</span>
+</div>
+</div>
+<div class="flex-1 pr-stack-md">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-md text-label-md text-on-surface">Water Utility Bill - Q3</span>
+<span class="md:hidden px-1.5 py-0.5 bg-success/10 text-success border border-success/20 font-data-sm text-[10px] uppercase tracking-wider">SUCCESS</span>
+</div>
+<div class="flex items-center gap-3 font-data-sm text-data-sm text-text-muted">
+<span>24 OCT 2023</span>
+<span class="text-border">|</span>
+<span>TXN-88921-A</span>
+</div>
+</div>
+<div class="w-32 hidden sm:flex">
+<span class="px-2 py-1 bg-success/10 text-success border border-success/20 font-data-sm text-data-sm uppercase tracking-wider inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> SUCCESS
+                        </span>
+</div>
+<div class="w-32 text-right font-data-md text-data-md text-on-surface">
+                        ₹1,250.00
+                    </div>
+<div class="w-10 flex justify-end">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group flex items-center p-stack-md hover:bg-surface-container-lowest transition-colors cursor-pointer">
+<div class="w-12 hidden md:flex">
+<div class="w-8 h-8 bg-surface-container-high border border-border flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">account_balance</span>
+</div>
+</div>
+<div class="flex-1 pr-stack-md">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-md text-label-md text-on-surface">Property Tax - FY 2023-24</span>
+<span class="md:hidden px-1.5 py-0.5 bg-success/10 text-success border border-success/20 font-data-sm text-[10px] uppercase tracking-wider">SUCCESS</span>
+</div>
+<div class="flex items-center gap-3 font-data-sm text-data-sm text-text-muted">
+<span>15 OCT 2023</span>
+<span class="text-border">|</span>
+<span>TXN-77210-P</span>
+</div>
+</div>
+<div class="w-32 hidden sm:flex">
+<span class="px-2 py-1 bg-success/10 text-success border border-success/20 font-data-sm text-data-sm uppercase tracking-wider inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> SUCCESS
+                        </span>
+</div>
+<div class="w-32 text-right font-data-md text-data-md text-on-surface">
+                        ₹8,500.00
+                    </div>
+<div class="w-10 flex justify-end">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group flex items-center p-stack-md hover:bg-surface-container-lowest transition-colors cursor-pointer">
+<div class="w-12 hidden md:flex">
+<div class="w-8 h-8 bg-surface-container-high border border-border flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">electric_bolt</span>
+</div>
+</div>
+<div class="flex-1 pr-stack-md">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-md text-label-md text-on-surface">Electricity Board - SEP</span>
+<span class="md:hidden px-1.5 py-0.5 bg-success/10 text-success border border-success/20 font-data-sm text-[10px] uppercase tracking-wider">SUCCESS</span>
+</div>
+<div class="flex items-center gap-3 font-data-sm text-data-sm text-text-muted">
+<span>02 OCT 2023</span>
+<span class="text-border">|</span>
+<span>TXN-66104-E</span>
+</div>
+</div>
+<div class="w-32 hidden sm:flex">
+<span class="px-2 py-1 bg-success/10 text-success border border-success/20 font-data-sm text-data-sm uppercase tracking-wider inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> SUCCESS
+                        </span>
+</div>
+<div class="w-32 text-right font-data-md text-data-md text-on-surface">
+                        ₹2,700.00
+                    </div>
+<div class="w-10 flex justify-end">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group flex items-center p-stack-md hover:bg-surface-container-lowest transition-colors cursor-pointer bg-surface-bright border-l-4 border-l-warning">
+<div class="w-12 hidden md:flex">
+<div class="w-8 h-8 bg-surface-container-high border border-border flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">directions_car</span>
+</div>
+</div>
+<div class="flex-1 pr-stack-md">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-md text-label-md text-on-surface">Vehicle Registration Renewal</span>
+<span class="md:hidden px-1.5 py-0.5 bg-warning/10 text-warning border border-warning/20 font-data-sm text-[10px] uppercase tracking-wider">PENDING</span>
+</div>
+<div class="flex items-center gap-3 font-data-sm text-data-sm text-text-muted">
+<span>28 SEP 2023</span>
+<span class="text-border">|</span>
+<span>TXN-55099-V</span>
+</div>
+</div>
+<div class="w-32 hidden sm:flex">
+<span class="px-2 py-1 bg-warning/10 text-warning border border-warning/20 font-data-sm text-data-sm uppercase tracking-wider inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">pending</span> PENDING
+                        </span>
+</div>
+<div class="w-32 text-right font-data-md text-data-md text-on-surface">
+                        ₹1,500.00
+                    </div>
+<div class="w-10 flex justify-end">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="p-stack-md border-t border-border flex justify-center">
+<button class="px-6 py-2 bg-surface text-primary font-label-md text-label-md border border-border hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span>Load More Records</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-surface border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm w-full h-full active:scale-95 transition-transform hover:bg-surface-container-lowest" href="#">
+<span class="material-symbols-outlined mb-1">payments</span>
+<span>Hub</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold font-label-sm text-label-sm w-full h-full active:scale-95 transition-transform hover:bg-surface-container-lowest relative" href="#">
+<div class="absolute top-0 w-8 h-1 bg-primary"></div>
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">history</span>
+<span>History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm w-full h-full active:scale-95 transition-transform hover:bg-surface-container-lowest" href="#">
+<span class="material-symbols-outlined mb-1">wallet</span>
+<span>Wallets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm w-full h-full active:scale-95 transition-transform hover:bg-surface-container-lowest" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span>Account</span>
+</a>
+</nav>
+</body></html>

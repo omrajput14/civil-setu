@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CivicSetu - Login</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts for Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#F4F6F8",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-primary-container": "#87a4cc",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-surface": "#141b2b",
+                        "surface-tint": "#436084",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#c49b5f",
+                        "tertiary-fixed": "#ffddb1",
+                        "tertiary": "#331f00",
+                        "on-secondary": "#ffffff",
+                        "warning": "#F59E0B",
+                        "outline": "#73777f",
+                        "primary": "#002444",
+                        "inverse-primary": "#abc9f2",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "on-tertiary-fixed": "#291800",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-variant": "#dce2f7",
+                        "primary-fixed-dim": "#abc9f2",
+                        "tertiary-container": "#4f3300",
+                        "surface-container": "#e9edff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#141b2b",
+                        "surface-container-highest": "#dce2f7",
+                        "on-primary-fixed": "#001c37",
+                        "secondary-container": "#fe932c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "on-secondary-container": "#663500",
+                        "surface-bright": "#f9f9ff",
+                        "primary-container": "#1a3a5c",
+                        "success": "#16A34A",
+                        "surface-dim": "#d3daef",
+                        "inverse-surface": "#293040",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d2e4ff",
+                        "error": "#ba1a1a",
+                        "text-muted": "#6B7280",
+                        "secondary": "#904d00",
+                        "on-surface-variant": "#43474e",
+                        "border": "#E5E7EB",
+                        "outline-variant": "#c3c6cf",
+                        "surface": "#FFFFFF",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-secondary-fixed": "#2f1500",
+                        "surface-container-high": "#e1e8fd",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "danger": "#DC2626"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "rail-height": "32px",
+                        "margin-desktop": "32px",
+                        "stack-lg": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "data-sm": ["IBM Plex Mono"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "data-lg": ["IBM Plex Mono"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "body-md": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "data-md": ["IBM Plex Mono"]
+                    },
+                    "fontSize": {
+                        "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Input Styling based on Guidelines */
+        .instrument-input {
+            border-radius: 6px;
+            transition: all 0.2s ease-in-out;
+        }
+        .instrument-input:focus {
+            border-width: 2px;
+            border-color: #1a3a5c; /* primary-container */
+            outline: none;
+            box-shadow: none;
+            padding-left: 11px; /* Compensate for border width jump */
+            padding-right: 11px;
+        }
+        
+        /* Subtle elevation shadow specifically requested */
+        .card-elevation {
+            box-shadow: 0 1px 2px rgba(17,24,39,0.06);
+        }
+        
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop text-on-background font-body-md">
+<!-- Main Card Container -->
+<main class="w-full max-w-[420px]">
+<div class="bg-surface border border-border rounded-[8px] p-[40px] card-elevation mb-stack-md">
+<!-- Header Section -->
+<header class="mb-[32px] text-center flex flex-col items-center">
+<div class="w-12 h-12 bg-primary-container text-on-primary rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined" style="font-size: 28px;">account_balance</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary-container uppercase tracking-wide">
+                    CivicSetu
+                </h1>
+<p class="font-data-sm text-data-sm uppercase text-text-muted mt-1">
+                    Rural Governance Operating System
+                </p>
+</header>
+<!-- State 1: Login Form -->
+<div class="block" id="view-login">
+<form class="flex flex-col gap-[20px]" onsubmit="event.preventDefault(); toggleView();">
+<!-- Dropdown -->
+<div>
+<label class="block font-data-sm text-data-sm uppercase text-text-muted mb-stack-sm" for="panchayat">
+                            Panchayat / Office Name
+                        </label>
+<div class="relative">
+<select class="w-full bg-surface border border-border instrument-input px-3 py-2 text-on-surface font-body-md appearance-none cursor-pointer" id="panchayat">
+<option disabled="" selected="" value="">Select assigned office...</option>
+<option value="gp_01">GP-014: Anandpur District</option>
+<option value="gp_02">GP-088: Block Development Office</option>
+<option value="gp_03">GP-102: Central Secretariat</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none">
+                                expand_more
+                            </span>
+</div>
+</div>
+<!-- Username -->
+<div>
+<label class="block font-data-sm text-data-sm uppercase text-text-muted mb-stack-sm" for="username">
+                            Username
+                        </label>
+<input autocomplete="username" class="w-full bg-surface border border-border instrument-input px-3 py-2 text-on-surface font-body-md" id="username" placeholder="Enter operator ID" type="text"/>
+</div>
+<!-- Password -->
+<div>
+<label class="block font-data-sm text-data-sm uppercase text-text-muted mb-stack-sm" for="password">
+                            Password
+                        </label>
+<input autocomplete="current-password" class="w-full bg-surface border border-border instrument-input px-3 py-2 text-on-surface font-body-md" id="password" placeholder="••••••••" type="password"/>
+</div>
+<!-- Submit Action -->
+<div class="mt-2">
+<button class="w-full bg-primary-container text-on-primary font-label-md text-label-md py-3 rounded-[6px] hover:bg-primary transition-colors active:scale-[0.98]" type="submit">
+                            Login
+                        </button>
+</div>
+</form>
+</div>
+<!-- State 2: Role Selection (Hidden by default) -->
+<div class="hidden" id="view-roles">
+<div class="mb-[24px]">
+<h2 class="font-label-md text-label-md text-on-surface mb-1">Select Access Profile</h2>
+<p class="font-body-md text-body-md text-text-muted text-sm">Multiple authorizations detected for your account.</p>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<!-- Role: Sarpanch (Selected Example) -->
+<button class="w-full flex items-center justify-between p-4 bg-surface border-y border-r border-l-4 border-l-warning border-y-border border-r-border rounded-[6px] hover:bg-surface-container-low transition-colors text-left group">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary-container transition-colors">Sarpanch</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase mt-0.5">ID: GP-AUTH-01A</span>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary-container transition-colors">
+                            chevron_right
+                        </span>
+</button>
+<!-- Role: Secretary -->
+<button class="w-full flex items-center justify-between p-4 bg-surface border border-border rounded-[6px] hover:bg-surface-container-low transition-colors text-left group">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary-container transition-colors">Secretary</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase mt-0.5">ID: GP-SEC-892</span>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary-container transition-colors">
+                            chevron_right
+                        </span>
+</button>
+<!-- Role: Field Officer -->
+<button class="w-full flex items-center justify-between p-4 bg-surface border border-border rounded-[6px] hover:bg-surface-container-low transition-colors text-left group">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary-container transition-colors">Field Officer</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase mt-0.5">ID: FLD-OPS-404</span>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary-container transition-colors">
+                            chevron_right
+                        </span>
+</button>
+<!-- Role: Citizen Desk -->
+<button class="w-full flex items-center justify-between p-4 bg-surface border border-border rounded-[6px] hover:bg-surface-container-low transition-colors text-left group">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary-container transition-colors">Citizen Desk</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase mt-0.5">ID: PUB-SVC-100</span>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary-container transition-colors">
+                            chevron_right
+                        </span>
+</button>
+</div>
+<div class="mt-6 text-center">
+<button class="font-data-sm text-data-sm uppercase text-primary hover:underline cursor-pointer bg-transparent border-none" onclick="toggleView()">
+                        Cancel &amp; Return
+                    </button>
+</div>
+</div>
+</div>
+<!-- External Footer -->
+<div class="text-center">
+<p class="font-data-sm text-data-sm uppercase text-text-muted tracking-widest">
+                CIVICSETU v1.0 · MINISTRY OF PANCHAYATI RAJ COMPLIANT
+            </p>
+</div>
+</main>
+<script>
+        function toggleView() {
+            const loginView = document.getElementById('view-login');
+            const rolesView = document.getElementById('view-roles');
+            
+            if (loginView.classList.contains('block')) {
+                // Simulate loading state briefly before showing roles
+                const btn = loginView.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<span class="material-symbols-outlined animate-spin" style="font-size:18px">sync</span>';
+                btn.classList.add('opacity-80', 'pointer-events-none');
+                
+                setTimeout(() => {
+                    loginView.classList.replace('block', 'hidden');
+                    rolesView.classList.replace('hidden', 'block');
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('opacity-80', 'pointer-events-none');
+                }, 600);
+            } else {
+                rolesView.classList.replace('block', 'hidden');
+                loginView.classList.replace('hidden', 'block');
+            }
+        }
+    </script>
+</body></html>

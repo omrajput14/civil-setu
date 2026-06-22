@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Citizen Registration - Aadhaar Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for instrument panel feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F6F8;
+            border-left: 1px solid #E5E7EB;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c3c6cf;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #73777f;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "danger": "#DC2626",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-surface": "#141b2b",
+                        "inverse-on-surface": "#edf0ff",
+                        "warning": "#F59E0B",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-tertiary-container": "#c49b5f",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#F4F6F8",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "surface-dim": "#d3daef",
+                        "on-secondary-fixed": "#2f1500",
+                        "surface-container-high": "#e1e8fd",
+                        "on-background": "#141b2b",
+                        "surface": "#FFFFFF",
+                        "surface-container": "#e9edff",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "primary-fixed-dim": "#abc9f2",
+                        "on-secondary-container": "#663500",
+                        "surface-container-highest": "#dce2f7",
+                        "surface-container-low": "#f1f3ff",
+                        "primary-fixed": "#d2e4ff",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "on-primary-fixed": "#001c37",
+                        "inverse-primary": "#abc9f2",
+                        "surface-variant": "#dce2f7",
+                        "primary-container": "#1a3a5c",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c3c6cf",
+                        "outline": "#73777f",
+                        "inverse-surface": "#293040",
+                        "on-surface-variant": "#43474e",
+                        "success": "#16A34A",
+                        "text-muted": "#6B7280",
+                        "secondary": "#904d00",
+                        "secondary-container": "#fe932c",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#87a4cc",
+                        "surface-bright": "#f9f9ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "border": "#E5E7EB",
+                        "surface-tint": "#436084",
+                        "secondary-fixed": "#ffdcc3",
+                        "tertiary": "#331f00",
+                        "on-tertiary-fixed": "#291800",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#4f3300",
+                        "primary": "#002444"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "24px",
+                        "margin-desktop": "32px",
+                        "rail-height": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["IBM Plex Sans"],
+                        "data-md": ["IBM Plex Mono"],
+                        "label-md": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "data-sm": ["IBM Plex Mono"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "data-lg": ["IBM Plex Mono"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar (Transactional - Hidden nav items) -->
+<header class="bg-surface w-full top-0 sticky border-b border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] flex items-center justify-between px-margin-mobile md:px-margin-desktop h-14 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary font-bold text-[24px]">account_balance</span>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Rural Connect</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">System Status: Secure</span>
+<span class="material-symbols-outlined text-success text-[16px]">lock</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex items-center justify-center p-margin-mobile md:p-margin-desktop w-full max-w-4xl mx-auto">
+<!-- Registration Form Container (Instrument Panel Style) -->
+<div class="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] w-full max-w-2xl overflow-hidden rounded-[6px]">
+<!-- Form Header / Status Rail -->
+<div class="h-rail-height bg-surface border-b border-border px-4 flex items-center justify-between">
+<span class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest">Process: UIDAI_VERIFICATION_01</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest">Step 1 of 3</span>
+</div>
+<div class="p-stack-lg md:p-margin-desktop space-y-stack-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm">Citizen Registration</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Authenticate identity using Aadhaar to access government services.</p>
+</div>
+<div class="border border-border p-stack-md rounded-[6px] bg-background">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-warning mt-1">info</span>
+<div>
+<span class="font-label-md text-label-md block mb-1">Mandatory Requirement</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Your Aadhaar number will be verified via OTP sent to the registered mobile number. Do not navigate away from this page.</span>
+</div>
+</div>
+</div>
+<form action="#" class="space-y-stack-lg" method="POST">
+<!-- Aadhaar Field -->
+<div class="space-y-stack-sm">
+<label class="font-label-md text-label-md text-on-surface block" for="aadhaar">Aadhaar Number</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-muted font-data-md text-data-md">
+                                UID
+                            </span>
+<input class="bg-surface border border-border text-on-surface font-data-md text-data-md rounded-[6px] focus:ring-0 focus:border-primary focus:border-2 block w-full pl-12 p-2.5 transition-colors" id="aadhaar" maxlength="12" name="aadhaar" pattern="\d{12}" placeholder="0000 0000 0000" required="" type="text"/>
+</div>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">12-Digit Format Required</span>
+</div>
+<!-- Mobile Number Field -->
+<div class="space-y-stack-sm">
+<label class="font-label-md text-label-md text-on-surface block" for="mobile">Registered Mobile Number</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-muted font-data-md text-data-md">
+                                +91
+                            </span>
+<input class="bg-surface border border-border text-on-surface font-data-md text-data-md rounded-[6px] focus:ring-0 focus:border-primary focus:border-2 block w-full pl-12 p-2.5 transition-colors" id="mobile" maxlength="10" name="mobile" pattern="[6-9]{1}[0-9]{9}" placeholder="9876543210" required="" type="tel"/>
+</div>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">Must correspond to Aadhaar registry</span>
+</div>
+<!-- OTP Block (Initially hidden, revealed via interaction ideally, shown here for design completeness) -->
+<div class="border border-border p-stack-md rounded-[6px] bg-surface relative overflow-hidden">
+<!-- Simulated disabled overlay for initial state -->
+<div class="absolute inset-0 bg-background/50 z-10 flex items-center justify-center backdrop-blur-[1px]">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-[6px] border border-transparent hover:bg-primary/90 transition-colors shadow-[0_1px_2px_rgba(17,24,39,0.06)]" type="button">Request OTP</button>
+</div>
+<div class="space-y-stack-sm opacity-50">
+<label class="font-label-md text-label-md text-on-surface block flex items-center justify-between" for="otp">
+                                One Time Password (OTP)
+                                <span class="font-data-sm text-data-sm text-warning uppercase">Awaiting Request</span>
+</label>
+<input class="bg-surface border border-border text-on-surface font-data-lg text-data-lg text-center tracking-[0.5em] rounded-[6px] focus:ring-0 focus:border-primary focus:border-2 block w-full p-3 transition-colors" disabled="" id="otp" maxlength="6" name="otp" placeholder="------" type="text"/>
+<div class="flex justify-between items-center mt-2">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">Valid for 05:00</span>
+<button class="font-label-sm text-label-sm text-primary underline opacity-50 cursor-not-allowed" disabled="" type="button">Resend Code</button>
+</div>
+</div>
+</div>
+<!-- Consent -->
+<div class="flex items-start gap-3 mt-stack-lg">
+<div class="flex items-center h-5">
+<input aria-describedby="consent-description" class="w-4 h-4 border border-border rounded-[2px] bg-surface focus:ring-2 focus:ring-primary focus:ring-offset-background text-primary" id="consent" required="" type="checkbox"/>
+</div>
+<div class="text-sm">
+<label class="font-label-md text-label-md text-on-surface" for="consent">Data Processing Consent</label>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1" id="consent-description">I hereby consent to the secure processing of my demographic data retrieved from UIDAI solely for the purpose of citizen registration and service delivery monitoring.</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-stack-md border-t border-border flex justify-end gap-stack-md">
+<button class="px-6 py-2 border border-border bg-surface text-primary font-label-md text-label-md rounded-[6px] hover:bg-surface-container-low transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-surface" type="button">
+                            Cancel
+                        </button>
+<button class="px-6 py-2 bg-primary-container text-on-primary font-label-md text-label-md rounded-[6px] hover:bg-primary transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-surface flex items-center gap-2 shadow-[0_1px_2px_rgba(17,24,39,0.06)]" type="submit">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+                            Verify & Register
+                        </button>
+</div>
+</form>
+</div>
+<!-- Bottom Status Rail -->
+<div class="h-rail-height bg-surface border-t border-border px-4 flex items-center justify-between">
+<span class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">encrypted</span> 256-bit TLS</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest">Server Time: <span class="font-data-sm text-data-sm" id="clock"></span></span>
+</div>
+</div>
+</main>
+<script>
+        // Simple clock for instrument panel feel
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toISOString().split('T')[1].split('.')[0] + ' UTC';
+            document.getElementById('clock').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Input formatting for Aadhaar (spaces every 4 digits)
+        const aadhaarInput = document.getElementById('aadhaar');
+        aadhaarInput.addEventListener('input', function (e) {
+            let target = e.target;
+            let val = target.value.replace(/\D/g, '');
+            if (val.length > 12) val = val.slice(0, 12);
+            
+            // Format for display (not needed if we want strict raw input, but helpful for UX)
+            // Keeping it simple and raw to match 'instrument panel' strictness, 
+            // but ensuring only digits are entered.
+            target.value = val;
+        });
+
+        // Mobile number formatting
+        const mobileInput = document.getElementById('mobile');
+        mobileInput.addEventListener('input', function (e) {
+            let target = e.target;
+            let val = target.value.replace(/\D/g, '');
+            if (val.length > 10) val = val.slice(0, 10);
+            target.value = val;
+        });
+    </script>
+</body></html>

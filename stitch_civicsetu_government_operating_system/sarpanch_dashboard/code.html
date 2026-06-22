@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CivicSetu - Sarpanch Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "background": "#F4F6F8",
+                "inverse-on-surface": "#edf0ff",
+                "on-primary-container": "#87a4cc",
+                "secondary-fixed-dim": "#ffb77d",
+                "on-surface": "#141b2b",
+                "surface-tint": "#436084",
+                "error-container": "#ffdad6",
+                "on-error": "#ffffff",
+                "on-tertiary-container": "#c49b5f",
+                "tertiary-fixed": "#ffddb1",
+                "tertiary": "#331f00",
+                "on-secondary": "#ffffff",
+                "warning": "#F59E0B",
+                "outline": "#73777f",
+                "primary": "#002444",
+                "inverse-primary": "#abc9f2",
+                "on-tertiary-fixed-variant": "#5f410c",
+                "on-tertiary-fixed": "#291800",
+                "on-secondary-fixed-variant": "#6e3900",
+                "surface-container-low": "#f1f3ff",
+                "surface-variant": "#dce2f7",
+                "primary-fixed-dim": "#abc9f2",
+                "tertiary-container": "#4f3300",
+                "surface-container": "#e9edff",
+                "on-primary": "#ffffff",
+                "on-background": "#141b2b",
+                "surface-container-highest": "#dce2f7",
+                "on-primary-fixed": "#001c37",
+                "secondary-container": "#fe932c",
+                "on-error-container": "#93000a",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#ecbf80",
+                "on-secondary-container": "#663500",
+                "surface-bright": "#f9f9ff",
+                "primary-container": "#1a3a5c",
+                "success": "#16A34A",
+                "surface-dim": "#d3daef",
+                "inverse-surface": "#293040",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed": "#d2e4ff",
+                "error": "#ba1a1a",
+                "text-muted": "#6B7280",
+                "secondary": "#904d00",
+                "on-surface-variant": "#43474e",
+                "border": "#E5E7EB",
+                "outline-variant": "#c3c6cf",
+                "surface": "#FFFFFF",
+                "secondary-fixed": "#ffdcc3",
+                "on-secondary-fixed": "#2f1500",
+                "surface-container-high": "#e1e8fd",
+                "on-primary-fixed-variant": "#2a486b",
+                "danger": "#DC2626"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "stack-md": "16px",
+                "gutter": "16px",
+                "margin-mobile": "16px",
+                "rail-height": "32px",
+                "margin-desktop": "32px",
+                "stack-lg": "24px",
+                "stack-sm": "8px"
+        },
+        "fontFamily": {
+                "data-sm": ["IBM Plex Mono"],
+                "label-sm": ["IBM Plex Sans"],
+                "body-lg": ["IBM Plex Sans"],
+                "data-lg": ["IBM Plex Mono"],
+                "headline-lg": ["IBM Plex Sans"],
+                "body-md": ["IBM Plex Sans"],
+                "headline-md": ["IBM Plex Sans"],
+                "label-md": ["IBM Plex Sans"],
+                "data-md": ["IBM Plex Mono"]
+        },
+        "fontSize": {
+                "data-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "data-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                "data-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.on-background');
+    -webkit-font-smoothing: antialiased;
+  }
+  .instrument-shadow {
+    box-shadow: 0 1px 2px rgba(17,24,39,0.06);
+  }
+</style>
+</head>
+<body class="flex min-h-screen w-full overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[240px] bg-primary dark:bg-primary border-r border-outline-variant flex flex-col z-50 transition-colors duration-150">
+<div class="p-6 flex items-center gap-3 border-b border-outline-variant/30">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border border-outline-variant/50 shrink-0">
+<span class="material-symbols-outlined text-on-primary text-[20px]">assured_workload</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-on-primary leading-tight">CivicSetu</span>
+<span class="font-data-sm text-data-sm text-on-primary-container uppercase tracking-wider">Rural Governance OS</span>
+</div>
+</div>
+<nav class="flex-1 py-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 border-l-4 border-secondary-container bg-primary-container text-on-primary font-label-md text-label-md transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+        Dashboard
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary-container hover:opacity-100 font-label-md text-label-md transition-colors duration-150 border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+        Gram Panchayat
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary-container hover:opacity-100 font-label-md text-label-md transition-colors duration-150 border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+        Schemes
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary-container hover:opacity-100 font-label-md text-label-md transition-colors duration-150 border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+        Certificates
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary-container hover:opacity-100 font-label-md text-label-md transition-colors duration-150 border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined text-[20px]">engineering</span>
+        Public Works
+      </a>
+<div class="mt-auto pt-4 border-t border-outline-variant/30">
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary-container hover:opacity-100 font-label-md text-label-md transition-colors duration-150 border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+          Settings
+        </a>
+</div>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col ml-[240px]">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 h-[56px] bg-surface dark:bg-surface border-b border-border shadow-sm flex justify-between items-center px-margin-desktop w-full sticky z-40">
+<div class="flex items-center gap-8 h-full">
+<nav class="flex h-full gap-6">
+<a class="text-primary font-bold border-b-2 border-primary h-full flex items-center px-1 font-label-md text-label-md scale-95 active:scale-90 transition-transform" href="#">Dashboard</a>
+<a class="text-on-surface-variant font-medium h-full flex items-center px-1 font-label-md text-label-md hover:text-primary transition-colors scale-95 active:scale-90" href="#">Inventory</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors rounded hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors rounded hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+</button>
+<div class="w-8 h-8 bg-surface-variant border border-border rounded-full overflow-hidden ml-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">person</span>
+</div>
+</div>
+</header>
+<!-- Status-Rail -->
+<div class="bg-surface-container-lowest full-width h-[32px] border-b border-border flex items-center px-margin-desktop gap-stack-md shrink-0">
+<span class="font-data-sm text-data-sm uppercase text-text-muted cursor-default">WARD 4 · BUDGET FY 25-26 · LAST SYNCED 2 MIN AGO · 14 OPEN ITEMS</span>
+</div>
+<!-- Scrollable Canvas -->
+<main class="flex-1 p-margin-desktop flex flex-col gap-stack-lg">
+<!-- KPI Row -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter w-full">
+<!-- KPI Card 1 -->
+<article class="bg-surface border border-border instrument-shadow p-stack-md flex flex-col gap-2 rounded-sm relative overflow-hidden">
+<div class="w-1 h-full bg-primary absolute left-0 top-0"></div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase pl-2">Active Projects</span>
+<span class="font-data-lg text-data-lg text-on-surface pl-2">8</span>
+</article>
+<!-- KPI Card 2 -->
+<article class="bg-surface border border-border instrument-shadow p-stack-md flex flex-col justify-between rounded-sm relative overflow-hidden">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Budget Utilized</span>
+<span class="font-data-lg text-data-lg text-on-surface">68%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant mt-3 rounded-full overflow-hidden">
+<div class="h-full bg-warning w-[68%]"></div>
+</div>
+</article>
+<!-- KPI Card 3 -->
+<article class="bg-surface border border-border instrument-shadow p-stack-md flex flex-col gap-2 rounded-sm relative overflow-hidden">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Open Complaints</span>
+<span class="font-data-lg text-data-lg text-on-surface flex items-baseline gap-2">
+            14
+            <span class="material-symbols-outlined text-danger text-[20px] self-center">trending_up</span>
+</span>
+</article>
+<!-- KPI Card 4 -->
+<article class="bg-surface border border-border instrument-shadow p-stack-md flex flex-col gap-2 rounded-sm relative overflow-hidden">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Next Gram Sabha</span>
+<span class="font-data-lg text-data-lg text-on-surface whitespace-nowrap tracking-tight">24 JUN 2025</span>
+</article>
+</section>
+<!-- 2-Column Data Modules -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter w-full items-start">
+<!-- Left Column: Infrastructure Map (60%) -->
+<div class="lg:col-span-7 flex flex-col gap-stack-sm h-full">
+<div class="flex items-center justify-between">
+<h2 class="font-label-md text-label-md text-primary uppercase tracking-wider">Infrastructure Map</h2>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">Live Feed</span>
+</div>
+</div>
+<div class="bg-surface border border-border instrument-shadow flex flex-col rounded-sm h-[480px]">
+<!-- Map Toolbar -->
+<div class="p-3 border-b border-border flex gap-2 bg-surface-container-lowest">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-4 py-1.5 border border-primary rounded-sm transition-colors">All Layers</button>
+<button class="bg-surface text-on-surface-variant font-label-sm text-label-sm px-4 py-1.5 border border-border hover:bg-surface-variant rounded-sm transition-colors">Roads</button>
+<button class="bg-surface text-on-surface-variant font-label-sm text-label-sm px-4 py-1.5 border border-border hover:bg-surface-variant rounded-sm transition-colors">Water</button>
+<button class="bg-surface text-on-surface-variant font-label-sm text-label-sm px-4 py-1.5 border border-border hover:bg-surface-variant rounded-sm transition-colors ml-auto flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+                Filters
+              </button>
+</div>
+<!-- Map Viewport -->
+<div class="flex-1 w-full bg-surface-variant relative overflow-hidden" data-location="Rural India Village" style="">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-60 pointer-events-none" data-alt="A highly detailed top-down view of a modern digital map interface displaying a rural village layout. The aesthetic is clean, light-mode, and industrial, utilizing a strict palette of soft greys, white, and deep navy blue accents. Geometric shapes represent buildings and precise line-work details roads and water pipelines. The lighting is flat and uniform, emphasizing functional clarity over realism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh9HqIHiJGON5zekkSiBrK_5-oZnxK6bq86heR_7Sa6LRyAxzTO_q9lwFIHNZ132iiKey3STt5bHylcYdUbXa_FVk74lEf2OG7v43XNGK4MW0fmkCCmTGhzu2VYjgxY7LA4EPQ4X0nlssEShYZkYPo4m0nVE0Efvhtbhxo8-4BQXDrZgmgxoHAmGupfZsO9OQt4DDPspNvy5hsWAh25maOcE78l0jEXNAAIF4DwXylMk24t31NrLIJnhgppO6W3bps0jrX__uxQZrW"/>
+<!-- Simulated Map Data Points -->
+<div class="absolute top-[30%] left-[40%] w-3 h-3 bg-warning rounded-full border-2 border-surface shadow-sm cursor-pointer hover:scale-125 transition-transform"></div>
+<div class="absolute top-[60%] left-[20%] w-3 h-3 bg-primary rounded-full border-2 border-surface shadow-sm cursor-pointer hover:scale-125 transition-transform"></div>
+<div class="absolute top-[45%] left-[70%] w-3 h-3 bg-primary rounded-full border-2 border-surface shadow-sm cursor-pointer hover:scale-125 transition-transform"></div>
+<!-- Map Controls -->
+<div class="absolute bottom-4 right-4 flex flex-col gap-1">
+<button class="w-8 h-8 bg-surface border border-border flex items-center justify-center instrument-shadow text-on-surface-variant hover:text-primary transition-colors rounded-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<button class="w-8 h-8 bg-surface border border-border flex items-center justify-center instrument-shadow text-on-surface-variant hover:text-primary transition-colors rounded-sm">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Lists (40%) -->
+<div class="lg:col-span-5 flex flex-col gap-stack-lg">
+<!-- Module: Pending Approvals -->
+<div class="flex flex-col gap-stack-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-label-md text-label-md text-primary uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+                Pending Approvals
+              </h2>
+<a class="font-label-sm text-label-sm text-surface-tint hover:underline" href="#">View All</a>
+</div>
+<div class="bg-surface border border-border instrument-shadow flex flex-col rounded-sm">
+<!-- Item 1 -->
+<div class="p-4 border-b border-border flex justify-between items-center bg-surface hover:bg-surface-bright transition-colors group">
+<div class="flex flex-col gap-1">
+<span class="font-body-md text-body-md text-on-surface font-medium leading-tight">Road Repair - NH Junction</span>
+<div class="flex items-center gap-2 text-text-muted">
+<span class="font-data-sm text-data-sm bg-surface-variant px-1.5 py-0.5 rounded-sm">PRJ-8821</span>
+<span class="font-data-sm text-data-sm">₹1,84,000</span>
+</div>
+</div>
+<button class="border border-border text-primary font-label-sm text-label-sm px-3 py-1.5 rounded-sm hover:bg-surface-variant transition-colors uppercase tracking-wide opacity-0 group-hover:opacity-100 focus:opacity-100">Review</button>
+</div>
+<!-- Item 2 -->
+<div class="p-4 flex justify-between items-center bg-surface hover:bg-surface-bright transition-colors group">
+<div class="flex flex-col gap-1">
+<span class="font-body-md text-body-md text-on-surface font-medium leading-tight">Water Tank Maintenance</span>
+<div class="flex items-center gap-2 text-text-muted">
+<span class="font-data-sm text-data-sm bg-surface-variant px-1.5 py-0.5 rounded-sm">MNT-1044</span>
+<span class="font-data-sm text-data-sm">₹45,500</span>
+</div>
+</div>
+<button class="border border-border text-primary font-label-sm text-label-sm px-3 py-1.5 rounded-sm hover:bg-surface-variant transition-colors uppercase tracking-wide opacity-0 group-hover:opacity-100 focus:opacity-100">Review</button>
+</div>
+</div>
+</div>
+<!-- Module: Recent Complaints -->
+<div class="flex flex-col gap-stack-sm">
+<h2 class="font-label-md text-label-md text-primary uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">report_problem</span>
+              Recent Complaints
+            </h2>
+<div class="bg-surface border border-border instrument-shadow flex flex-col rounded-sm">
+<!-- Complaint 1 -->
+<div class="p-4 border-b border-border flex items-start gap-4 hover:bg-surface-container-lowest transition-colors cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-warning/10 flex items-center justify-center shrink-0 border border-warning/20">
+<span class="material-symbols-outlined text-warning text-[18px]">water_drop</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<div class="flex justify-between items-start">
+<span class="font-body-md text-body-md text-on-surface font-medium leading-tight">Severe water logging near Market</span>
+<span class="font-data-sm text-data-sm text-text-muted">2H AGO</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-data-sm text-data-sm text-text-muted">ID: CMP-4092</span>
+<span class="font-data-sm text-data-sm uppercase tracking-wider text-warning font-semibold">Open</span>
+</div>
+</div>
+</div>
+<!-- Complaint 2 -->
+<div class="p-4 flex items-start gap-4 hover:bg-surface-container-lowest transition-colors cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 border border-border">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">lightbulb</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<div class="flex justify-between items-start">
+<span class="font-body-md text-body-md text-on-surface font-medium leading-tight text-on-surface-variant">Streetlight broken</span>
+<span class="font-data-sm text-data-sm text-text-muted">1D AGO</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-data-sm text-data-sm text-text-muted">ID: CMP-4088</span>
+<span class="font-data-sm text-data-sm uppercase tracking-wider text-surface-tint font-semibold">In Progress</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

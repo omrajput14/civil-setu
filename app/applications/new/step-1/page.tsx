@@ -80,7 +80,7 @@ export default function Page() {
 <div className="flex-grow"></div>
 </main>
 {/* Bottom Action Bar */}
-<div className="fixed bottom-0 w-full bg-surface border-t border-border px-margin-mobile md:px-margin-desktop py-4 z-40 shadow-elevation">
+<div className="sticky bottom-0 w-full bg-surface border-t border-border px-margin-mobile md:px-margin-desktop py-4 z-40 shadow-elevation">
 <div className="max-w-3xl mx-auto w-full">
 <button className="w-full bg-primary text-on-primary font-label-md text-label-md py-3 px-4 rounded-DEFAULT hover:bg-primary-container transition-colors active:scale-95 font-bold uppercase tracking-wide">
                 Continue

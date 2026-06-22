@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CivicSetu - Digital Vault</title>
+<!-- Google Fonts: IBM Plex Sans & IBM Plex Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from Style Guidance -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#1a3a5c",
+                    "inverse-surface": "#293040",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#dce2f7",
+                    "on-tertiary-fixed": "#291800",
+                    "surface-bright": "#f9f9ff",
+                    "secondary": "#904d00",
+                    "background": "#F4F6F8",
+                    "outline": "#73777f",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#ffdcc3",
+                    "on-surface": "#141b2b",
+                    "on-secondary-fixed": "#2f1500",
+                    "tertiary-fixed": "#ffddb1",
+                    "on-primary-fixed": "#001c37",
+                    "secondary-fixed-dim": "#ffb77d",
+                    "success": "#16A34A",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#d2e4ff",
+                    "error": "#ba1a1a",
+                    "danger": "#DC2626",
+                    "on-background": "#141b2b",
+                    "on-primary-container": "#87a4cc",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c3c6cf",
+                    "inverse-primary": "#abc9f2",
+                    "on-surface-variant": "#43474e",
+                    "inverse-on-surface": "#edf0ff",
+                    "surface": "#FFFFFF",
+                    "surface-container-high": "#e1e8fd",
+                    "secondary-container": "#fe932c",
+                    "tertiary-container": "#4f3300",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#e9edff",
+                    "text-muted": "#6B7280",
+                    "surface-tint": "#436084",
+                    "primary-fixed-dim": "#abc9f2",
+                    "warning": "#F59E0B",
+                    "surface-container-highest": "#dce2f7",
+                    "on-secondary-fixed-variant": "#6e3900",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#663500",
+                    "surface-container-low": "#f1f3ff",
+                    "on-primary-fixed-variant": "#2a486b",
+                    "surface-dim": "#d3daef",
+                    "on-tertiary-fixed-variant": "#5f410c",
+                    "tertiary": "#331f00",
+                    "on-tertiary-container": "#c49b5f",
+                    "primary": "#002444",
+                    "tertiary-fixed-dim": "#ecbf80",
+                    "border": "#E5E7EB"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "stack-md": "16px",
+                    "gutter": "16px",
+                    "stack-lg": "24px",
+                    "stack-sm": "8px",
+                    "rail-height": "32px"
+            },
+            "fontFamily": {
+                    "data-sm": ["IBM Plex Mono"],
+                    "label-sm": ["IBM Plex Sans"],
+                    "headline-md": ["IBM Plex Sans"],
+                    "headline-lg": ["IBM Plex Sans"],
+                    "body-lg": ["IBM Plex Sans"],
+                    "label-md": ["IBM Plex Sans"],
+                    "data-lg": ["IBM Plex Mono"],
+                    "body-md": ["IBM Plex Sans"],
+                    "data-md": ["IBM Plex Mono"]
+            },
+            "fontSize": {
+                    "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                    "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                    "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Utility for 0px corners strictly enforced by brand */
+        .sharp-corners { border-radius: 0 !important; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .shadow-lift { box-shadow: 0 1px 2px rgba(17,24,39,0.06); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row antialiased">
+<!-- Nav Sidebar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-[240px] bg-primary text-on-primary border-r border-outline-variant fixed left-0 top-0 py-stack-lg z-50">
+<div class="px-margin-desktop mb-stack-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-primary">CivicSetu</h1>
+</div>
+<div class="flex items-center px-margin-desktop mb-stack-lg">
+<div class="w-10 h-10 bg-primary-container rounded-none flex items-center justify-center mr-3">
+<span class="font-data-md text-data-md text-on-primary-container">SR</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-primary uppercase">S. RAJESH KUMAR</p>
+<p class="font-data-sm text-data-sm text-on-primary/70 uppercase">ID: GOV-8829-01</p>
+</div>
+</div>
+<div class="flex flex-col h-full mt-stack-md">
+<!-- Active Tab: Issued (Closest match to Digital Vault/Documents) -->
+<a class="flex items-center px-margin-desktop py-stack-sm bg-primary-container text-on-primary-container border-l-4 border-secondary transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3">folder_shared</span>
+<span class="font-body-md text-body-md">My Certificates</span>
+</a>
+<a class="flex items-center px-margin-desktop py-stack-sm text-on-primary/70 hover:bg-primary-fixed-dim/10 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3">cloud_upload</span>
+<span class="font-body-md text-body-md">DigiLocker Drive</span>
+</a>
+<a class="flex items-center px-margin-desktop py-stack-sm text-on-primary/70 hover:bg-primary-fixed-dim/10 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3">history_edu</span>
+<span class="font-body-md text-body-md">Activity Logs</span>
+</a>
+<a class="flex items-center px-margin-desktop py-stack-sm text-on-primary/70 hover:bg-primary-fixed-dim/10 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3">account_balance</span>
+<span class="font-body-md text-body-md">Department Links</span>
+</a>
+<a class="flex items-center px-margin-desktop py-stack-sm text-on-primary/70 hover:bg-primary-fixed-dim/10 transition-all duration-200 ease-in-out mt-auto" href="#">
+<span class="material-symbols-outlined mr-3">contact_support</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[240px] pb-24 md:pb-0">
+<!-- Status Rail (Top) -->
+<div class="h-rail-height bg-surface border-b border-border flex items-center justify-between px-margin-mobile md:px-margin-desktop w-full top-0 sticky z-40">
+<div class="flex items-center gap-4">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">SECURE VAULT: ACTIVE</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase hidden sm:inline">ENCRYPTION: AES-256</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">SYSTEM ONLINE</span>
+</div>
+</div>
+<!-- TopAppBar (Mobile/Desktop Header) -->
+<header class="bg-surface border-b border-outline-variant w-full sticky top-rail-height z-30 flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 transition-colors duration-200">
+<div class="flex items-center">
+<button class="md:hidden text-primary mr-4 hover:bg-surface-container-low transition-colors duration-200 p-2 rounded-none">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Digital Vault</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 transition-colors duration-200 sharp-corners border border-transparent hover:border-border">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-sm">search</span>
+<input class="pl-10 pr-4 py-2 border border-border sharp-corners font-body-md text-body-md bg-surface text-on-surface focus:outline-none focus:border-primary-container focus:border-2 transition-all w-64 placeholder-text-muted" placeholder="Search documents..." type="text"/>
+</div>
+</div>
+</header>
+<!-- Search Bar Mobile -->
+<div class="sm:hidden px-margin-mobile py-stack-sm bg-surface border-b border-border">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted">search</span>
+<input class="pl-10 pr-4 py-2 border border-border sharp-corners font-body-md text-body-md bg-surface text-on-surface focus:outline-none focus:border-primary-container focus:border-2 transition-all w-full placeholder-text-muted" placeholder="Search documents..." type="text"/>
+</div>
+</div>
+<div class="p-margin-mobile md:p-margin-desktop max-w-7xl mx-auto space-y-8">
+<!-- Linked Identities Section -->
+<section>
+<div class="flex justify-between items-end mb-stack-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Linked Identities</h2>
+<p class="font-body-md text-body-md text-text-muted mt-1">Core identity documents verified by state authority.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Aadhaar Card -->
+<div class="bg-surface border border-border sharp-corners shadow-lift p-stack-md flex flex-col relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary-fixed-dim/10 -mr-8 -mt-8 rotate-45 transform"></div>
+<div class="flex justify-between items-start mb-stack-lg relative z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container text-on-primary flex items-center justify-center sharp-corners">
+<span class="material-symbols-outlined">badge</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wide">Aadhaar Card</h3>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">UIDAI • GOV OF INDIA</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-1 bg-success/10 text-success border border-success/20 sharp-corners font-data-sm text-data-sm uppercase">
+                                Verified
+                            </span>
+</div>
+<div class="mb-stack-lg">
+<p class="font-data-md text-data-md text-primary tracking-widest">XXXX-XXXX-8829</p>
+<p class="font-data-sm text-data-sm text-text-muted mt-1 uppercase">S. RAJESH KUMAR</p>
+</div>
+<div class="mt-auto pt-stack-sm border-t border-border flex justify-end">
+<button class="font-label-sm text-label-sm text-primary uppercase hover:bg-surface-container-low px-3 py-1.5 transition-colors sharp-corners border border-transparent hover:border-border">View Document</button>
+</div>
+</div>
+<!-- PAN Card -->
+<div class="bg-surface border border-border sharp-corners shadow-lift p-stack-md flex flex-col relative overflow-hidden">
+<div class="flex justify-between items-start mb-stack-lg relative z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container text-on-primary flex items-center justify-center sharp-corners">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wide">PAN Card</h3>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">INCOME TAX DEPT</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-1 bg-success/10 text-success border border-success/20 sharp-corners font-data-sm text-data-sm uppercase">
+                                Verified
+                            </span>
+</div>
+<div class="mb-stack-lg">
+<p class="font-data-md text-data-md text-primary tracking-widest">ABCDE1234F</p>
+<p class="font-data-sm text-data-sm text-text-muted mt-1 uppercase">S. RAJESH KUMAR</p>
+</div>
+<div class="mt-auto pt-stack-sm border-t border-border flex justify-end">
+<button class="font-label-sm text-label-sm text-primary uppercase hover:bg-surface-container-low px-3 py-1.5 transition-colors sharp-corners border border-transparent hover:border-border">View Document</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Issued Documents Section -->
+<section>
+<div class="flex justify-between items-end mb-stack-md border-b border-border pb-stack-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Issued Documents</h2>
+<p class="font-body-md text-body-md text-text-muted mt-1">Official certificates and records synced from departmental databases.</p>
+</div>
+<button class="hidden sm:flex items-center gap-2 font-label-md text-label-md bg-primary-container text-on-primary px-4 py-2 sharp-corners hover:bg-primary-fixed-variant transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+                        Fetch Document
+                    </button>
+</div>
+<div class="bg-surface border border-border shadow-lift sharp-corners">
+<!-- List Header (Desktop) -->
+<div class="hidden md:grid grid-cols-12 gap-4 p-stack-sm border-b border-border bg-surface-container-low font-data-sm text-data-sm text-text-muted uppercase">
+<div class="col-span-5 pl-2">Document Name</div>
+<div class="col-span-3">Issuing Authority</div>
+<div class="col-span-2">Date Issued</div>
+<div class="col-span-2 text-right pr-2">Actions</div>
+</div>
+<!-- List Items -->
+<div class="divide-y divide-border">
+<!-- Item 1: Driving License -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 p-stack-md items-center hover:bg-surface-bright transition-colors group">
+<div class="col-span-1 md:col-span-5 flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-dim flex items-center justify-center sharp-corners border border-border shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">directions_car</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface uppercase">Driving License</h4>
+<p class="font-data-sm text-data-sm text-text-muted md:hidden mt-0.5">MINISTRY OF ROAD TRANSPORT • 12 JAN 2021</p>
+<p class="font-data-sm text-data-sm text-primary md:hidden mt-1">DL-14-2021-9982</p>
+</div>
+</div>
+<div class="hidden md:block col-span-3">
+<span class="font-data-sm text-data-sm text-on-surface uppercase">Min. of Road Transport</span>
+<p class="font-data-sm text-data-sm text-primary mt-0.5">DL-14-2021-9982</p>
+</div>
+<div class="hidden md:block col-span-2">
+<span class="font-data-sm text-data-sm text-on-surface">12 JAN 2021</span>
+</div>
+<div class="col-span-1 md:col-span-2 flex justify-end gap-2">
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-surface-container border border-transparent hover:border-border sharp-corners transition-colors" title="Download">
+<span class="material-symbols-outlined" style="font-size: 20px;">download</span>
+</button>
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-surface-container border border-transparent hover:border-border sharp-corners transition-colors" title="Share">
+<span class="material-symbols-outlined" style="font-size: 20px;">share</span>
+</button>
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-surface-container border border-transparent hover:border-border sharp-corners transition-colors" title="View details">
+<span class="material-symbols-outlined" style="font-size: 20px;">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Item 2: COVID Vaccine -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 p-stack-md items-center hover:bg-surface-bright transition-colors group">
+<div class="col-span-1 md:col-span-5 flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-dim flex items-center justify-center sharp-corners border border-border shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">vaccines</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface uppercase">COVID-19 Vaccination Certificate</h4>
+<p class="font-data-sm text-data-sm text-text-muted md:hidden mt-0.5">MINISTRY OF HEALTH • 05 AUG 2021</p>
+<p class="font-data-sm text-data-sm text-primary md:hidden mt-1">COV-992-110</p>
+</div>
+</div>
+<div class="hidden md:block col-span-3">
+<span class="font-data-sm text-data-sm text-on-surface uppercase">Min. of Health</span>
+<p class="font-data-sm text-data-sm text-primary mt-0.5">COV-992-110</p>
+</div>
+<div class="hidden md:block col-span-2">
+<span class="font-data-sm text-data-sm text-on-surface">05 AUG 2021</span>
+</div>
+<div class="col-span-1 md:col-span-2 flex justify-end gap-2">
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-surface-container border border-transparent hover:border-border sharp-corners transition-colors" title="Download">
+<span class="material-symbols-outlined" style="font-size: 20px;">download</span>
+</button>
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-surface-container border border-transparent hover:border-border sharp-corners transition-colors" title="Share">
+<span class="material-symbols-outlined" style="font-size: 20px;">share</span>
+</button>
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-surface-container border border-transparent hover:border-border sharp-corners transition-colors" title="View details">
+<span class="material-symbols-outlined" style="font-size: 20px;">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Item 3: Income Certificate -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 p-stack-md items-center hover:bg-surface-bright transition-colors group">
+<div class="col-span-1 md:col-span-5 flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-dim flex items-center justify-center sharp-corners border border-border shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">request_quote</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface uppercase">Income Certificate</h4>
+<p class="font-data-sm text-data-sm text-text-muted md:hidden mt-0.5">REVENUE DEPARTMENT • 18 MAR 2023</p>
+<p class="font-data-sm text-data-sm text-primary md:hidden mt-1">INC-TN-23-441</p>
+</div>
+</div>
+<div class="hidden md:block col-span-3">
+<span class="font-data-sm text-data-sm text-on-surface uppercase">Revenue Department</span>
+<p class="font-data-sm text-data-sm text-primary mt-0.5">INC-TN-23-441</p>
+</div>
+<div class="hidden md:block col-span-2">
+<span class="font-data-sm text-data-sm text-on-surface">18 MAR 2023</span>
+</div>
+<div class="col-span-1 md:col-span-2 flex justify-end gap-2">
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-surface-container border border-transparent hover:border-border sharp-corners transition-colors" title="Download">
+<span class="material-symbols-outlined" style="font-size: 20px;">download</span>
+</button>
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-surface-container border border-transparent hover:border-border sharp-corners transition-colors" title="Share">
+<span class="material-symbols-outlined" style="font-size: 20px;">share</span>
+</button>
+<button class="p-1.5 text-text-muted hover:text-primary hover:bg-surface-container border border-transparent hover:border-border sharp-corners transition-colors" title="View details">
+<span class="material-symbols-outlined" style="font-size: 20px;">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Prominent List Action -->
+<div class="p-stack-md border-t border-border bg-surface-container-low flex justify-center">
+<button class="flex items-center gap-2 font-label-md text-label-md text-primary uppercase hover:text-primary-container transition-colors py-2 px-4 border border-border sharp-corners bg-surface hover:bg-surface-bright">
+<span class="material-symbols-outlined text-sm">post_add</span>
+                            Add New Document
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile only) -->
+<nav class="md:hidden flex justify-around items-center h-16 w-full px-2 pb-safe fixed bottom-0 z-50 bg-surface border-t border-outline-variant scale-95 transition-transform duration-150">
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-1/4 h-full" href="#">
+<span class="material-symbols-outlined mb-1 text-xl">dashboard</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-1/4 h-full" href="#">
+<span class="material-symbols-outlined mb-1 text-xl">badge</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-[10px]">Identity</span>
+</a>
+<!-- Active Tab: Issued -->
+<a class="flex flex-col items-center justify-center text-primary border-t-2 border-secondary w-1/4 h-full bg-surface-container-low" href="#">
+<span class="material-symbols-outlined mb-1 text-xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-[10px] font-bold">Issued</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-1/4 h-full" href="#">
+<span class="material-symbols-outlined mb-1 text-xl">settings</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-[10px]">Settings</span>
+</a>
+</nav>
+</body></html>

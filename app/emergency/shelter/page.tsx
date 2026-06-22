@@ -21,7 +21,7 @@ export default function Page() {
 {/* TopAppBar */}
 
 {/* Main Canvas */}
-<main className="flex-grow pt-[calc(32px+64px)] pb-[56px] md:pb-0 flex flex-col md:flex-row">
+<main className="flex-grow pt-[calc(32px+64px)] pb-[56px] flex flex-col md:flex-row">
 {/* Left Sidebar - Map Area */}
 <section className="w-full md:w-1/2 lg:w-3/5 h-[40vh] md:h-[calc(100vh-96px)] relative border-b md:border-b-0 md:border-r border-border bg-surface-variant">
 {/* Simulated Map Container */}
@@ -59,7 +59,7 @@ export default function Page() {
 {/* Right Sidebar - Data Panel */}
 <section className="w-full md:w-1/2 lg:w-2/5 bg-background flex flex-col h-auto md:h-[calc(100vh-96px)] overflow-y-auto">
 {/* Filters Header */}
-<div className="bg-surface border-b border-border p-margin-mobile md:p-margin-desktop sticky top-0 z-20">
+<div className="bg-surface border-b border-border p-margin-mobile sticky top-0 z-20">
 <h1 className="font-headline-md text-headline-md text-primary mb-4">OFFICIAL REFUGE POINTS</h1>
 {/* Filter Chips */}
 <div className="flex flex-wrap gap-2">
@@ -81,7 +81,7 @@ export default function Page() {
 </div>
 </div>
 {/* List Container */}
-<div className="p-margin-mobile md:p-margin-desktop flex flex-col gap-stack-lg">
+<div className="p-margin-mobile flex flex-col gap-stack-lg">
 {/* Primary Shelter Card */}
 <div className="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] flex flex-col">
 <div className="p-4 border-b border-border flex justify-between items-start">

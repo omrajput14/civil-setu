@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Name Verification Workflow - Request Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#ffb77d",
+                      "on-tertiary-container": "#c49b5f",
+                      "on-secondary": "#ffffff",
+                      "text-muted": "#6B7280",
+                      "inverse-surface": "#293040",
+                      "on-tertiary-fixed": "#291800",
+                      "on-secondary-container": "#663500",
+                      "background": "#F4F6F8",
+                      "surface-variant": "#dce2f7",
+                      "tertiary-container": "#4f3300",
+                      "on-background": "#141b2b",
+                      "inverse-on-surface": "#edf0ff",
+                      "on-tertiary-fixed-variant": "#5f410c",
+                      "tertiary-fixed-dim": "#ecbf80",
+                      "warning": "#F59E0B",
+                      "surface": "#FFFFFF",
+                      "on-secondary-fixed-variant": "#6e3900",
+                      "error-container": "#ffdad6",
+                      "on-surface-variant": "#43474e",
+                      "success": "#16A34A",
+                      "border": "#E5E7EB",
+                      "on-secondary-fixed": "#2f1500",
+                      "surface-container-low": "#f1f3ff",
+                      "on-primary-fixed": "#001c37",
+                      "danger": "#DC2626",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#e1e8fd",
+                      "surface-container": "#e9edff",
+                      "surface-container-highest": "#dce2f7",
+                      "on-tertiary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-bright": "#f9f9ff",
+                      "secondary-fixed": "#ffdcc3",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#abc9f2",
+                      "surface-tint": "#436084",
+                      "on-primary-fixed-variant": "#2a486b",
+                      "primary-fixed-dim": "#abc9f2",
+                      "on-surface": "#141b2b",
+                      "tertiary": "#331f00",
+                      "primary": "#002444",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#73777f",
+                      "surface-dim": "#d3daef",
+                      "primary-fixed": "#d2e4ff",
+                      "primary-container": "#1a3a5c",
+                      "secondary-container": "#fe932c",
+                      "tertiary-fixed": "#ffddb1",
+                      "on-primary-container": "#87a4cc",
+                      "secondary": "#904d00",
+                      "outline-variant": "#c3c6cf"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "rail-height": "32px",
+                      "margin-mobile": "16px",
+                      "stack-lg": "24px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "gutter": "16px",
+                      "margin-desktop": "32px"
+              },
+              "fontFamily": {
+                      "data-md": [
+                              "IBM Plex Mono"
+                      ],
+                      "body-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "data-lg": [
+                              "IBM Plex Mono"
+                      ],
+                      "data-sm": [
+                              "IBM Plex Mono"
+                      ],
+                      "body-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "headline-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-sm": [
+                              "IBM Plex Sans"
+                      ],
+                      "headline-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-md": [
+                              "IBM Plex Sans"
+                      ]
+              },
+              "fontSize": {
+                      "data-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "data-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .elevation-1 {
+            box-shadow: 0 1px 2px rgba(17,24,39,0.06);
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row antialiased font-body-md">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center h-[64px] px-margin-mobile md:px-margin-desktop w-full z-50 bg-surface border-b border-border dark:border-outline-variant docked full-width top-0 text-primary dark:text-primary-fixed-dim md:hidden shrink-0">
+<div class="flex items-center gap-stack-md">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 active:bg-surface-container-high p-2 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Name Change Request</h1>
+</div>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 active:bg-surface-container-high p-2 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help_outline</span>
+</button>
+</header>
+<!-- NavigationDrawer (Desktop) -->
+<nav class="hidden md:flex flex-col pt-8 bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container border-r border-border dark:border-outline-variant fixed left-0 top-0 h-full w-[240px] shrink-0 z-40">
+<div class="px-6 pb-6 border-b border-on-primary/20 mb-4">
+<h2 class="font-headline-lg text-headline-lg text-on-primary tracking-tight">Verification Workflow</h2>
+</div>
+<ul class="flex flex-col gap-1 w-full font-label-md text-label-md">
+<!-- Active State -->
+<li>
+<a class="flex items-center gap-stack-md border-l-4 border-secondary-container bg-primary-container text-on-primary-container px-4 py-3 transition-all duration-150 ease-in-out w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">edit_square</span>
+<span>Request Details</span>
+</a>
+</li>
+<!-- Inactive States -->
+<li>
+<a class="flex items-center gap-stack-md text-on-primary/70 dark:text-on-primary-container/70 px-4 py-3 hover:text-on-primary hover:bg-primary-fixed-dim/10 dark:hover:bg-primary/20 transition-all duration-150 ease-in-out w-full border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">upload_file</span>
+<span>Document Upload</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md text-on-primary/70 dark:text-on-primary-container/70 px-4 py-3 hover:text-on-primary hover:bg-primary-fixed-dim/10 dark:hover:bg-primary/20 transition-all duration-150 ease-in-out w-full border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">fact_check</span>
+<span>Final Review</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md text-on-primary/70 dark:text-on-primary-container/70 px-4 py-3 hover:text-on-primary hover:bg-primary-fixed-dim/10 dark:hover:bg-primary/20 transition-all duration-150 ease-in-out w-full border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">task_alt</span>
+<span>Submission Status</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto p-4 border-t border-on-primary/20 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center text-primary font-label-md">
+                 JS
+             </div>
+<div>
+<div class="font-label-md text-label-sm text-on-primary">J. Smith</div>
+<div class="font-data-sm text-data-sm text-on-primary/70 uppercase">ID: 884-A9B</div>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-1 md:ml-[240px] flex flex-col min-h-screen w-full relative">
+<!-- Desktop Header Substitute (Since TopAppBar is hidden on md per mobile instructions, but contextually we need a header area) -->
+<div class="hidden md:flex justify-between items-center h-[88px] px-margin-desktop w-full border-b border-border bg-surface shrink-0">
+<div class="flex items-center gap-stack-md">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">Name Change Request</h1>
+</div>
+<button class="flex items-center gap-2 text-on-surface-variant border border-border px-4 py-2 rounded font-label-md text-label-md hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+                Need Help?
+            </button>
+</div>
+<div class="flex-1 p-margin-mobile md:p-margin-desktop max-w-[800px] mx-auto w-full flex flex-col gap-stack-lg">
+<!-- Progress / Status Rail -->
+<div class="w-full flex flex-col gap-2">
+<div class="flex justify-between items-center px-1">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">Step 1 of 3</span>
+<span class="font-label-sm text-label-sm text-primary">Request Details</span>
+</div>
+<div class="h-2 w-full bg-border rounded-full overflow-hidden flex">
+<div class="h-full bg-primary w-1/3"></div>
+</div>
+</div>
+<!-- Form Card -->
+<div class="bg-surface border border-border rounded elevation-1 flex flex-col overflow-hidden">
+<div class="bg-surface h-rail-height border-b border-border flex items-center px-4 shrink-0">
+<span class="font-data-sm text-data-sm text-text-muted uppercase tracking-wider">Citizen Identity Data</span>
+</div>
+<form class="p-6 flex flex-col gap-stack-lg">
+<div class="bg-surface-container-low border border-border rounded p-4 flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">verified_user</span>
+<div>
+<h3 class="font-label-md text-label-md text-primary mb-1">Verified Current Identity</h3>
+<p class="font-body-md text-[14px] leading-snug text-on-surface-variant">This information is pulled from the central registry and cannot be modified directly.</p>
+</div>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-md text-label-md text-on-surface" for="currentName">Current Legal Name</label>
+<input class="w-full bg-background border border-border rounded-[6px] px-4 py-3 font-data-md text-data-md text-text-muted focus:outline-none cursor-not-allowed" id="currentName" readonly="" type="text" value="JOHNATHAN ALBERT SMITH"/>
+</div>
+<div class="w-full h-px bg-border my-2"></div>
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-md text-label-md text-on-surface" for="newName">Requested Legal Name <span class="text-danger">*</span></label>
+<input class="w-full bg-surface border border-border rounded-[6px] px-4 py-3 font-data-md text-data-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors" id="newName" placeholder="Enter full new name" required="" type="text"/>
+<span class="font-data-sm text-data-sm text-text-muted mt-1">Must match supporting documentation exactly.</span>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-md text-label-md text-on-surface" for="reason">Reason for Change <span class="text-danger">*</span></label>
+<div class="relative">
+<select class="w-full bg-surface border border-border rounded-[6px] px-4 py-3 font-body-md text-on-surface appearance-none focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors pr-10" id="reason" required="">
+<option disabled="" selected="" value="">Select an administrative reason...</option>
+<option value="marriage">Marriage</option>
+<option value="divorce">Divorce</option>
+<option value="court_order">Court Order</option>
+<option value="correction">Correction of Error</option>
+<option value="other">Other Administrative Reason</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none">expand_more</span>
+</div>
+</div>
+</form>
+</div>
+<!-- Action Area -->
+<div class="flex justify-end gap-4 mt-4 pt-6 border-t border-border">
+<button class="px-6 py-2 border border-border rounded text-primary font-label-md text-label-md hover:bg-surface-container-low transition-colors" type="button">
+                    Cancel
+                </button>
+<button class="px-8 py-2 bg-primary text-on-primary rounded font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button">
+                    Continue to Document Upload
+                </button>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report Issue - Step 2</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: IBM Plex Sans & Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "danger": "#DC2626",
+                        "on-secondary-fixed": "#2f1500",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#291800",
+                        "surface-variant": "#dce2f7",
+                        "inverse-primary": "#abc9f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e9edff",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "primary-fixed": "#d2e4ff",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#1a3a5c",
+                        "outline-variant": "#c3c6cf",
+                        "warning": "#F59E0B",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d3daef",
+                        "tertiary": "#331f00",
+                        "on-tertiary-container": "#c49b5f",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "success": "#16A34A",
+                        "on-surface": "#141b2b",
+                        "secondary": "#904d00",
+                        "secondary-container": "#fe932c",
+                        "on-background": "#141b2b",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#dce2f7",
+                        "inverse-surface": "#293040",
+                        "surface": "#FFFFFF",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-primary-container": "#87a4cc",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-bright": "#f9f9ff",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "primary-fixed-dim": "#abc9f2",
+                        "tertiary-container": "#4f3300",
+                        "on-surface-variant": "#43474e",
+                        "outline": "#73777f",
+                        "primary": "#002444",
+                        "background": "#F4F6F8",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-secondary-container": "#663500",
+                        "surface-container-high": "#e1e8fd",
+                        "border": "#E5E7EB",
+                        "text-muted": "#6B7280",
+                        "on-primary-fixed": "#001c37",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "surface-tint": "#436084"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "rail-height": "32px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "data-lg": ["IBM Plex Mono"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "body-md": ["IBM Plex Sans"],
+                        "data-sm": ["IBM Plex Mono"],
+                        "data-md": ["IBM Plex Mono"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom 6px rounding rule applied utility */
+        .rounded-sys {
+            border-radius: 6px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md h-[884px] flex flex-col overflow-hidden antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] flex items-center justify-between px-margin-mobile h-14 w-full shrink-0 z-20 relative">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 -ml-2 rounded-sys active:scale-95 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Report Issue</h1>
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 -mr-2 rounded-sys active:scale-95 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</header>
+<!-- Status Rail / Progress -->
+<div class="h-rail-height bg-surface border-b border-border flex items-center px-margin-mobile gap-4 shrink-0 z-10 relative">
+<div class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest w-24 shrink-0">STEP 2 OF 3</div>
+<div aria-valuemax="3" aria-valuemin="1" aria-valuenow="2" class="flex-1 flex gap-1 h-1.5" role="progressbar">
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Scrollable Content Canvas -->
+<main class="flex-1 overflow-y-auto px-margin-mobile py-stack-lg flex flex-col gap-stack-lg pb-32">
+<!-- Section 1: Capture/Upload Photo -->
+<section class="bg-surface border border-border rounded-sys p-4 flex flex-col gap-3 shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+<div class="flex flex-col gap-1">
+<h2 class="font-label-md text-label-md text-primary">Capture/Upload Photo</h2>
+<p class="font-body-md text-[14px] leading-[20px] text-text-muted">Evidence required for verification</p>
+</div>
+<button class="w-full border-2 border-dashed border-outline-variant hover:border-primary rounded-sys bg-surface-bright h-36 flex flex-col items-center justify-center gap-2 cursor-pointer transition-all group focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" type="button">
+<div class="w-12 h-12 bg-surface-container-low group-hover:bg-primary-container/10 rounded-full flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-2xl">add_a_photo</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors">Tap to select or capture</span>
+</button>
+</section>
+<!-- Section 2: Identify Location -->
+<section class="bg-surface border border-border rounded-sys p-4 flex flex-col gap-stack-md shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+<h2 class="font-label-md text-label-md text-primary">Identify Location</h2>
+<!-- Map Viewport -->
+<div class="relative w-full h-48 border border-border rounded-sys overflow-hidden bg-surface-variant isolate">
+<div class="absolute inset-0 bg-cover bg-center opacity-90" data-alt="A clean, modern top-down satellite map view of a rural administrative area. The map style is light mode, high contrast, using a restricted corporate color palette of soft whites, pale cool grays, and muted earth tones. The UI aesthetic is professional, strictly functional, and geometric, resembling an industrial GIS instrument panel. The map displays a grid of sparse dirt roads and small structures, evenly illuminated." data-location="Ward 4, Rural District" style="background-image: url('https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg')"></div>
+<!-- Center Pin Overlay -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+<div class="relative -top-3">
+<span class="material-symbols-outlined text-danger text-4xl drop-shadow-md" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-1 bg-black/20 blur-[2px] rounded-[100%]"></div>
+</div>
+</div>
+<!-- Map Controls (Decorative/Static) -->
+<div class="absolute bottom-2 right-2 flex flex-col gap-1 z-10">
+<div class="w-8 h-8 bg-surface border border-border rounded-sys shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+<div class="w-8 h-8 bg-surface border border-border rounded-sys shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</div>
+</div>
+</div>
+<!-- Technical GPS Readout -->
+<div class="bg-surface-bright border border-border rounded-sys p-3 flex items-start gap-3">
+<span class="material-symbols-outlined text-outline-variant mt-0.5">my_location</span>
+<div class="flex flex-col gap-1">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">Current Location Auto-detected</span>
+<span class="font-data-md text-data-md text-primary tracking-tight">GPS: 28.6139° N, 77.2090° E</span>
+</div>
+</div>
+<!-- Landmark Input -->
+<div class="flex flex-col gap-2 pt-2">
+<label class="font-label-sm text-label-sm text-on-surface" for="landmark">Landmark/Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-[20px]">signpost</span>
+<input class="w-full bg-surface border border-border rounded-sys pl-10 pr-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary focus:ring-offset-0 transition-shadow" id="landmark" placeholder="e.g. Near Ward 4 Primary School" type="text"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-border p-margin-mobile shadow-[0_-1px_2px_rgba(17,24,39,0.06)] z-40">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 rounded-sys hover:bg-on-primary-fixed transition-colors active:scale-[0.98] shadow-sm flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="button">
+<span>Continue</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</body></html>

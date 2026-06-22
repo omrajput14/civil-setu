@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resolution Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "danger": "#DC2626",
+                      "on-secondary-fixed": "#2f1500",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed": "#291800",
+                      "surface-variant": "#dce2f7",
+                      "inverse-primary": "#abc9f2",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#e9edff",
+                      "secondary-fixed-dim": "#ffb77d",
+                      "primary-fixed": "#d2e4ff",
+                      "error": "#ba1a1a",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#1a3a5c",
+                      "outline-variant": "#c3c6cf",
+                      "warning": "#F59E0B",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#d3daef",
+                      "tertiary": "#331f00",
+                      "on-tertiary-container": "#c49b5f",
+                      "on-secondary-fixed-variant": "#6e3900",
+                      "success": "#16A34A",
+                      "on-surface": "#141b2b",
+                      "secondary": "#904d00",
+                      "secondary-container": "#fe932c",
+                      "on-background": "#141b2b",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#dce2f7",
+                      "inverse-surface": "#293040",
+                      "surface": "#FFFFFF",
+                      "tertiary-fixed": "#ffddb1",
+                      "on-primary-container": "#87a4cc",
+                      "surface-container-low": "#f1f3ff",
+                      "surface-bright": "#f9f9ff",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#edf0ff",
+                      "on-primary-fixed-variant": "#2a486b",
+                      "tertiary-fixed-dim": "#ecbf80",
+                      "primary-fixed-dim": "#abc9f2",
+                      "tertiary-container": "#4f3300",
+                      "on-surface-variant": "#43474e",
+                      "outline": "#73777f",
+                      "primary": "#002444",
+                      "background": "#F4F6F8",
+                      "secondary-fixed": "#ffdcc3",
+                      "on-secondary-container": "#663500",
+                      "surface-container-high": "#e1e8fd",
+                      "border": "#E5E7EB",
+                      "text-muted": "#6B7280",
+                      "on-primary-fixed": "#001c37",
+                      "on-tertiary-fixed-variant": "#5f410c",
+                      "surface-tint": "#436084"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "32px",
+                      "gutter": "16px",
+                      "stack-sm": "8px",
+                      "rail-height": "32px",
+                      "margin-mobile": "16px",
+                      "stack-md": "16px",
+                      "stack-lg": "24px"
+              },
+              "fontFamily": {
+                      "data-lg": [
+                              "IBM Plex Mono"
+                      ],
+                      "body-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-sm": [
+                              "IBM Plex Sans"
+                      ],
+                      "body-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "data-sm": [
+                              "IBM Plex Mono"
+                      ],
+                      "data-md": [
+                              "IBM Plex Mono"
+                      ],
+                      "headline-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "headline-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-md": [
+                              "IBM Plex Sans"
+                      ]
+              },
+              "fontSize": {
+                      "data-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { background-color: #F4F6F8; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col pb-24 md:pb-0 md:pl-[240px]">
+<!-- Desktop Sidebar -->
+<nav class="hidden md:flex flex-col h-full w-[240px] bg-primary-container text-on-primary-container py-stack-lg border-r border-border fixed left-0 top-0 z-40">
+<div class="px-margin-desktop mb-8">
+<h1 class="font-headline-md text-headline-md text-on-primary font-bold">Rural Connect</h1>
+</div>
+<div class="flex-1 space-y-2">
+<a class="flex items-center space-x-3 px-margin-desktop py-3 text-on-primary-container hover:bg-surface-container-low/10 transition-colors" href="#">
+<span class="material-symbols-outlined">report_problem</span>
+<span class="font-label-md text-label-md">Grievance Redressal</span>
+</a>
+<a class="flex items-center space-x-3 px-margin-desktop py-3 text-on-primary-container hover:bg-surface-container-low/10 transition-colors" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-md text-label-md">Scheme Tracking</span>
+</a>
+<a class="flex items-center space-x-3 px-margin-desktop py-3 text-on-primary-container hover:bg-surface-container-low/10 transition-colors" href="#">
+<span class="material-symbols-outlined">contact_phone</span>
+<span class="font-label-md text-label-md">Local Directory</span>
+</a>
+<a class="flex items-center space-x-3 px-margin-desktop py-3 text-on-primary-container hover:bg-surface-container-low/10 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="px-margin-desktop pt-4 border-t border-surface-container-low/20">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-primary">Ramesh Kumar</div>
+<div class="font-label-sm text-label-sm">ID: 4829-1029-4821</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Header -->
+<header class="bg-surface w-full top-0 sticky z-30 shadow-[0_1px_2px_rgba(17,24,39,0.06)] md:hidden">
+<div class="flex items-center px-margin-mobile h-14 w-full">
+<button aria-label="Back" class="mr-4 text-on-surface p-2 -ml-2 rounded-full hover:bg-surface-container-low transition-colors active:scale-95">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">Resolution Detail</h1>
+</div>
+</header>
+<div class="hidden md:flex bg-surface w-full top-0 sticky z-30 shadow-[0_1px_2px_rgba(17,24,39,0.06)] h-14 items-center px-margin-desktop border-b border-border">
+<button aria-label="Back" class="mr-4 text-on-surface p-2 -ml-2 rounded-full hover:bg-surface-container-low transition-colors active:scale-95 flex items-center space-x-2">
+<span class="material-symbols-outlined">arrow_back</span>
+<span class="font-label-md text-label-md">Back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface ml-4 border-l border-border pl-4">Resolution Detail</h1>
+</div>
+<!-- Status Rail -->
+<div class="h-rail-height bg-surface w-full border-b border-border flex items-center px-margin-mobile md:px-margin-desktop z-20">
+<div class="font-data-sm text-data-sm text-text-muted uppercase flex items-center space-x-2">
+<span class="text-success font-semibold">RESOLVED</span>
+<span>·</span>
+<span>ID: GRV-2023-0982</span>
+<span>·</span>
+<span>WARD 4</span>
+</div>
+</div>
+<!-- Main Canvas -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop space-y-stack-lg max-w-4xl mx-auto w-full">
+<!-- Grievance Summary Card -->
+<section class="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md rounded">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface mb-1">Waste Collection Delay</h2>
+<div class="font-data-sm text-data-sm text-text-muted uppercase space-x-2">
+<span>ID: GRV-2023-0982</span>
+<span>|</span>
+<span>08 OCT 2023</span>
+</div>
+</div>
+<div class="bg-success/10 text-success font-label-sm text-label-sm px-2 py-1 rounded flex items-center space-x-1">
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">check_circle</span>
+<span>RESOLVED</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Scheduled waste collection vehicle has not visited Sector 4 for the past three days. Bins are overflowing and causing a health hazard.
+            </p>
+</section>
+<!-- Resolution Section -->
+<section class="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md rounded">
+<h3 class="font-label-md text-label-md text-text-muted uppercase mb-4 tracking-wider">Resolution Details</h3>
+<div class="space-y-6">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Resolution Summary</h4>
+<p class="font-body-md text-body-md text-on-surface-variant bg-background p-4 rounded border border-border">
+                        The waste collection route for Sector 4 has been optimized. Additional collection vehicles deployed to clear the backlog. Regular schedule will resume immediately.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-background p-4 rounded border border-border">
+<h4 class="font-label-md text-label-md text-text-muted mb-1">Resolved By</h4>
+<div class="font-body-md text-body-md text-on-surface font-medium flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary-container">badge</span>
+<span>Sanitation Dept. Supervisor</span>
+</div>
+</div>
+<div class="bg-background p-4 rounded border border-border">
+<h4 class="font-label-md text-label-md text-text-muted mb-1">Completion Date</h4>
+<div class="font-data-md text-data-md text-on-surface font-medium flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary-container">event</span>
+<span>12 OCT 2023</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-2">Evidence</h4>
+<div class="w-32 h-32 rounded border border-border overflow-hidden bg-background relative cursor-pointer hover:opacity-90 transition-opacity">
+<img alt="Evidence Photo" class="w-full h-full object-cover" data-alt="A clear, daytime photograph showing a clean, empty street corner in a residential area, indicating that waste bins have been emptied. The lighting is bright and even, capturing a tidy urban environment. The aesthetic is documentary and realistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjTPbYiyWbzLQ1Gh-DWDhpCGAHlk8ssDJkHP-V1i2oiCb9W94EKA8uMIa1jAaMC3Om_JZYmkIWEoF72LGU99bki8OtvV-cWK6chddzBCYIYY9mczrJIpHP2GqRNotM_2W_eBHyV5HIzzUaAhcZ2-6fsk6KSPu6ULSyjJ015hrpdrrTUqtWw22zhd_qhnIvulPVdHuuhlgqFlomNRNQj848kwfRr8eoywRGzMY9umxX-C4sESCCGekoPUnd9Qkg05AWb0p-xZZy-V0j"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Rating Section -->
+<section class="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md rounded flex flex-col items-center justify-center text-center">
+<h3 class="font-label-md text-label-md text-on-surface mb-4">Rate this resolution</h3>
+<div class="flex space-x-2 mb-2">
+<button class="text-warning hover:scale-110 transition-transform"><span class="material-symbols-outlined filled-icon" style="font-size: 32px;">star</span></button>
+<button class="text-warning hover:scale-110 transition-transform"><span class="material-symbols-outlined filled-icon" style="font-size: 32px;">star</span></button>
+<button class="text-warning hover:scale-110 transition-transform"><span class="material-symbols-outlined filled-icon" style="font-size: 32px;">star</span></button>
+<button class="text-warning hover:scale-110 transition-transform"><span class="material-symbols-outlined filled-icon" style="font-size: 32px;">star</span></button>
+<button class="text-outline-variant hover:text-warning hover:scale-110 transition-all"><span class="material-symbols-outlined" style="font-size: 32px;">star</span></button>
+</div>
+<p class="font-data-sm text-data-sm text-text-muted">Your feedback helps us improve services.</p>
+</section>
+<!-- Action Buttons -->
+<section class="flex flex-col md:flex-row gap-4 pt-4">
+<button class="w-full md:w-auto bg-primary-container text-on-primary font-label-md text-label-md py-3 px-6 rounded hover:bg-primary-container/90 transition-colors active:scale-95 flex items-center justify-center space-x-2">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Back to Dashboard</span>
+</button>
+<button class="w-full md:w-auto bg-surface text-primary-container border border-primary-container font-label-md text-label-md py-3 px-6 rounded hover:bg-surface-container-low transition-colors active:scale-95 flex items-center justify-center space-x-2">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>File Feedback</span>
+</button>
+</section>
+</main>
+<!-- Mobile Bottom Navigation (Suppressed per "Transactional/Sub-page" rule, but user prompt explicitly requested "Persistent bottom nav", so it is included) -->
+<nav class="md:hidden bg-surface text-primary font-label-sm text-label-sm fixed bottom-0 w-full z-50 border-t border-border shadow-[0_-1px_2px_rgba(17,24,39,0.06)] flex justify-around items-center h-16 px-gutter pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">apps</span>
+<span>Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>

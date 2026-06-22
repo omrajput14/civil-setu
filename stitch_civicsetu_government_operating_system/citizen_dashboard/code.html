@@ -1,0 +1,359 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Citizen Service Dashboard</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: IBM Plex Sans & Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "danger": "#DC2626",
+                    "tertiary-fixed": "#ffddb1",
+                    "on-surface": "#141b2b",
+                    "inverse-on-surface": "#edf0ff",
+                    "warning": "#F59E0B",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb77d",
+                    "on-tertiary-container": "#c49b5f",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#F4F6F8",
+                    "tertiary-fixed-dim": "#ecbf80",
+                    "surface-dim": "#d3daef",
+                    "on-secondary-fixed": "#2f1500",
+                    "surface-container-high": "#e1e8fd",
+                    "on-background": "#141b2b",
+                    "surface": "#FFFFFF",
+                    "surface-container": "#e9edff",
+                    "on-primary-fixed-variant": "#2a486b",
+                    "primary-fixed-dim": "#abc9f2",
+                    "on-secondary-container": "#663500",
+                    "surface-container-highest": "#dce2f7",
+                    "surface-container-low": "#f1f3ff",
+                    "primary-fixed": "#d2e4ff",
+                    "on-tertiary-fixed-variant": "#5f410c",
+                    "on-primary-fixed": "#001c37",
+                    "inverse-primary": "#abc9f2",
+                    "surface-variant": "#dce2f7",
+                    "primary-container": "#1a3a5c",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c3c6cf",
+                    "outline": "#73777f",
+                    "inverse-surface": "#293040",
+                    "on-surface-variant": "#43474e",
+                    "success": "#16A34A",
+                    "text-muted": "#6B7280",
+                    "secondary": "#904d00",
+                    "secondary-container": "#fe932c",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#87a4cc",
+                    "surface-bright": "#f9f9ff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#6e3900",
+                    "border": "#E5E7EB",
+                    "surface-tint": "#436084",
+                    "secondary-fixed": "#ffdcc3",
+                    "tertiary": "#331f00",
+                    "on-tertiary-fixed": "#291800",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#4f3300",
+                    "primary": "#002444"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "16px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "stack-lg": "24px",
+                    "margin-desktop": "32px",
+                    "rail-height": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["IBM Plex Sans"],
+                    "data-md": ["IBM Plex Mono"],
+                    "label-md": ["IBM Plex Sans"],
+                    "label-sm": ["IBM Plex Sans"],
+                    "body-lg": ["IBM Plex Sans"],
+                    "data-sm": ["IBM Plex Mono"],
+                    "headline-md": ["IBM Plex Sans"],
+                    "headline-lg": ["IBM Plex Sans"],
+                    "data-lg": ["IBM Plex Mono"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "data-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "data-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "data-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Base styles to enforce rigid geometry and remove default outline fuzziness */
+        * { box-sizing: border-box; outline-color: #1a3a5c; }
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        
+        /* Hide scrollbar for clean dashboard look */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #c3c6cf; }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen overflow-hidden flex font-body-md text-body-md">
+<!-- Navigation Drawer (Desktop/Tablet Layout) -->
+<aside class="hidden md:flex flex-col h-full w-[240px] bg-surface dark:bg-on-surface border-r border-border dark:border-outline shrink-0 z-40">
+<div class="p-stack-lg border-b border-border dark:border-outline">
+<div class="flex items-center gap-stack-sm mb-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-border overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot profile photograph of a rural Indian citizen, neutral expression, well-lit, sharp focus, modern realistic style suitable for a government ID dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTrnIDpEFBf0twQl9X_PSKOxG67AKERvip2RoCRW4YkPCRfgCCu7xNX242GXhe_kCCAC94td74ggEVW1nGXc3IVkarfs1yHip8VuiBunDwwEYMIZOkszv30ENpQp42l0Rkm2whusD-tOvNCxk0u7Ri247skeeFoludLuSuBSkiutLsAA5e1CJWXyxHzntx_KBXMMYRYfVczMxFoqBWNrPd4TzhzaD_eHtNg-9HQesLlbhhngPfoO_weDVm8AWEnMBasAQ_xAeM8OnW">
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Ramesh Kumar</div>
+<div class="font-data-sm text-data-sm text-text-muted">ID: 4829-1029-4821</div>
+</div>
+</div>
+<div class="font-data-sm text-data-sm text-on-surface-variant bg-surface-container px-2 py-1 rounded inline-block mt-2">Village: Bilaspur</div>
+</div>
+<nav class="flex-1 py-stack-lg flex flex-col gap-1 overflow-y-auto">
+<!-- Items from JSON mapping -->
+<a class="text-on-surface-variant dark:text-outline-variant pl-4 py-3 flex items-center gap-3 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">report_problem</span>
+<span class="font-label-md text-label-md">Grievance Redressal</span>
+</a>
+<a class="text-on-surface-variant dark:text-outline-variant pl-4 py-3 flex items-center gap-3 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span class="font-label-md text-label-md">Scheme Tracking</span>
+</a>
+<a class="text-on-surface-variant dark:text-outline-variant pl-4 py-3 flex items-center gap-3 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">contact_phone</span>
+<span class="font-label-md text-label-md">Local Directory</span>
+</a>
+<div class="mt-auto border-t border-border pt-4">
+<a class="text-on-surface-variant dark:text-outline-variant pl-4 py-3 flex items-center gap-3 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+</nav>
+</aside>
+<!-- Main Workspace -->
+<div class="flex-1 flex flex-col h-full relative">
+<!-- TopAppBar (From JSON) -->
+<header class="w-full top-0 sticky bg-surface dark:bg-on-surface border-b border-border dark:border-outline shadow-[0_1px_2px_rgba(17,24,39,0.06)] flex items-center justify-between px-margin-mobile h-14 shrink-0 z-30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Rural Connect</span>
+</div>
+<button class="hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors active:scale-95 p-2 rounded-full flex items-center justify-center text-on-surface-variant dark:text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Status Rail (Instrument Panel technical metadata) -->
+<div class="h-rail-height bg-surface border-b border-border flex items-center px-margin-mobile shadow-[0_1px_2px_rgba(17,24,39,0.06)] shrink-0 z-20">
+<span class="font-data-sm text-data-sm text-text-muted tracking-widest uppercase flex items-center">
+                AADHAAR LINKED 
+                <span class="material-symbols-outlined text-[12px] mx-2 opacity-50">fiber_manual_record</span> 
+                WARD 4 
+                <span class="material-symbols-outlined text-[12px] mx-2 opacity-50">fiber_manual_record</span>
+<span class="text-success font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> STATUS: VERIFIED
+                </span>
+</span>
+</div>
+<!-- Scrollable Content Canvas -->
+<main class="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop pb-24 md:pb-margin-desktop bg-background">
+<div class="max-w-[1024px] mx-auto flex flex-col gap-stack-lg">
+<!-- Welcome Section -->
+<section>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-1">Welcome back, Ramesh.</h1>
+<p class="font-body-md text-body-md text-text-muted">Overview of your current civic engagements and active services.</p>
+</section>
+<!-- Section 1: Active Applications (KPI Cards) -->
+<section>
+<h2 class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest mb-stack-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">folder_open</span> Active Applications
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface border border-border rounded shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md relative overflow-hidden flex flex-col">
+<div class="absolute top-0 left-0 w-1 h-full bg-warning"></div>
+<div class="flex justify-between items-start mb-3">
+<span class="bg-surface-container border border-outline-variant px-2 py-0.5 rounded font-data-sm text-data-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-warning">pending</span> IN PROGRESS
+                                </span>
+<span class="font-data-sm text-data-sm text-text-muted">Updated: 09:42 AM</span>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Agricultural Subsidy</h3>
+<div class="font-data-md text-data-md text-primary bg-primary-fixed/30 px-2 py-1 rounded inline-block self-start mt-2 border border-primary-fixed-dim">
+                                ID: SUB-2023-891A
+                            </div>
+<div class="mt-4 pt-4 border-t border-border">
+<div class="flex justify-between font-data-sm text-data-sm mb-1 text-text-muted">
+<span class="">Step 2 of 4: Verification</span>
+<span class="text-on-surface font-bold">50%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded overflow-hidden">
+<div class="h-full bg-primary w-2/4"></div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface border border-border rounded shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md relative overflow-hidden flex flex-col">
+<div class="absolute top-0 left-0 w-1 h-full bg-success"></div>
+<div class="flex justify-between items-start mb-3">
+<span class="bg-surface-container border border-outline-variant px-2 py-0.5 rounded font-data-sm text-data-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-success">task_alt</span> APPROVED
+                                </span>
+<span class="font-data-sm text-data-sm text-text-muted">Updated: Yesterday</span>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Housing Expansion Permit</h3>
+<div class="font-data-md text-data-md text-primary bg-primary-fixed/30 px-2 py-1 rounded inline-block self-start mt-2 border border-primary-fixed-dim">
+                                ID: PRM-442-99B
+                            </div>
+<div class="mt-4 pt-4 border-t border-border flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-muted">Ready for final execution.</span>
+<button class="font-label-sm text-label-sm text-primary hover:text-primary-container flex items-center gap-1 uppercase tracking-wide">
+                                    View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Recommended Schemes -->
+<section>
+<h2 class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest mb-stack-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span> Recommended Schemes
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Scheme Card 1 -->
+<div class="bg-surface border border-border rounded shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md flex flex-col justify-between group hover:border-primary-fixed-dim transition-colors cursor-pointer">
+<div>
+<div class="w-10 h-10 rounded bg-tertiary-fixed-dim/20 flex items-center justify-center mb-3 border border-tertiary-fixed">
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Solar Water Pump Yojana</h3>
+<p class="font-body-md text-body-md text-text-muted">Up to 80% capital subsidy for eligible farmers to install off-grid solar water pumps.</p>
+</div>
+<div class="mt-stack-md pt-stack-sm border-t border-border flex justify-between items-center">
+<span class="font-data-sm text-data-sm text-success font-bold">HIGH MATCH</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">east</span>
+</div>
+</div>
+<!-- Scheme Card 2 -->
+<div class="bg-surface border border-border rounded shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md flex flex-col justify-between group hover:border-primary-fixed-dim transition-colors cursor-pointer">
+<div>
+<div class="w-10 h-10 rounded bg-secondary-fixed/50 flex items-center justify-center mb-3 border border-secondary-fixed-dim">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Youth Skill Initiative</h3>
+<p class="font-body-md text-body-md text-text-muted">Technical training grants for family dependents aged 18-25 in the rural technology sector.</p>
+</div>
+<div class="mt-stack-md pt-stack-sm border-t border-border flex justify-between items-center">
+<span class="font-data-sm text-data-sm text-on-surface-variant font-bold">ELIGIBLE</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">east</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Recent Activity (List View) -->
+<section>
+<h2 class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest mb-stack-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">history</span> Recent Activity
+                    </h2>
+<div class="bg-surface border border-border rounded shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+<!-- List Item 1 -->
+<div class="p-stack-md border-b border-border last:border-0 flex gap-stack-md items-start hover:bg-surface-container-lowest transition-colors">
+<div class="mt-1 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 border border-outline-variant">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">upload_file</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface">Document Upload Successful</h4>
+<p class="font-body-md text-body-md text-text-muted mt-0.5">Land Registry Form.pdf was attached to SUB-2023-891A.</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-data-sm text-data-sm text-text-muted block">Today</span>
+<span class="font-data-sm text-data-sm text-text-muted opacity-60">09:42 AM</span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="p-stack-md border-b border-border last:border-0 flex gap-stack-md items-start hover:bg-surface-container-lowest transition-colors">
+<div class="mt-1 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 border border-outline-variant">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">gavel</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface">Grievance Case Closed</h4>
+<p class="font-body-md text-body-md text-text-muted mt-0.5">Water supply disruption report #GRV-110 resolved.</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-data-sm text-data-sm text-text-muted block">Oct 24</span>
+<span class="font-data-sm text-data-sm text-text-muted opacity-60">14:15 PM</span>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="p-stack-md border-b border-border last:border-0 flex gap-stack-md items-start hover:bg-surface-container-lowest transition-colors">
+<div class="mt-1 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 border border-outline-variant">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">login</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface">System Login</h4>
+<p class="font-body-md text-body-md text-text-muted mt-0.5">Authenticated via Mobile OTP.</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-data-sm text-data-sm text-text-muted block">Oct 22</span>
+<span class="font-data-sm text-data-sm text-text-muted opacity-60">08:00 AM</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only - From JSON, Home Active) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface dark:bg-on-surface border-t border-border dark:border-outline shadow-[0_-1px_2px_rgba(17,24,39,0.06)] flex justify-around items-center h-16 px-gutter pb-safe md:hidden"><!-- Active: Home -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-secondary-container bg-primary-container/10 dark:bg-primary-container rounded-xl px-2 py-1 active:scale-90 transition-transform w-20 border-t-2 border-[#FFA500]" href="#">
+  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+  <span class="font-label-sm text-label-sm mt-1 uppercase font-bold">Home</span>
+</a>
+<!-- Inactive: Services -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-2 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high rounded-xl active:scale-90 transition-transform w-20" href="#">
+  <span class="material-symbols-outlined">apps</span>
+  <span class="font-label-sm text-label-sm mt-1 uppercase">Services</span>
+</a>
+<!-- Inactive: Polls -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-2 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high rounded-xl active:scale-90 transition-transform w-20" href="#">
+  <span class="material-symbols-outlined">how_to_vote</span>
+  <span class="font-label-sm text-label-sm mt-1 uppercase">Polls</span>
+</a>
+<!-- Inactive: Town Hall -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-2 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high rounded-xl active:scale-90 transition-transform w-20" href="#">
+  <span class="material-symbols-outlined">meeting_room</span>
+  <span class="font-label-sm text-label-sm mt-1 uppercase">Town Hall</span>
+</a></nav>
+
+
+</body></html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Document Viewer - CivicSetu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-surface": "#141b2b",
+                        "surface-dim": "#d3daef",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#dce2f7",
+                        "secondary-fixed": "#ffdcc3",
+                        "background": "#F4F6F8",
+                        "surface-container-highest": "#dce2f7",
+                        "on-tertiary-container": "#c49b5f",
+                        "tertiary-container": "#4f3300",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "surface": "#FFFFFF",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#edf0ff",
+                        "surface-bright": "#f9f9ff",
+                        "primary": "#002444",
+                        "success": "#16A34A",
+                        "tertiary": "#331f00",
+                        "text-muted": "#6B7280",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "border": "#E5E7EB",
+                        "surface-container-high": "#e1e8fd",
+                        "on-tertiary-fixed": "#291800",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#436084",
+                        "on-primary-container": "#87a4cc",
+                        "secondary": "#904d00",
+                        "outline-variant": "#c3c6cf",
+                        "surface-container-low": "#f1f3ff",
+                        "primary-fixed-dim": "#abc9f2",
+                        "inverse-primary": "#abc9f2",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "warning": "#F59E0B",
+                        "on-secondary-fixed": "#2f1500",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "inverse-surface": "#293040",
+                        "primary-container": "#1a3a5c",
+                        "on-primary-fixed": "#001c37",
+                        "surface-container": "#e9edff",
+                        "danger": "#DC2626",
+                        "outline": "#73777f",
+                        "on-secondary-container": "#663500",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-surface-variant": "#43474e",
+                        "on-background": "#141b2b",
+                        "primary-fixed": "#d2e4ff",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fe932c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "rail-height": "32px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["IBM Plex Sans"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "body-md": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "data-sm": ["IBM Plex Mono"],
+                        "data-md": ["IBM Plex Mono"],
+                        "data-lg": ["IBM Plex Mono"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F4F6F8; }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            opacity: 0.05;
+            font-size: 64px;
+            font-weight: 700;
+            color: #1A3A5C;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md text-on-surface">
+<!-- Top App Bar -->
+<header class="bg-surface w-full sticky top-0 z-10 border-b border-border flex items-center justify-between px-margin-mobile md:px-margin-desktop h-[64px]">
+<div class="flex items-center gap-4">
+<button aria-label="Go Back" class="text-on-surface hover:bg-surface-container-low p-2 rounded-none transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Income Certificate</h1>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Share" class="text-on-surface hover:bg-surface-container-low p-2 rounded-none transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<button aria-label="Download" class="text-on-surface hover:bg-surface-container-low p-2 rounded-none transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</header>
+<!-- Status Rail -->
+<div class="bg-surface h-rail-height border-b border-border flex items-center px-margin-mobile md:px-margin-desktop gap-6">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">ENCRYPTION: AES-256</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-success" data-icon="verified">verified</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">VERIFIED: SYSTEM TRUST</span>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-grow p-margin-mobile md:p-margin-desktop flex flex-col gap-stack-lg max-w-4xl mx-auto w-full pb-32">
+<!-- Document Preview Card -->
+<div class="bg-surface border border-border relative overflow-hidden flex flex-col p-8 gap-6 shadow-[0_1px_2px_rgba(17,24,39,0.06)] min-h-[600px]">
+<div class="watermark">OFFICIAL COPY</div>
+<!-- Document Header -->
+<div class="flex justify-between items-start border-b border-border pb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">INCOME CERTIFICATE</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2">Government of State, Revenue Department</p>
+</div>
+<div class="text-right">
+<p class="font-data-sm text-data-sm text-text-muted">CERTIFICATE NO.</p>
+<p class="font-data-md text-data-md text-primary">INC-2023-8829-XJ</p>
+</div>
+</div>
+<!-- Citizen Info & Photo -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 py-6 border-b border-border">
+<div class="md:col-span-1">
+<div class="w-32 h-40 border border-border bg-background p-1">
+<img class="w-full h-full object-cover grayscale" data-alt="A formal, official-looking passport-style photograph of an adult male citizen named Aarav Sharma, wearing professional attire against a plain white background. The image should look like a standard identification photo, well-lit and high contrast, fitting a modern government document viewer interface. Strict lighting and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR1Wk-hifmz838FLYhrUjoHdzmAJvRMBTEKPFO2siBOP7gFEazr2W346yEGfrnFsFVZ9RBP_mMdOoMGSWJtjKHezQzaR0gHUHBZng2HISAmI-nSyAKx8GRYl-XhhvqwHyIS2fnR--IQKl3oQNsq2Fz9DrLfG4aKRDihanOvKIcXTizpu77u-j-iq-g5hDJDgEm1a1nDUXexIaMQrCY-lVkLshb3sz8YA2v7x2KQPWYYfjP-0WA8oMXqO8-fiUae7YLGAsZNs25w76U"/>
+</div>
+</div>
+<div class="md:col-span-3 flex flex-col gap-4 justify-center">
+<div>
+<p class="font-label-sm text-label-sm text-text-muted uppercase">Name</p>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Aarav Sharma</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-text-muted uppercase">Annual Income</p>
+<p class="font-data-lg text-data-lg text-primary">₹ 4,50,000</p>
+</div>
+</div>
+</div>
+<!-- Verification Elements -->
+<div class="flex justify-between items-end pt-6 mt-auto">
+<div class="w-24 h-24 border border-border bg-background p-2">
+<img class="w-full h-full object-contain" data-alt="A clean, sharp, scannable QR code graphic representing secure verification data. The QR code should be stark black and white, perfectly square, and look like a standard digital verification code found on official government certificates or tickets. It should be high resolution and free of any blurs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDSbufA55wkBgh0CDkJ2v82o99MTWvd7R3cOWiy40HQ1om-l1QYLSsUTuF3tY2EgThLtS94n4MiXlAQKSjqT7d3RcU4KP8K6EbOylqYnsMi39HP7enppITPBPtTT8sNAHY9Pt7JnVY8ylOBcb4JMGUOx-RYiPVtaHaONp5m4a8EZ4TGC1W-jY75-EW_BzjZIEuCoLIRvFU_SSi9RBxcX9rJj0pn_vvumZ-xEX28QjDyqWEahhwKRaQ0oODhB2qrAxtMYWjLJJUb6Ow"/>
+</div>
+<div class="text-center">
+<div class="w-20 h-20 border-2 border-primary/20 rounded-full flex items-center justify-center mx-auto mb-2 opacity-50">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="account_balance">account_balance</span>
+</div>
+<p class="font-label-sm text-label-sm text-primary uppercase">Official Seal</p>
+</div>
+</div>
+</div>
+<!-- Metadata Section -->
+<div class="bg-surface border border-border p-6 shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+<h3 class="font-label-md text-label-md text-primary mb-4 border-b border-border pb-2">VERIFICATION DETAILS</h3>
+<ul class="flex flex-col gap-4">
+<li class="flex flex-col md:flex-row md:justify-between border-b border-border/50 pb-2">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Issuing Authority</span>
+<span class="font-body-md text-body-md text-on-surface">Revenue Department</span>
+</li>
+<li class="flex flex-col md:flex-row md:justify-between border-b border-border/50 pb-2">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Issued Date</span>
+<span class="font-body-md text-body-md text-on-surface">18 Mar 2023</span>
+</li>
+<li class="flex flex-col md:flex-row md:justify-between">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Verification Hash</span>
+<span class="font-data-md text-data-md text-primary">8829-XJ21-4821-LS99</span>
+</li>
+</ul>
+</div>
+</main>
+<!-- Floating Action Button Area -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-sm border-t border-border p-margin-mobile md:p-margin-desktop z-20 flex justify-center shadow-[0_-1px_2px_rgba(17,24,39,0.06)]">
+<button class="bg-primary-container text-on-primary w-full max-w-4xl font-label-md text-label-md uppercase h-12 flex items-center justify-center gap-2 hover:bg-primary transition-colors rounded-none">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+            SHARE SECURE LINK
+        </button>
+</div>
+</body></html>

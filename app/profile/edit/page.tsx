@@ -80,7 +80,20 @@ export default function Page() {
 </div>
 </div>
 </section>
-{/* Section 4: Security */}
+{/* Section 4: Family Tree / Linked Accounts */}
+<section aria-labelledby="section-family" className="bg-surface p-stack-md border border-border rounded-lg shadow-sm flex flex-col gap-stack-md">
+<div className="flex items-center justify-between">
+<div className="flex flex-col">
+<span className="font-label-md text-label-md text-on-surface">Family Tree</span>
+<span className="font-data-sm text-data-sm text-text-muted">Linked dependents and Head of Family</span>
+</div>
+<Link href="/family/search" className="font-label-sm text-label-sm text-primary-container hover:text-secondary underline underline-offset-4 transition-colors">
+                        Manage Family
+                    </Link>
+</div>
+</section>
+
+{/* Section 5: Security */}
 <section aria-labelledby="section-security" className="bg-surface p-stack-md border border-border rounded-lg shadow-sm flex flex-col gap-stack-md">
 
 <div className="flex items-center justify-between">
@@ -89,16 +102,16 @@ export default function Page() {
 <span className="font-data-sm text-data-sm text-text-muted">Last updated: 45 days ago</span>
 </div>
 <button className="font-label-sm text-label-sm text-primary-container hover:text-secondary underline underline-offset-4 transition-colors" type="button">
-                        Update Password
+                        Reset Password
                     </button>
 </div>
 </section>
 </form>
 </main>
 {/* Fixed Bottom Action Bar for Transactional Screen */}
-<div className="fixed bottom-0 w-full bg-surface border-t border-border p-4 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<div className="sticky bottom-0 w-full bg-surface border-t border-border p-4 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
 <div className="max-w-2xl mx-auto flex items-center justify-end gap-4">
-<button className="font-label-md text-label-md px-6 py-3 rounded border border-border text-primary-container hover:bg-surface-container-low transition-colors" onclick="history.back()" type="button">
+<button className="font-label-md text-label-md px-6 py-3 rounded border border-border text-primary-container hover:bg-surface-container-low transition-colors" type="button">
                 Cancel
             </button>
 <button className="font-label-md text-label-md px-8 py-3 rounded bg-primary-container text-on-primary hover:bg-primary transition-colors flex items-center gap-2 active:scale-95 shadow-sm" type="submit">
@@ -107,16 +120,6 @@ export default function Page() {
             </button>
 </div>
 </div>
-{/* Footer Component (Status Rail variant) */}
-<footer className="fixed bottom-[72px] md:bottom-0 w-full h-[32px] bg-surface-container-lowest border-t border-border z-30 hidden md:flex items-center justify-between px-margin-desktop w-full">
-<div className="font-data-sm text-data-sm uppercase text-text-muted">
-            CIVICSETU OPERATIONAL UNIT • SYSTEM STATUS: OPTIMAL
-        </div>
-<div className="flex gap-4 font-data-sm text-data-sm uppercase text-text-muted">
-<span>ID: CS-8821</span>
-<span>REF: 2024-ALPHA</span>
-</div>
-</footer>
       </div>
     </AppLayout>
   );

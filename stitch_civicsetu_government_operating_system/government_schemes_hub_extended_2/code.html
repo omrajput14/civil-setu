@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CivicSetu - Government Schemes Hub</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: IBM Plex Sans & IBM Plex Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#abc9f2",
+                      "secondary": "#904d00",
+                      "outline-variant": "#c3c6cf",
+                      "primary": "#002444",
+                      "surface-dim": "#d3daef",
+                      "border": "#E5E7EB",
+                      "on-tertiary-fixed": "#291800",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#dce2f7",
+                      "background": "#F4F6F8",
+                      "surface-bright": "#f9f9ff",
+                      "surface-tint": "#436084",
+                      "primary-fixed-dim": "#abc9f2",
+                      "surface-container-low": "#f1f3ff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#87a4cc",
+                      "tertiary-fixed": "#ffddb1",
+                      "surface-container-high": "#e1e8fd",
+                      "on-secondary-fixed": "#2f1500",
+                      "surface-variant": "#dce2f7",
+                      "secondary-fixed": "#ffdcc3",
+                      "danger": "#DC2626",
+                      "on-surface-variant": "#43474e",
+                      "on-surface": "#141b2b",
+                      "surface": "#FFFFFF",
+                      "inverse-on-surface": "#edf0ff",
+                      "tertiary-container": "#4f3300",
+                      "on-secondary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#663500",
+                      "surface-container": "#e9edff",
+                      "primary-container": "#1a3a5c",
+                      "on-primary-fixed": "#001c37",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed-variant": "#2a486b",
+                      "tertiary": "#331f00",
+                      "on-tertiary-fixed-variant": "#5f410c",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#c49b5f",
+                      "on-background": "#141b2b",
+                      "inverse-surface": "#293040",
+                      "outline": "#73777f",
+                      "secondary-container": "#fe932c",
+                      "success": "#16A34A",
+                      "tertiary-fixed-dim": "#ecbf80",
+                      "text-muted": "#6B7280",
+                      "warning": "#F59E0B",
+                      "on-secondary-fixed-variant": "#6e3900",
+                      "primary-fixed": "#d2e4ff",
+                      "secondary-fixed-dim": "#ffb77d",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-lg": "24px",
+                      "stack-sm": "8px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "32px",
+                      "stack-md": "16px",
+                      "gutter": "16px",
+                      "rail-height": "32px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "body-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "body-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-sm": [
+                              "IBM Plex Sans"
+                      ],
+                      "data-md": [
+                              "IBM Plex Mono"
+                      ],
+                      "headline-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "data-sm": [
+                              "IBM Plex Mono"
+                      ],
+                      "data-lg": [
+                              "IBM Plex Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "data-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "data-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F4F6F8;
+            color: #141b2b;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md antialiased pb-[80px] md:pb-0 md:pl-60">
+<!-- Mobile Nav Header -->
+<header class="md:hidden sticky top-0 z-40 bg-primary w-full h-14 flex items-center px-margin-mobile border-b border-outline-variant">
+<button class="mr-4 text-on-primary hover:bg-primary-fixed-variant p-1 rounded-sm transition-colors duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-[20px] font-bold text-on-primary">Government Schemes</h1>
+</header>
+<!-- Desktop Sidebar -->
+<aside class="hidden md:flex flex-col fixed inset-y-0 left-0 w-[240px] bg-primary text-on-primary z-50">
+<div class="h-14 flex items-center px-margin-desktop border-b border-outline-variant">
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary">GOVERNMENT PORTAL</h1>
+</div>
+<nav class="flex-1 py-stack-md flex flex-col gap-2 px-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-primary-fixed-variant transition-colors duration-200 text-on-primary-fixed-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary-container text-on-primary-container rounded-md relative" href="#">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary rounded-l-md"></div>
+<span class="material-symbols-outlined">account_balance</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-primary-fixed-variant transition-colors duration-200 text-on-primary-fixed-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-4xl mx-auto md:px-margin-desktop mb-8">
+<!-- Desktop Header & Status Rail -->
+<div class="hidden md:block pt-stack-lg">
+<div class="flex items-center gap-4 mb-stack-sm">
+<button class="text-primary hover:bg-surface-variant p-1 rounded-sm transition-colors duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Government Schemes</h1>
+</div>
+</div>
+<!-- Status Rail (Mobile & Desktop) -->
+<div class="w-full bg-surface border-b border-border h-rail-height flex items-center px-margin-mobile md:px-4 md:rounded-t-lg md:border-t md:border-x md:mt-stack-sm">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">AADHAAR LINKED · WARD 4 · 9 SCHEMES MATCHED</span>
+</div>
+<!-- Search & Filter Section -->
+<section class="bg-surface p-margin-mobile md:p-6 border-b border-border md:border-x md:rounded-b-lg shadow-[0_1px_2px_rgba(17,24,39,0.06)] mb-stack-lg">
+<div class="relative w-full mb-stack-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface border border-border rounded-[6px] text-[14px] text-on-surface placeholder:text-text-muted focus:ring-0 focus:border-primary-container focus:border-2 font-body-md transition-all" placeholder="Search schemes" type="text"/>
+</div>
+<!-- Filter Chips -->
+<div class="flex overflow-x-auto hide-scrollbar gap-2 pb-2">
+<button class="px-4 py-1.5 rounded-[6px] bg-primary-container text-surface font-label-md text-[13px] whitespace-nowrap transition-colors border border-primary-container">All</button>
+<button class="px-4 py-1.5 rounded-[6px] bg-surface text-on-surface-variant font-body-md text-[13px] whitespace-nowrap border border-border hover:bg-surface-container-low transition-colors">Agriculture</button>
+<button class="px-4 py-1.5 rounded-[6px] bg-surface text-on-surface-variant font-body-md text-[13px] whitespace-nowrap border border-border hover:bg-surface-container-low transition-colors">Education</button>
+<button class="px-4 py-1.5 rounded-[6px] bg-surface text-on-surface-variant font-body-md text-[13px] whitespace-nowrap border border-border hover:bg-surface-container-low transition-colors">Health</button>
+<button class="px-4 py-1.5 rounded-[6px] bg-surface text-on-surface-variant font-body-md text-[13px] whitespace-nowrap border border-border hover:bg-surface-container-low transition-colors">Housing</button>
+<button class="px-4 py-1.5 rounded-[6px] bg-surface text-on-surface-variant font-body-md text-[13px] whitespace-nowrap border border-border hover:bg-surface-container-low transition-colors">Pension</button>
+<button class="px-4 py-1.5 rounded-[6px] bg-surface text-on-surface-variant font-body-md text-[13px] whitespace-nowrap border border-border hover:bg-surface-container-low transition-colors">Women &amp; Child</button>
+</div>
+</section>
+<!-- Scheme List -->
+<section class="flex flex-col gap-stack-md px-margin-mobile md:px-0">
+<!-- Scheme Card 1 -->
+<article class="bg-surface border border-border rounded-xl shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-4 md:p-6 flex flex-col hover:border-primary-container transition-colors cursor-pointer group">
+<div class="mb-2">
+<span class="font-body-md text-[12px] uppercase text-text-muted tracking-wider font-semibold">AGRICULTURE</span>
+</div>
+<h3 class="font-headline-md text-[16px] font-semibold text-on-surface mb-2">PM Kisan Samman Nidhi</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-4 leading-relaxed line-clamp-2">Direct income support of ₹6,000 per year provided to all landholding farmer families across the country in three equal installments.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-border">
+<div class="flex flex-col">
+<span class="font-data-md text-[14px] font-semibold text-primary-container">Benefit: ₹6,000/year</span>
+</div>
+<div class="flex items-center text-primary-container group-hover:text-secondary transition-colors font-label-md text-label-md">
+<span>View Details &amp; Apply</span>
+<span class="material-symbols-outlined ml-1 text-sm">chevron_right</span>
+</div>
+</div>
+</article>
+<!-- Scheme Card 2 -->
+<article class="bg-surface border border-border rounded-xl shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-4 md:p-6 flex flex-col hover:border-primary-container transition-colors cursor-pointer group">
+<div class="mb-2 flex items-center justify-between">
+<span class="font-body-md text-[12px] uppercase text-text-muted tracking-wider font-semibold">PENSION</span>
+<span class="bg-success/10 text-success font-label-sm text-[10px] px-2 py-0.5 rounded-[4px] uppercase tracking-wider">Eligible</span>
+</div>
+<h3 class="font-headline-md text-[16px] font-semibold text-on-surface mb-2">Indira Gandhi National Old Age Pension</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-4 leading-relaxed line-clamp-2">Financial assistance provided to senior citizens (60 years and above) belonging to BPL households.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-border">
+<div class="flex flex-col">
+<span class="font-data-md text-[14px] font-semibold text-primary-container">Benefit: ₹1,000/month</span>
+</div>
+<div class="flex items-center text-primary-container group-hover:text-secondary transition-colors font-label-md text-label-md">
+<span>View Details &amp; Apply</span>
+<span class="material-symbols-outlined ml-1 text-sm">chevron_right</span>
+</div>
+</div>
+</article>
+<!-- Scheme Card 3 -->
+<article class="bg-surface border border-border rounded-xl shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-4 md:p-6 flex flex-col hover:border-primary-container transition-colors cursor-pointer group">
+<div class="mb-2">
+<span class="font-body-md text-[12px] uppercase text-text-muted tracking-wider font-semibold">HOUSING</span>
+</div>
+<h3 class="font-headline-md text-[16px] font-semibold text-on-surface mb-2">Pradhan Mantri Awas Yojana (Urban)</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-4 leading-relaxed line-clamp-2">Ensuring 'Housing for All' in urban areas by providing central assistance to implementing agencies for housing construction.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-border">
+<div class="flex flex-col">
+<span class="font-data-md text-[14px] font-semibold text-primary-container">Benefit: Subsidy up to ₹2.67 Lakhs</span>
+</div>
+<div class="flex items-center text-primary-container group-hover:text-secondary transition-colors font-label-md text-label-md">
+<span>View Details &amp; Apply</span>
+<span class="material-symbols-outlined ml-1 text-sm">chevron_right</span>
+</div>
+</div>
+</article>
+<!-- Scheme Card 4 -->
+<article class="bg-surface border border-border rounded-xl shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-4 md:p-6 flex flex-col hover:border-primary-container transition-colors cursor-pointer group">
+<div class="mb-2 flex items-center justify-between">
+<span class="font-body-md text-[12px] uppercase text-text-muted tracking-wider font-semibold">HEALTH</span>
+<span class="bg-warning/10 text-warning font-label-sm text-[10px] px-2 py-0.5 rounded-[4px] uppercase tracking-wider">Action Required</span>
+</div>
+<h3 class="font-headline-md text-[16px] font-semibold text-on-surface mb-2">Ayushman Bharat - PMJAY</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-4 leading-relaxed line-clamp-2">Provides health cover of ₹5 lakhs per family per year for secondary and tertiary care hospitalization across public and private empaneled hospitals.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-border">
+<div class="flex flex-col">
+<span class="font-data-md text-[14px] font-semibold text-primary-container">Benefit: ₹5 Lakhs/year</span>
+</div>
+<div class="flex items-center text-primary-container group-hover:text-secondary transition-colors font-label-md text-label-md">
+<span>View Details &amp; Apply</span>
+<span class="material-symbols-outlined ml-1 text-sm">chevron_right</span>
+</div>
+</div>
+</article>
+<!-- Scheme Card 5 (New) -->
+<article class="bg-surface border border-border rounded-xl shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-4 md:p-6 flex flex-col hover:border-primary-container transition-colors cursor-pointer group">
+<div class="mb-2 flex items-center justify-between">
+<span class="font-body-md text-[12px] uppercase text-text-muted tracking-wider font-semibold">WOMEN &amp; CHILD</span>
+<span class="font-data-sm text-[11px] text-text-muted">SSY-2024</span>
+</div>
+<h3 class="font-headline-md text-[16px] font-semibold text-on-surface mb-2">Sukanya Samriddhi Yojana</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-4 leading-relaxed line-clamp-2">A savings scheme for the girl child to encourage parents to build a fund for their education and marriage.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-border">
+<div class="flex flex-col">
+<span class="font-data-md text-[14px] font-semibold text-primary-container">Benefit: 8.2% Annual Interest</span>
+</div>
+<div class="flex items-center text-primary-container group-hover:text-secondary transition-colors font-label-md text-label-md">
+<span>View Details &amp; Apply</span>
+<span class="material-symbols-outlined ml-1 text-sm">chevron_right</span>
+</div>
+</div>
+</article>
+<!-- Scheme Card 6 (New) -->
+<article class="bg-surface border border-border rounded-xl shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-4 md:p-6 flex flex-col hover:border-primary-container transition-colors cursor-pointer group">
+<div class="mb-2 flex items-center justify-between">
+<span class="font-body-md text-[12px] uppercase text-text-muted tracking-wider font-semibold">EDUCATION</span>
+<span class="font-data-sm text-[11px] text-text-muted">PMS-9912</span>
+</div>
+<h3 class="font-headline-md text-[16px] font-semibold text-on-surface mb-2">Post Matric Scholarship</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-4 leading-relaxed line-clamp-2">Financial assistance to the students belonging to SC/ST/OBC categories for pursuing post-matriculation courses.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-border">
+<div class="flex flex-col">
+<span class="font-data-md text-[14px] font-semibold text-primary-container">Benefit: Tuition + Maintenance</span>
+</div>
+<div class="flex items-center text-primary-container group-hover:text-secondary transition-colors font-label-md text-label-md">
+<span>View Details &amp; Apply</span>
+<span class="material-symbols-outlined ml-1 text-sm">chevron_right</span>
+</div>
+</div>
+</article>
+<!-- Scheme Card 7 (New) -->
+<article class="bg-surface border border-border rounded-xl shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-4 md:p-6 flex flex-col hover:border-primary-container transition-colors cursor-pointer group">
+<div class="mb-2 flex items-center justify-between">
+<span class="font-body-md text-[12px] uppercase text-text-muted tracking-wider font-semibold">AGRICULTURE</span>
+<span class="font-data-sm text-[11px] text-text-muted">PMKSY-88</span>
+</div>
+<h3 class="font-headline-md text-[16px] font-semibold text-on-surface mb-2">PM Krishi Sinchai Yojana</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-4 leading-relaxed line-clamp-2">Focuses on creating sources of assured irrigation and 'Per Drop More Crop' through micro-irrigation.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-border">
+<div class="flex flex-col">
+<span class="font-data-md text-[14px] font-semibold text-primary-container">Benefit: 55% Subsidy</span>
+</div>
+<div class="flex items-center text-primary-container group-hover:text-secondary transition-colors font-label-md text-label-md">
+<span>View Details &amp; Apply</span>
+<span class="material-symbols-outlined ml-1 text-sm">chevron_right</span>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface border-t border-outline-variant flex justify-around items-center h-[64px] pb-safe">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline w-full h-full active:scale-95 transition-transform hover:bg-surface-container-low">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary border-t-4 border-[#D97706] w-full h-full active:scale-95 transition-transform bg-surface-container-lowest pt-[2px]">
+<span class="material-symbols-outlined mb-1 text-[#D97706]" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<span class="font-label-sm text-label-sm text-[#D97706]">Services</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline w-full h-full active:scale-95 transition-transform hover:bg-surface-container-low">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+</body></html>

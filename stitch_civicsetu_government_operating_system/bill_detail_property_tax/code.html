@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Citizen Portal - Bill Details</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "tertiary-container": "#4f3300",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c3c6cf",
+                        "primary-fixed-dim": "#abc9f2",
+                        "inverse-primary": "#abc9f2",
+                        "surface-container": "#e9edff",
+                        "on-surface": "#141b2b",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#293040",
+                        "primary-container": "#1a3a5c",
+                        "on-tertiary-fixed": "#291800",
+                        "tertiary": "#331f00",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-primary-container": "#87a4cc",
+                        "surface-bright": "#f9f9ff",
+                        "surface-container-high": "#e1e8fd",
+                        "surface-dim": "#d3daef",
+                        "text-muted": "#6B7280",
+                        "surface-tint": "#436084",
+                        "surface": "#FFFFFF",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#2f1500",
+                        "on-error-container": "#93000a",
+                        "danger": "#DC2626",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f1f3ff",
+                        "secondary": "#904d00",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "warning": "#F59E0B",
+                        "outline": "#73777f",
+                        "border": "#E5E7EB",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "on-primary-fixed": "#001c37",
+                        "primary-fixed": "#d2e4ff",
+                        "on-tertiary-container": "#c49b5f",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "secondary-container": "#fe932c",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "surface-variant": "#dce2f7",
+                        "on-background": "#141b2b",
+                        "success": "#16A34A",
+                        "background": "#F4F6F8",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary": "#002444",
+                        "on-secondary-container": "#663500",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#dce2f7",
+                        "on-surface-variant": "#43474e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "rail-height": "32px",
+                        "gutter": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "data-sm": ["IBM Plex Mono"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "data-lg": ["IBM Plex Mono"],
+                        "data-md": ["IBM Plex Mono"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+                    },
+                    "boxShadow": {
+                        "elevation-1": "0 1px 2px rgba(17,24,39,0.06)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col md:flex-row">
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden fixed top-0 w-full z-50 flex items-center justify-between px-margin-mobile h-16 bg-surface dark:bg-inverse-surface border-b border-outline-variant">
+<button class="text-primary dark:text-primary-fixed cursor-pointer active:opacity-80 p-2 -ml-2">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">CITIZEN PORTAL</span>
+<button class="text-on-surface-variant dark:text-on-surface-variant cursor-pointer active:opacity-80 p-2 -mr-2">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- NavigationDrawer (Desktop) - Hidden because it's a detail view -->
+<aside class="hidden md:flex flex-col h-full fixed left-0 top-0 w-[240px] bg-primary dark:bg-on-primary-fixed border-r border-outline z-40">
+<!-- Drawer Header -->
+<div class="p-gutter border-b border-outline/20">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden flex-shrink-0">
+<img alt="Citizen Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a citizen in a well-lit, modern setting. The style is crisp, clean, and corporate, fitting a government portal profile picture. The lighting is bright and evenly distributed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrZYuNGaegizIri40uRTya1DQn5ADn54xmSu6WJo-R9VdM8c3B9ZFOLh1d_H1tkwoJ9laa6gjRSim-ys0l5VSqPSQmYeRbUmGoQ8iJvEUNPQ2kbAA_ArdqudZi3u_UEms64lqA62mB65WqODQ4VtkaJvqOj4suYcSkP7Pqb82T5wCxP52EkzvXwYnxc5jFnxoEB2727Z2wNiGdLFtJXWTlR1QcCcb3i2iuaMcy_-IqxvBsfqMKS7IlQ9AjqE96DRcIzIeZgB0Nb0yn"/>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-primary">CITIZEN-09241</div>
+<div class="font-data-sm text-data-sm text-on-primary/70 uppercase">Verified Profile</div>
+</div>
+</div>
+</div>
+<!-- Navigation Items -->
+<nav class="flex-1 py-stack-md flex flex-col gap-1">
+<a class="px-gutter py-3 flex items-center gap-3 text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Payments Hub</span>
+</a>
+<!-- Active State -->
+<a class="px-gutter py-3 flex items-center gap-3 bg-secondary-container text-on-secondary-container border-l-4 border-secondary font-bold cursor-pointer hover:bg-primary-container transition-all" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md">Bill History</span>
+</a>
+<a class="px-gutter py-3 flex items-center gap-3 text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Payment Methods</span>
+</a>
+<a class="px-gutter py-3 flex items-center gap-3 text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<!-- System Status -->
+<div class="p-gutter border-t border-outline/20 bg-primary-container/50">
+<div class="font-data-sm text-data-sm text-on-primary/70 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+                SYSTEM ACTIVE
+            </div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-16 md:mt-0 md:ml-[240px] p-margin-mobile md:p-margin-desktop bg-background pb-32">
+<!-- Back Navigation (Desktop) -->
+<div class="hidden md:flex items-center gap-2 mb-stack-lg text-text-muted cursor-pointer hover:text-primary transition-colors w-fit">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span class="font-label-md text-label-md">Return to Bill History</span>
+</div>
+<div class="max-w-4xl mx-auto space-y-stack-lg">
+<!-- Header Module -->
+<header class="flex flex-col md:flex-row md:items-start justify-between gap-stack-md border-b border-border pb-stack-lg">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h1 class="font-headline-lg text-headline-lg text-primary">Property Tax - FY 2023-24</h1>
+<span class="px-2 py-1 bg-warning/10 text-warning border border-warning/20 font-data-sm text-data-sm uppercase rounded-[2px] tracking-wider font-semibold">Pending</span>
+</div>
+<div class="font-data-md text-data-md text-text-muted flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">tag</span>
+                        BILL ID: PTX-2324-9982-A
+                    </div>
+</div>
+<!-- Print/Download Actions -->
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center border border-border bg-surface text-primary hover:bg-surface-container-low transition-colors rounded">
+<span class="material-symbols-outlined">print</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center border border-border bg-surface text-primary hover:bg-surface-container-low transition-colors rounded">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</header>
+<!-- Main Data Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Financials & CTA -->
+<div class="md:col-span-7 space-y-stack-lg">
+<!-- Amount Summary Card -->
+<section class="bg-surface border border-border rounded-DEFAULT shadow-elevation-1 overflow-hidden flex flex-col">
+<div class="p-stack-lg border-b border-border flex-1 flex flex-col justify-center bg-surface-bright">
+<div class="font-label-sm text-label-sm text-text-muted uppercase mb-2">Total Amount Due</div>
+<div class="font-data-lg text-[48px] leading-[56px] text-primary flex items-baseline gap-2">
+<span class="text-headline-md text-text-muted font-normal">$</span>
+                                4,250.00
+                            </div>
+<div class="font-body-md text-body-md text-danger mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">warning</span>
+                                Due in 14 Days (Oct 31, 2023)
+                            </div>
+</div>
+<!-- Breakdown Grid -->
+<div class="grid grid-cols-3 bg-surface divide-x divide-border">
+<div class="p-gutter">
+<div class="font-label-sm text-label-sm text-text-muted mb-1">Principal</div>
+<div class="font-data-md text-data-md text-on-surface">$4,100.00</div>
+</div>
+<div class="p-gutter">
+<div class="font-label-sm text-label-sm text-text-muted mb-1">Interest</div>
+<div class="font-data-md text-data-md text-on-surface">$50.00</div>
+</div>
+<div class="p-gutter">
+<div class="font-label-sm text-label-sm text-text-muted mb-1">Penalties</div>
+<div class="font-data-md text-data-md text-on-surface">$100.00</div>
+</div>
+</div>
+</section>
+<!-- Payment Action Area -->
+<section class="bg-surface border border-border rounded-DEFAULT shadow-elevation-1 p-stack-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md">Payment Options</h2>
+<!-- Payment Methods List -->
+<div class="space-y-2 mb-stack-lg">
+<label class="flex items-center justify-between p-gutter border border-primary/20 bg-primary/5 rounded cursor-pointer">
+<div class="flex items-center gap-3">
+<input checked="" class="text-primary focus:ring-primary h-4 w-4 border-outline" name="payment_method" type="radio"/>
+<span class="material-symbols-outlined text-primary">account_balance</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">ACH Bank Transfer</div>
+<div class="font-body-sm text-[13px] text-text-muted">No processing fee</div>
+</div>
+</div>
+</label>
+<label class="flex items-center justify-between p-gutter border border-border hover:border-outline-variant bg-surface rounded cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<input class="text-primary focus:ring-primary h-4 w-4 border-outline" name="payment_method" type="radio"/>
+<span class="material-symbols-outlined text-text-muted">credit_card</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Credit / Debit Card</div>
+<div class="font-body-sm text-[13px] text-text-muted">2.9% processing fee applies</div>
+</div>
+</div>
+</label>
+</div>
+<button class="w-full bg-primary-container text-on-primary py-4 px-6 rounded flex items-center justify-center gap-2 hover:bg-primary transition-colors shadow-elevation-1 font-label-md text-label-md uppercase tracking-wide">
+<span class="material-symbols-outlined text-sm">lock</span>
+                            Pay $4,250.00 Now
+                        </button>
+<div class="mt-4 font-body-sm text-[12px] text-text-muted text-center flex justify-center items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+                            Secure, encrypted transaction via GovPay
+                        </div>
+</section>
+</div>
+<!-- Right Column: Details & Metadata -->
+<div class="md:col-span-5 space-y-stack-lg">
+<!-- Property Details Card -->
+<section class="bg-surface border border-border rounded-DEFAULT shadow-elevation-1">
+<div class="p-gutter border-b border-border bg-surface-bright flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">real_estate_agent</span>
+<h2 class="font-label-md text-label-md text-primary uppercase">Assessment Basis</h2>
+</div>
+<div class="p-gutter space-y-4">
+<!-- Property Info Map / Image -->
+<div class="w-full h-32 bg-surface-variant border border-border rounded overflow-hidden relative mb-4">
+<div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="A clean, high-contrast overhead satellite map view of a suburban property lot. The styling is muted with deep navy UI overlays, fitting a modern government GIS application. The specific lot is highlighted with a subtle yellow outline." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIbaHkxsgDWdRSLdm5Fadw67HMtbglDJA5Tlc_0AB5iwGVBaOGCTZhaQLdIWYKlkZZaRIJX_-FrSSpUB0AADA5e4MksSmXHZ-RgYpHSm0jv9ug0-D7qMEpLTwXEBeejpOr6TkyTo90wA_RqHC9_BTs8G2CYKCMxQMZb64XObRiXgNH9vEaaf3mMx5vUK-uZxAUgXe6TXhCys23v7QbVc2lISgw9Ju--Zv1nH7emS56xcOwVfSlj2-9eTAjSPZBxi0TBr1E9_BwOPjs')"></div>
+<div class="absolute bottom-2 right-2 bg-surface/90 border border-border px-2 py-1 font-data-sm text-[10px] text-primary z-10 backdrop-blur-sm">PARCEL: 849-B</div>
+</div>
+<ul class="space-y-3 font-body-md text-body-md">
+<li class="flex justify-between items-baseline border-b border-border/50 pb-2">
+<span class="text-text-muted">Property Area</span>
+<span class="font-data-md text-data-md text-on-surface">2,450 sq ft</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-border/50 pb-2">
+<span class="text-text-muted">Usage Type</span>
+<span class="font-label-md text-label-md text-on-surface">Residential (R-1)</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-border/50 pb-2">
+<span class="text-text-muted">Assessed Value</span>
+<span class="font-data-md text-data-md text-on-surface">$425,000</span>
+</li>
+<li class="flex justify-between items-baseline pb-1">
+<span class="text-text-muted">Millage Rate</span>
+<span class="font-data-md text-data-md text-on-surface">1.0%</span>
+</li>
+</ul>
+</div>
+<!-- Status Rail (Internal) -->
+<div class="h-rail-height bg-surface-container-low border-t border-border px-gutter flex items-center justify-between font-data-sm text-[11px] text-text-muted uppercase">
+<span>Valuation Date: Jan 1, 2023</span>
+<span>Ref: VAL-8821</span>
+</div>
+</section>
+<!-- Metadata Card -->
+<section class="bg-surface border border-border rounded-DEFAULT shadow-elevation-1">
+<div class="p-gutter border-b border-border bg-surface-bright flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">history</span>
+<h2 class="font-label-md text-label-md text-primary uppercase">Record Metadata</h2>
+</div>
+<div class="p-gutter grid grid-cols-2 gap-4">
+<div>
+<div class="font-label-sm text-label-sm text-text-muted mb-1 uppercase">Last Paid</div>
+<div class="font-data-md text-data-md text-on-surface">12 Jun 2023</div>
+<div class="font-body-sm text-[12px] text-text-muted mt-1">Receipt: <a class="text-primary hover:underline" href="#">#RCP-912</a></div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-text-muted mb-1 uppercase">Next Assessment</div>
+<div class="font-data-md text-data-md text-on-surface">Apr 2024</div>
+<div class="font-body-sm text-[12px] text-text-muted mt-1">Est. Change: +1.2%</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-surface dark:bg-inverse-surface border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-lowest flex-1 h-full active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm mt-1">Hub</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold hover:bg-surface-container-lowest flex-1 h-full active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined fill">history</span>
+<span class="font-label-sm text-label-sm mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-lowest flex-1 h-full active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">wallet</span>
+<span class="font-label-sm text-label-sm mt-1">Wallets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-lowest flex-1 h-full active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Account</span>
+</a>
+</nav>
+</body></html>

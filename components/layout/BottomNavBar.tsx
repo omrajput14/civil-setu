@@ -14,7 +14,7 @@ export default function BottomNavBar() {
   ];
 
   return (
-    <nav className="fixed bottom-0 w-full z-50 bg-surface dark:bg-on-surface border-t border-border dark:border-outline shadow-[0_-1px_2px_rgba(17,24,39,0.06)] flex justify-around items-center h-16 px-gutter pb-safe md:hidden">
+    <nav className="absolute bottom-0 left-0 right-0 z-50 bg-surface dark:bg-on-surface border-t border-border shadow-[0_-1px_2px_rgba(17,24,39,0.06)] flex justify-around items-center h-16 px-gutter">
       {navItems.map((item) => {
         const isActive = pathname === item.href;
         return (

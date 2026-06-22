@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grievance Redressal Dashboard</title>
+<!-- Google Fonts: IBM Plex Sans & IBM Plex Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&amp;family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "primary-fixed-dim": "#abc9f2",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "inverse-primary": "#abc9f2",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-primary-fixed": "#001c37",
+                        "surface": "#FFFFFF",
+                        "border": "#E5E7EB",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "success": "#16A34A",
+                        "on-secondary-fixed": "#2f1500",
+                        "secondary": "#904d00",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary-container": "#4f3300",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#73777f",
+                        "background": "#F4F6F8",
+                        "on-secondary-container": "#663500",
+                        "error-container": "#ffdad6",
+                        "warning": "#F59E0B",
+                        "tertiary": "#331f00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e9edff",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#1a3a5c",
+                        "inverse-on-surface": "#edf0ff",
+                        "surface-tint": "#436084",
+                        "on-surface": "#141b2b",
+                        "primary-fixed": "#d2e4ff",
+                        "on-primary-container": "#87a4cc",
+                        "on-background": "#141b2b",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#fe932c",
+                        "surface-container-low": "#f1f3ff",
+                        "primary": "#002444",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#c49b5f",
+                        "surface-container-high": "#e1e8fd",
+                        "on-tertiary-fixed": "#291800",
+                        "text-muted": "#6B7280",
+                        "surface-container-highest": "#dce2f7",
+                        "danger": "#DC2626",
+                        "outline-variant": "#c3c6cf",
+                        "surface-dim": "#d3daef",
+                        "secondary-fixed": "#ffdcc3",
+                        "inverse-surface": "#293040",
+                        "on-surface-variant": "#43474e",
+                        "surface-variant": "#dce2f7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "rail-height": "32px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "24px",
+                        "gutter": "16px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "data-md": ["IBM Plex Mono"],
+                        "data-lg": ["IBM Plex Mono"],
+                        "body-md": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "data-sm": ["IBM Plex Mono"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "data-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "data-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "data-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400"}]
+                    },
+                    "boxShadow": {
+                        "sm": "0 1px 2px rgba(17,24,39,0.06)",
+                        "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen font-body-md text-on-background pb-24 antialiased">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-inverse-surface w-full top-0 border-b border-border dark:border-outline shadow-sm flex justify-between items-center px-margin-mobile py-4 w-full z-50 transition-colors duration-200 sticky top-0">
+<button aria-label="Go back" class="text-primary dark:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-primary-container rounded-full p-1 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-on-primary-fixed uppercase tracking-tight text-center flex-1">GOVERNMENT SERVICES</h1>
+<button aria-hidden="true" class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-primary-container rounded-full p-1 transition-colors flex items-center justify-center opacity-0 pointer-events-none">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</header>
+<!-- Status Rail -->
+<div class="h-rail-height bg-surface border-b border-border flex items-center px-margin-mobile">
+<span class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest w-full text-center">
+            1 ACTIVE  ·  4 RESOLVED  ·  WARD 4
+        </span>
+</div>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-md mx-auto pt-stack-md px-margin-mobile flex flex-col gap-stack-lg">
+<!-- Page Header & Context -->
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-stack-sm">Grievances</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage and track your reported civic issues.</p>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+            Report New Issue
+        </button>
+<!-- Active Grievances Section -->
+<section class="flex flex-col gap-stack-sm">
+<h3 class="font-label-sm text-label-sm uppercase text-text-muted tracking-widest pl-1">Active Grievances</h3>
+<div class="flex flex-col gap-stack-md">
+<!-- Active Card 1 -->
+<article class="bg-surface border border-border rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col gap-2">
+<div class="absolute top-0 left-0 w-1 h-full bg-warning"></div>
+<div class="flex justify-between items-start w-full">
+<div class="flex flex-col">
+<h4 class="font-label-md text-label-md text-on-surface">Broken Street Light</h4>
+<span class="font-data-sm text-data-sm text-text-muted mt-1">ID: GRV-2024-0012</span>
+</div>
+<div class="bg-surface-bright border border-warning/30 text-warning px-2 py-1 rounded-DEFAULT flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">pending</span>
+<span class="font-data-sm text-data-sm uppercase tracking-wider font-semibold">In Progress</span>
+</div>
+</div>
+<div class="bg-background rounded-lg p-3 mt-1 border border-border flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="font-body-md text-[14px] text-on-surface-variant">Technician assigned</span>
+<span class="font-data-sm text-data-sm text-on-surface font-semibold">40%</span>
+</div>
+<div class="w-full bg-surface-dim rounded-full h-1.5 overflow-hidden border border-border/50">
+<div class="bg-warning h-full rounded-full transition-all duration-500" style="width: 40%"></div>
+</div>
+</div>
+</article>
+<!-- Active Card 2 -->
+<article class="bg-surface border border-border rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col gap-2">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary-container"></div>
+<div class="flex justify-between items-start w-full">
+<div class="flex flex-col">
+<h4 class="font-label-md text-label-md text-on-surface">Water Supply Leakage</h4>
+<span class="font-data-sm text-data-sm text-text-muted mt-1">ID: GRV-2024-0009</span>
+</div>
+<div class="bg-surface-bright border border-secondary-container/30 text-secondary-container px-2 py-1 rounded-DEFAULT flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">find_in_page</span>
+<span class="font-data-sm text-data-sm uppercase tracking-wider font-semibold">Under Review</span>
+</div>
+</div>
+<div class="bg-background rounded-lg p-3 mt-1 border border-border flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="font-body-md text-[14px] text-on-surface-variant">Initial assessment</span>
+<span class="font-data-sm text-data-sm text-on-surface font-semibold">15%</span>
+</div>
+<div class="w-full bg-surface-dim rounded-full h-1.5 overflow-hidden border border-border/50">
+<div class="bg-secondary-container h-full rounded-full transition-all duration-500" style="width: 15%"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Resolved Section -->
+<section class="flex flex-col gap-stack-sm mb-stack-lg">
+<h3 class="font-label-sm text-label-sm uppercase text-text-muted tracking-widest pl-1">Resolved</h3>
+<div class="bg-surface border border-border rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Resolved Row 1 -->
+<div class="p-3 px-4 border-b border-border flex justify-between items-center last:border-b-0 hover:bg-background transition-colors cursor-pointer">
+<div class="flex flex-col">
+<h4 class="font-label-md text-label-md text-on-surface">Waste Collection Delay</h4>
+<span class="font-data-sm text-data-sm text-text-muted mt-0.5">ID: GRV-2023-0982</span>
+</div>
+<div class="flex items-center gap-1.5 bg-success/10 text-success px-2 py-1 rounded-DEFAULT">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-data-sm text-data-sm uppercase tracking-wider font-semibold">Resolved</span>
+</div>
+</div>
+<!-- Resolved Row 2 -->
+<div class="p-3 px-4 border-b border-border flex justify-between items-center last:border-b-0 hover:bg-background transition-colors cursor-pointer">
+<div class="flex flex-col">
+<h4 class="font-label-md text-label-md text-on-surface">Pothole Repair</h4>
+<span class="font-data-sm text-data-sm text-text-muted mt-0.5">ID: GRV-2023-0850</span>
+</div>
+<div class="flex items-center gap-1.5 bg-success/10 text-success px-2 py-1 rounded-DEFAULT">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-data-sm text-data-sm uppercase tracking-wider font-semibold">Resolved</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface dark:bg-inverse-surface fixed bottom-0 w-full rounded-t-xl border-t border-border dark:border-outline shadow-lg z-50 flex justify-around items-center px-4 py-3 pb-safe">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform w-16" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="home">home</span>
+<span class="font-label-sm text-[10px] font-semibold text-center w-full truncate">Home</span>
+</a>
+<!-- Services (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-xl px-4 py-2 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform min-w-[72px]" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="apps" style="font-variation-settings: 'FILL' 1;">apps</span>
+<span class="font-label-sm text-[11px] font-bold text-center w-full truncate">Services</span>
+</a>
+<!-- Schemes (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform w-16" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="description">description</span>
+<span class="font-label-sm text-[10px] font-semibold text-center w-full truncate">Schemes</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform w-16" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="person">person</span>
+<span class="font-label-sm text-[10px] font-semibold text-center w-full truncate">Profile</span>
+</a>
+</nav>
+<!-- Safe area padding for bottom nav -->
+<style>
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 0.75rem);
+        }
+    </style>
+</body></html>

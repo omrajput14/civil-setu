@@ -19,7 +19,7 @@ export default function Page() {
         </span>
 </div>
 {/* Main Canvas */}
-<main className="flex-grow w-full max-w-[800px] mx-auto p-margin-mobile md:p-margin-desktop space-y-stack-lg pb-32">
+<main className="flex-grow w-full max-w-[800px] mx-auto p-margin-mobile space-y-stack-lg pb-32">
 {/* Section 1: Change Password */}
 <section className="bg-surface border border-border rounded-DEFAULT shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-lg">
 <div className="flex items-center gap-3 mb-stack-md border-b border-border pb-stack-sm">
@@ -108,7 +108,7 @@ export default function Page() {
 </section>
 </main>
 {/* Fixed Bottom Action Area */}
-<div className="fixed bottom-0 left-0 w-full bg-surface border-t border-border p-margin-mobile md:px-margin-desktop md:py-4 shadow-[0_-1px_2px_rgba(17,24,39,0.06)] z-50">
+<div className="sticky bottom-0 left-0 w-full bg-surface border-t border-border p-margin-mobile md:px-margin-desktop md:py-4 shadow-[0_-1px_2px_rgba(17,24,39,0.06)] z-50">
 <div className="max-w-[800px] mx-auto flex justify-end">
 <button className="bg-primary-container text-on-primary font-label-md text-label-md px-8 py-3 rounded-DEFAULT hover:opacity-90 active:scale-[0.98] transition-all duration-200 flex items-center gap-2 shadow-[0_1px_2px_rgba(17,24,39,0.06)] uppercase tracking-wider">
 <span className="material-symbols-outlined text-[18px]" data-icon="security">security</span>

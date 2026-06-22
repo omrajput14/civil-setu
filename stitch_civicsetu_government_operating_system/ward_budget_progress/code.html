@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ward Budget &amp; Progress - CivicSetu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#e1e8fd",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#87a4cc",
+                      "inverse-on-surface": "#edf0ff",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#dce2f7",
+                      "on-tertiary-fixed-variant": "#5f410c",
+                      "on-tertiary": "#ffffff",
+                      "primary": "#002444",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed": "#ffdcc3",
+                      "on-primary-fixed-variant": "#2a486b",
+                      "surface": "#FFFFFF",
+                      "tertiary": "#331f00",
+                      "surface-tint": "#436084",
+                      "outline": "#73777f",
+                      "secondary-fixed-dim": "#ffb77d",
+                      "inverse-surface": "#293040",
+                      "inverse-primary": "#abc9f2",
+                      "on-secondary-container": "#663500",
+                      "on-error": "#ffffff",
+                      "outline-variant": "#c3c6cf",
+                      "on-surface": "#141b2b",
+                      "tertiary-container": "#4f3300",
+                      "on-background": "#141b2b",
+                      "on-primary-fixed": "#001c37",
+                      "surface-container-low": "#f1f3ff",
+                      "on-secondary-fixed": "#2f1500",
+                      "border": "#E5E7EB",
+                      "on-tertiary-fixed": "#291800",
+                      "secondary-container": "#fe932c",
+                      "text-muted": "#6B7280",
+                      "success": "#16A34A",
+                      "on-secondary-fixed-variant": "#6e3900",
+                      "on-surface-variant": "#43474e",
+                      "surface-container": "#e9edff",
+                      "primary-fixed": "#d2e4ff",
+                      "surface-bright": "#f9f9ff",
+                      "danger": "#DC2626",
+                      "background": "#F4F6F8",
+                      "tertiary-fixed": "#ffddb1",
+                      "warning": "#F59E0B",
+                      "secondary": "#904d00",
+                      "tertiary-fixed-dim": "#ecbf80",
+                      "surface-container-highest": "#dce2f7",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#c49b5f",
+                      "surface-dim": "#d3daef",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#abc9f2",
+                      "primary-container": "#1a3a5c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "16px",
+                      "gutter": "16px",
+                      "margin-desktop": "32px",
+                      "stack-lg": "24px",
+                      "rail-height": "32px",
+                      "stack-sm": "8px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "headline-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "body-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "data-sm": [
+                              "IBM Plex Mono"
+                      ],
+                      "label-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "body-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-sm": [
+                              "IBM Plex Sans"
+                      ],
+                      "data-lg": [
+                              "IBM Plex Mono"
+                      ],
+                      "data-md": [
+                              "IBM Plex Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "data-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "data-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .data-mono {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-inverse-surface w-full top-0 border-b border-border dark:border-outline shadow-sm flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 z-50 sticky">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-primary-container transition-colors duration-200 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-on-primary-fixed uppercase tracking-tight">Ward 4: Budget &amp; Progress</h1>
+</div>
+</header>
+<!-- Status Rail -->
+<div class="w-full h-rail-height bg-white dark:bg-surface-container-lowest border-b border-border dark:border-outline flex items-center justify-start px-margin-mobile md:px-margin-desktop shadow-[0_1px_2px_rgba(17,24,39,0.06)] relative z-40">
+<span class="font-data-sm text-data-sm text-text-muted uppercase data-mono">WARD 4 · FY 2023-24 · 8 ACTIVE PROJECTS</span>
+</div>
+<!-- Main Content Grid -->
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Sidebar (Web Only) -->
+<aside class="hidden md:flex md:col-span-3 flex-col bg-primary min-h-[calc(100vh-140px)] rounded-[6px] text-on-primary py-stack-lg">
+<nav class="flex flex-col gap-2 w-full px-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-[4px] hover:bg-on-primary-fixed-variant transition-colors text-on-surface-variant dark:text-outline p-2" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-[4px] bg-on-primary-fixed-variant border-l-[4px] border-warning text-primary-fixed" href="#">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-[4px] hover:bg-on-primary-fixed-variant transition-colors text-on-surface-variant dark:text-outline p-2" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md text-label-md">Schemes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-[4px] hover:bg-on-primary-fixed-variant transition-colors text-on-surface-variant dark:text-outline p-2" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+</aside>
+<!-- Main Canvas -->
+<div class="col-span-1 md:col-span-9 flex flex-col gap-stack-lg">
+<!-- Section 1: Budget Overview -->
+<section class="flex flex-col gap-stack-sm">
+<h2 class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest data-mono">WARD BUDGET OVERVIEW</h2>
+<div class="bg-surface border border-border rounded-[6px] shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md mb-stack-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted mb-1">Total Budget</span>
+<span class="font-data-lg text-data-lg text-primary data-mono">₹42,50,000</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted mb-1">Utilized</span>
+<span class="font-data-lg text-data-lg text-primary data-mono">₹28,15,000</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted mb-1">Remaining</span>
+<span class="font-data-lg text-data-lg text-warning data-mono">₹14,35,000</span>
+</div>
+</div>
+<div class="w-full bg-background rounded-full h-2 overflow-hidden border border-border">
+<div class="bg-primary h-2" style="width: 66%"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="font-data-sm text-data-sm text-text-muted data-mono">0%</span>
+<span class="font-data-sm text-data-sm text-text-muted data-mono">66% UTILIZED</span>
+<span class="font-data-sm text-data-sm text-text-muted data-mono">100%</span>
+</div>
+</div>
+</section>
+<!-- Section 2: Active Projects -->
+<section class="flex flex-col gap-stack-sm">
+<h2 class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest data-mono">ACTIVE WARD PROJECTS</h2>
+<div class="flex flex-col gap-stack-md">
+<!-- Project Card 1 -->
+<div class="bg-surface border border-border rounded-[6px] shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md flex flex-col gap-stack-sm">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<h3 class="font-label-md text-label-md text-on-surface">Main Road Paving - Ward 4 East</h3>
+<span class="font-data-sm text-data-sm text-text-muted data-mono mt-1">ID: PWR-W4-001</span>
+</div>
+<span class="px-2 py-1 bg-surface-container-high text-primary font-data-sm text-data-sm rounded-[4px] uppercase data-mono border border-surface-tint">IN PROGRESS</span>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-text-muted">Progress</span>
+<span class="font-data-sm text-data-sm text-primary data-mono">75%</span>
+</div>
+<div class="w-full bg-background rounded-full h-1.5 overflow-hidden border border-border">
+<div class="bg-primary h-1.5" style="width: 75%"></div>
+</div>
+</div>
+<div class="mt-2 pt-2 border-t border-border">
+<span class="font-body-md text-body-md text-text-muted">Next Milestone: <span class="text-on-surface font-medium">Drainage completion</span></span>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="bg-surface border border-border rounded-[6px] shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md flex flex-col gap-stack-sm">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<h3 class="font-label-md text-label-md text-on-surface">Solar Street Lighting - Sector B</h3>
+<span class="font-data-sm text-data-sm text-text-muted data-mono mt-1">ID: PWR-W4-012</span>
+</div>
+<span class="px-2 py-1 bg-surface-bright text-success font-data-sm text-data-sm rounded-[4px] uppercase data-mono border border-success">ON TRACK</span>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-text-muted">Progress</span>
+<span class="font-data-sm text-data-sm text-success data-mono">40%</span>
+</div>
+<div class="w-full bg-background rounded-full h-1.5 overflow-hidden border border-border">
+<div class="bg-success h-1.5" style="width: 40%"></div>
+</div>
+</div>
+<div class="mt-2 pt-2 border-t border-border">
+<span class="font-body-md text-body-md text-text-muted">Next Milestone: <span class="text-on-surface font-medium">Battery installation</span></span>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="bg-surface border border-border rounded-[6px] shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md flex flex-col gap-stack-sm">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<h3 class="font-label-md text-label-md text-on-surface">Primary School Renovation</h3>
+<span class="font-data-sm text-data-sm text-text-muted data-mono mt-1">ID: PWR-W4-009</span>
+</div>
+<span class="px-2 py-1 bg-error-container text-on-error-container font-data-sm text-data-sm rounded-[4px] uppercase data-mono border border-error">DELAYED</span>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-text-muted">Progress</span>
+<span class="font-data-sm text-data-sm text-danger data-mono">15%</span>
+</div>
+<div class="w-full bg-background rounded-full h-1.5 overflow-hidden border border-border">
+<div class="bg-danger h-1.5" style="width: 15%"></div>
+</div>
+</div>
+<div class="mt-2 pt-2 border-t border-border">
+<span class="font-body-md text-body-md text-text-muted">Reason: <span class="text-danger font-medium">Material procurement</span></span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center bg-surface dark:bg-inverse-surface px-4 py-3 md:hidden shadow-lg border-t border-border dark:border-outline rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-xl px-4 py-2 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+<span class="font-label-md text-label-md mt-1">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md text-label-md mt-1">Schemes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

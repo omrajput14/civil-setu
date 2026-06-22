@@ -11,6 +11,7 @@ export default function SidebarDrawer() {
     { name: "Services", href: "/services", icon: "apps" },
     { name: "Ward Budget", href: "/ward/budget", icon: "account_balance" },
     { name: "Emergency SOS", href: "/emergency", icon: "emergency" },
+    { name: "Family Registry", href: "/family/search", icon: "family_restroom" },
   ];
 
   return (

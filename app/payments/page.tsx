@@ -1,142 +1,135 @@
+"use client";
+
 import AppLayout from "@/components/layout/AppLayout";
 import Link from "next/link";
+import { useState } from "react";
+import { useToast } from "@/components/ui/ToastProvider";
+
+const MOCK_BILLS = [
+  { id: 1, provider: "MAHAVITARAN", type: "Electricity", billNo: "EL-2023-894", due: "24 Oct 2023", amount: 1850, urgent: true },
+  { id: 2, provider: "PMC", type: "Property Tax", billNo: "PT-2324-112", due: "15 Nov 2023", amount: 2400, urgent: false },
+  { id: 3, provider: "Jal Board", type: "Water", billNo: "WT-2324-88", due: "20 Nov 2023", amount: 450, urgent: false },
+];
 
 export default function Page() {
-  return (
-    <AppLayout title="CIVICSETU - PAYMENTS HUB" showBackButton={true}>
-      <div className="w-full h-full relative">
-        {/* Extracted from Stitch HTML */}
-        {/* Navigation Drawer (Desktop) */}
-<nav className="hidden md:flex flex-col h-full fixed left-0 top-0 w-[240px] bg-primary dark:bg-on-primary-fixed border-r border-outline z-40">
-<div className="p-stack-md border-b border-outline/30">
-<div className="font-headline-lg text-headline-lg text-on-primary mb-stack-sm">CIVICSETU</div>
-<div className="flex items-center gap-2">
-<div className="w-8 h-8 rounded-full bg-outline-variant/20 flex items-center justify-center text-on-primary font-data-sm">C9</div>
-<div>
-<div className="font-label-md text-label-md text-on-primary">CITIZEN-09241</div>
-<div className="font-data-sm text-data-sm text-on-primary/70">Verified Profile</div>
-</div>
-</div>
-</div>
-<div className="flex-1 py-stack-md flex flex-col gap-2 px-stack-sm">
-<a className="flex items-center gap-3 px-stack-sm py-2 bg-secondary-container text-on-secondary-container border-l-4 border-secondary font-bold font-label-md text-label-md cursor-pointer hover:bg-primary-container transition-all" href="#">
-<span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1", }}>dashboard</span>
-                Payments Hub
-            </a>
-<a className="flex items-center gap-3 px-stack-sm py-2 text-on-primary/70 hover:text-on-primary hover:bg-primary-container font-label-md text-label-md cursor-pointer transition-all" href="#">
-<span className="material-symbols-outlined">receipt_long</span>
-                Bill History
-            </a>
-<a className="flex items-center gap-3 px-stack-sm py-2 text-on-primary/70 hover:text-on-primary hover:bg-primary-container font-label-md text-label-md cursor-pointer transition-all" href="#">
-<span className="material-symbols-outlined">account_balance_wallet</span>
-                Payment Methods
-            </a>
-<a className="flex items-center gap-3 px-stack-sm py-2 text-on-primary/70 hover:text-on-primary hover:bg-primary-container font-label-md text-label-md cursor-pointer transition-all" href="#">
-<span className="material-symbols-outlined">settings</span>
-                Settings
-            </a>
-</div>
-<div className="h-rail-height bg-surface flex items-center px-stack-md border-t border-outline/30 mt-auto">
-<span className="font-data-sm text-data-sm text-text-muted uppercase">SYSTEM ACTIVE</span>
-</div>
-</nav>
-{/* Top App Bar (Mobile & Desktop) */}
+  const { showToast } = useToast();
+  const [bills, setBills] = useState(MOCK_BILLS);
+  const [filter, setFilter] = useState("All");
 
-{/* Main Content Canvas */}
-<main className="flex-1 w-full mt-16 pb-20 md:pb-0 md:ml-[240px] p-margin-mobile md:p-margin-desktop bg-background flex flex-col gap-stack-lg">
-{/* Top Section: Total Outstanding Balance */}
-<section>
-<div className="bg-surface border border-border p-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-stack-md kpi-card">
-<div>
-<h2 className="font-data-sm text-data-sm text-text-muted uppercase mb-2">Total Outstanding Balance</h2>
-<div className="font-data-lg text-data-lg text-on-surface">₹ 4,250.00</div>
-</div>
-<div className="flex gap-stack-sm">
-<button className="bg-primary-container text-on-primary px-4 py-2 font-label-md text-label-md border border-primary-container hover:opacity-90 transition-opacity">Pay All</button>
-<button className="bg-surface text-primary-container px-4 py-2 font-label-md text-label-md border border-border hover:bg-surface-container-low transition-colors">Details</button>
-</div>
-</div>
-{/* Status Rail */}
-<div className="h-rail-height bg-surface border border-border border-t-0 flex items-center px-stack-sm">
-<span className="font-data-sm text-data-sm text-text-muted uppercase">Last updated: 14:32 IST | 3 Active Invoices</span>
-</div>
-</section>
-{/* Categories: Horizontal Scroll */}
-<section>
-<h3 className="font-data-sm text-data-sm text-text-muted uppercase mb-stack-sm">Filter by Category</h3>
-<div className="flex overflow-x-auto hide-scrollbar gap-stack-sm pb-2">
-<button className="flex-shrink-0 bg-primary-container text-on-primary px-4 py-2 font-label-md text-label-md border border-primary-container">All</button>
-<button className="flex-shrink-0 bg-surface text-on-surface px-4 py-2 font-label-md text-label-md border border-border hover:bg-surface-container-low transition-colors">Water</button>
-<button className="flex-shrink-0 bg-surface text-on-surface px-4 py-2 font-label-md text-label-md border border-border hover:bg-surface-container-low transition-colors">Electricity</button>
-<button className="flex-shrink-0 bg-surface text-on-surface px-4 py-2 font-label-md text-label-md border border-border hover:bg-surface-container-low transition-colors">Property Tax</button>
-<button className="flex-shrink-0 bg-surface text-on-surface px-4 py-2 font-label-md text-label-md border border-border hover:bg-surface-container-low transition-colors">Waste</button>
-<button className="flex-shrink-0 bg-surface text-on-surface px-4 py-2 font-label-md text-label-md border border-border hover:bg-surface-container-low transition-colors">Professional Tax</button>
-</div>
-</section>
-{/* Bill Cards & Quick Actions Grid */}
-<div className="grid grid-cols-1 lg:grid-cols-3 gap-stack-lg">
-{/* Bill Cards List */}
-<section className="lg:col-span-2 flex flex-col gap-stack-md">
-<h3 className="font-data-sm text-data-sm text-text-muted uppercase">Active Bills</h3>
-{/* Bill Card 1: Urgent */}
-<div className="bg-surface border border-border p-stack-md flex flex-col md:flex-row justify-between gap-stack-md kpi-card relative">
-{/* Urgent Badge */}
-<div className="absolute top-0 right-0 bg-danger text-on-error px-2 py-1 font-data-sm text-data-sm uppercase transform translate-x-px -translate-y-px border border-danger">
-                        DUE IN 2 DAYS
+  const totalAmount = bills.reduce((sum, b) => sum + b.amount, 0);
+
+  const filteredBills = bills.filter(b => filter === "All" || b.type === filter);
+
+  const handlePay = (id?: number) => {
+    showToast("Processing Payment...", "info");
+    setTimeout(() => {
+      if (id) {
+        setBills(prev => prev.filter(b => b.id !== id));
+      } else {
+        setBills([]);
+      }
+      showToast("Payment Successful!", "success");
+    }, 1500);
+  };
+
+  const categories = ["All", "Water", "Electricity", "Property Tax", "Waste"];
+
+  return (
+    <AppLayout title="PAYMENTS HUB" showBackButton={true}>
+      <div className="w-full">
+        {/* Status Rail */}
+        <div className="h-rail-height bg-surface border-b border-border flex items-center px-margin-mobile">
+          <span className="font-data-sm text-data-sm text-text-muted uppercase">Last updated: 14:32 IST | {bills.length} Active Invoices</span>
+        </div>
+
+        <div className="p-margin-mobile space-y-4">
+          {/* Sub-Navigation Chips */}
+          <div className="flex overflow-x-auto gap-2 pb-1" style={{ scrollbarWidth: 'none' }}>
+            <Link href="/payments" className="flex-shrink-0 bg-primary-container text-on-primary px-3 py-1.5 font-label-sm text-label-sm rounded-[6px] border border-primary-container">Hub</Link>
+            <Link href="/payments/history" className="flex-shrink-0 bg-surface text-on-surface-variant px-3 py-1.5 font-label-sm text-label-sm rounded-[6px] border border-border hover:bg-surface-container-low transition-colors">History</Link>
+            <Link href="/autopay" className="flex-shrink-0 bg-surface text-on-surface-variant px-3 py-1.5 font-label-sm text-label-sm rounded-[6px] border border-border hover:bg-surface-container-low transition-colors">Autopay</Link>
+            <Link href="/payments/bill" className="flex-shrink-0 bg-surface text-on-surface-variant px-3 py-1.5 font-label-sm text-label-sm rounded-[6px] border border-border hover:bg-surface-container-low transition-colors">Bill Detail</Link>
+          </div>
+
+          {/* Total Outstanding Balance */}
+          <section>
+            <div className="bg-surface border border-border rounded-[6px] p-4 flex flex-col gap-3 shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+              <div>
+                <h2 className="font-data-sm text-data-sm text-text-muted uppercase mb-1">Total Outstanding Balance</h2>
+                <div className="font-data-lg text-[28px] font-bold text-on-surface leading-tight">₹ {totalAmount.toLocaleString('en-IN')}.00</div>
+              </div>
+              <div className="flex gap-2">
+                <button onClick={() => handlePay()} disabled={bills.length === 0} className="bg-primary-container text-on-primary px-4 py-2 font-label-md text-label-md rounded-[6px] hover:opacity-90 transition-opacity flex-1 disabled:opacity-50">Pay All</button>
+                <button onClick={() => showToast("Navigating to details...", "info")} className="bg-surface text-primary-container px-4 py-2 font-label-md text-label-md border border-border rounded-[6px] hover:bg-surface-container-low transition-colors flex-1">Details</button>
+              </div>
+            </div>
+          </section>
+
+          {/* Categories: Horizontal Scroll */}
+          <section>
+            <h3 className="font-data-sm text-data-sm text-text-muted uppercase mb-2">Filter by Category</h3>
+            <div className="flex overflow-x-auto gap-2 pb-1" style={{ scrollbarWidth: 'none' }}>
+              {categories.map(cat => (
+                <button 
+                  key={cat}
+                  onClick={() => setFilter(cat)}
+                  className={`flex-shrink-0 px-3 py-1.5 font-label-sm text-label-sm rounded-[6px] border transition-colors ${filter === cat ? 'bg-primary-container text-on-primary border-primary-container' : 'bg-surface text-on-surface border-border hover:bg-surface-container-low'}`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </section>
+
+          {/* Active Bills */}
+          <section className="space-y-3">
+            <h3 className="font-data-sm text-data-sm text-text-muted uppercase">Active Bills {filter !== 'All' && `(${filter})`}</h3>
+            
+            {filteredBills.length === 0 ? (
+              <div className="bg-surface border border-border rounded-[6px] p-6 text-center shadow-sm">
+                <p className="text-text-muted font-body-sm text-[13px]">No pending {filter !== 'All' ? filter : ''} bills found.</p>
+              </div>
+            ) : (
+              filteredBills.map(bill => (
+                <div key={bill.id} className="bg-surface border border-border rounded-[6px] p-4 shadow-[0_1px_2px_rgba(17,24,39,0.06)] relative overflow-hidden">
+                  {bill.urgent && <div className="absolute top-0 right-0 bg-danger text-on-error px-2 py-0.5 font-data-sm text-[10px] uppercase rounded-bl-[6px]">DUE IN 2 DAYS</div>}
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex flex-col gap-1 min-w-0">
+                      <div className="font-label-md text-label-md text-on-surface">{bill.provider} - {bill.type}</div>
+                      <div className="flex items-center gap-3 flex-wrap">
+                        <span className="font-data-sm text-data-sm text-text-muted">Bill No: {bill.billNo}</span>
+                        <span className="font-data-sm text-data-sm text-text-muted">Due: {bill.due}</span>
+                      </div>
                     </div>
-<div className="flex flex-col gap-2">
-<div className="font-label-md text-label-md text-on-surface">MAHAVITARAN - Electricity</div>
-<div className="flex items-center gap-4">
-<div className="font-data-sm text-data-sm text-text-muted">Bill No: EL-2023-894</div>
-<div className="font-data-sm text-data-sm text-text-muted">Due: 24 Oct 2023</div>
-</div>
-</div>
-<div className="flex flex-col md:items-end justify-between">
-<div className="font-data-md text-data-md text-on-surface">₹ 1,850.00</div>
-<button className="mt-2 md:mt-0 text-primary font-label-sm text-label-sm uppercase hover:underline">Pay Now</button>
-</div>
-</div>
-{/* Bill Card 2 */}
-<div className="bg-surface border border-border p-stack-md flex flex-col md:flex-row justify-between gap-stack-md kpi-card">
-<div className="flex flex-col gap-2">
-<div className="font-label-md text-label-md text-on-surface">PMC - Property Tax</div>
-<div className="flex items-center gap-4">
-<div className="font-data-sm text-data-sm text-text-muted">Bill No: PT-2324-112</div>
-<div className="font-data-sm text-data-sm text-text-muted">Due: 15 Nov 2023</div>
-</div>
-</div>
-<div className="flex flex-col md:items-end justify-between">
-<div className="font-data-md text-data-md text-on-surface">₹ 2,400.00</div>
-<button className="mt-2 md:mt-0 text-primary font-label-sm text-label-sm uppercase hover:underline">Pay Now</button>
-</div>
-</div>
-</section>
-{/* Quick Actions */}
-<section className="flex flex-col gap-stack-md">
-<h3 className="font-data-sm text-data-sm text-text-muted uppercase">Quick Actions</h3>
-<div className="grid grid-cols-1 gap-2">
-<button className="bg-surface border border-border p-stack-sm flex items-center gap-3 hover:bg-surface-container-low transition-colors text-left kpi-card">
-<span className="material-symbols-outlined text-primary-container">flash_on</span>
-<span className="font-label-md text-label-md text-on-surface">Quick Pay</span>
-</button>
-<button className="bg-surface border border-border p-stack-sm flex items-center gap-3 hover:bg-surface-container-low transition-colors text-left kpi-card">
-<span className="material-symbols-outlined text-primary-container">history</span>
-<span className="font-label-md text-label-md text-on-surface">View History</span>
-</button>
-<button className="bg-surface border border-border p-stack-sm flex items-center gap-3 hover:bg-surface-container-low transition-colors text-left kpi-card">
-<span className="material-symbols-outlined text-primary-container">autorenew</span>
-<span className="font-label-md text-label-md text-on-surface">Manage Autopay</span>
-</button>
-</div>
-{/* Informational Graphic Placeholder */}
-<div className="mt-auto border border-border bg-surface p-stack-sm kpi-card">
-<div className="bg-cover bg-center w-full h-32 border border-outline-variant/30 opacity-70 mb-2" data-alt="A stylized, technical line-art illustration of a smart meter or abstract data dashboard, light mode, navy blue lines on white background, conveying digital payment efficiency." style={{ backgroundImage: "url('https", }}></div>
-<p className="font-data-sm text-data-sm text-text-muted">Set up Autopay to avoid late fees.</p>
-</div>
-</section>
-</div>
-</main>
-{/* Bottom Navigation (Mobile Only) */}
+                    <div className="flex flex-col items-end shrink-0">
+                      <div className="font-data-md text-data-md text-on-surface font-bold">₹ {bill.amount.toLocaleString('en-IN')}</div>
+                      <button onClick={() => handlePay(bill.id)} className="mt-1 text-primary font-label-sm text-label-sm uppercase hover:underline">Pay Now</button>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
+          </section>
+
+          {/* Quick Actions */}
+          <section className="space-y-2">
+            <h3 className="font-data-sm text-data-sm text-text-muted uppercase">Quick Actions</h3>
+            <div className="flex flex-col gap-2">
+              <Link href="/payments/bill" className="bg-surface border border-border rounded-[6px] p-3 flex items-center gap-3 hover:bg-surface-container-low transition-colors shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+                <span className="material-symbols-outlined text-primary-container">flash_on</span>
+                <span className="font-label-md text-label-md text-on-surface">Quick Pay</span>
+              </Link>
+              <Link href="/payments/history" className="bg-surface border border-border rounded-[6px] p-3 flex items-center gap-3 hover:bg-surface-container-low transition-colors shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+                <span className="material-symbols-outlined text-primary-container">history</span>
+                <span className="font-label-md text-label-md text-on-surface">View History</span>
+              </Link>
+              <Link href="/autopay" className="bg-surface border border-border rounded-[6px] p-3 flex items-center gap-3 hover:bg-surface-container-low transition-colors shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+                <span className="material-symbols-outlined text-primary-container">autorenew</span>
+                <span className="font-label-md text-label-md text-on-surface">Manage Autopay</span>
+              </Link>
+            </div>
+          </section>
+        </div>
       </div>
     </AppLayout>
   );

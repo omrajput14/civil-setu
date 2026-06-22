@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Raise New Ticket</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#c49b5f",
+                      "warning": "#F59E0B",
+                      "primary-fixed": "#d2e4ff",
+                      "on-secondary-fixed": "#2f1500",
+                      "inverse-on-surface": "#edf0ff",
+                      "tertiary": "#331f00",
+                      "primary-fixed-dim": "#abc9f2",
+                      "surface-container-high": "#e1e8fd",
+                      "surface-dim": "#d3daef",
+                      "tertiary-fixed": "#ffddb1",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#1a3a5c",
+                      "on-tertiary-fixed-variant": "#5f410c",
+                      "inverse-primary": "#abc9f2",
+                      "background": "#F4F6F8",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#43474e",
+                      "on-surface": "#141b2b",
+                      "secondary-container": "#fe932c",
+                      "surface-variant": "#dce2f7",
+                      "danger": "#DC2626",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#ffdcc3",
+                      "surface": "#FFFFFF",
+                      "on-tertiary-fixed": "#291800",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#dce2f7",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#2a486b",
+                      "error-container": "#ffdad6",
+                      "on-primary-container": "#87a4cc",
+                      "surface-bright": "#f9f9ff",
+                      "border": "#E5E7EB",
+                      "outline-variant": "#c3c6cf",
+                      "text-muted": "#6B7280",
+                      "secondary-fixed-dim": "#ffb77d",
+                      "surface-container-low": "#f1f3ff",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#001c37",
+                      "outline": "#73777f",
+                      "secondary": "#904d00",
+                      "on-secondary-fixed-variant": "#6e3900",
+                      "on-background": "#141b2b",
+                      "tertiary-fixed-dim": "#ecbf80",
+                      "surface-tint": "#436084",
+                      "inverse-surface": "#293040",
+                      "surface-container": "#e9edff",
+                      "tertiary-container": "#4f3300",
+                      "primary": "#002444",
+                      "success": "#16A34A",
+                      "on-secondary-container": "#663500",
+                      "on-secondary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "margin-mobile": "16px",
+                      "stack-lg": "24px",
+                      "rail-height": "32px",
+                      "margin-desktop": "32px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "data-sm": [
+                              "IBM Plex Mono"
+                      ],
+                      "label-sm": [
+                              "IBM Plex Sans"
+                      ],
+                      "data-lg": [
+                              "IBM Plex Mono"
+                      ],
+                      "body-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "headline-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "body-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "headline-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "data-md": [
+                              "IBM Plex Mono"
+                      ]
+              },
+              "fontSize": {
+                      "data-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "data-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "data-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen text-on-surface flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface text-primary dark:text-on-primary-fixed font-headline-md text-headline-md fixed top-0 w-full z-50 border-b border-border dark:border-outline shadow-[0_1px_2px_rgba(17,24,39,0.06)] flex justify-between items-center h-rail-height px-margin-desktop md:h-16 h-14" style="height: 64px;">
+<div class="flex items-center gap-4">
+<button class="hover:bg-surface-container-low transition-colors active:opacity-80 transition-opacity p-2 rounded-none flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed m-0 leading-none">New Support Ticket</h1>
+</div>
+<div class="hidden md:flex gap-4 items-center">
+<!-- Top Nav logic hidden as this is a transactional flow -->
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex justify-center items-start pt-[80px] pb-rail-height px-margin-mobile md:px-margin-desktop">
+<div class="w-full max-w-2xl bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] flex flex-col p-6 md:p-8 rounded-none">
+<form class="flex flex-col gap-stack-lg w-full">
+<!-- Category -->
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-md text-label-md text-on-surface" for="category">Issue Category</label>
+<div class="relative">
+<select class="w-full h-12 bg-surface border border-border rounded-none px-4 appearance-none focus:outline-none focus:border-primary focus:border-2 font-body-md text-body-md text-on-surface cursor-pointer" id="category">
+<option disabled="" selected="" value="">Select category</option>
+<option value="network">Network Connectivity</option>
+<option value="hardware">Hardware Failure</option>
+<option value="software">Software Bug</option>
+<option value="access">Access Control</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-text-muted">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Service ID -->
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-md text-label-md text-on-surface flex justify-between" for="service-id">
+                        Service ID 
+                        <span class="font-data-sm text-data-sm text-text-muted uppercase">Optional</span>
+</label>
+<input class="w-full h-12 bg-surface border border-border rounded-none px-4 focus:outline-none focus:border-primary focus:border-2 font-data-md text-data-md text-on-surface uppercase placeholder:text-text-muted placeholder:normal-case placeholder:font-body-md" id="service-id" placeholder="e.g., SRV-10294" type="text"/>
+</div>
+<!-- Describe Issue -->
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-md text-label-md text-on-surface" for="description">Describe your Issue</label>
+<textarea class="w-full bg-surface border border-border rounded-none p-4 focus:outline-none focus:border-primary focus:border-2 font-body-md text-body-md text-on-surface resize-y placeholder:text-text-muted" id="description" placeholder="Provide a detailed description of the problem..." rows="5"></textarea>
+</div>
+<!-- Upload Attachment -->
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-md text-label-md text-on-surface">Upload Attachment</label>
+<div class="w-full h-32 border border-dashed border-border flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-3xl">upload_file</span>
+<span class="font-body-md text-body-md text-text-muted group-hover:text-primary transition-colors">Click to upload or drag files here</span>
+<input class="hidden" id="file-upload" type="file"/>
+</div>
+</div>
+<!-- Action -->
+<div class="pt-stack-md flex justify-end">
+<button class="bg-primary-container text-on-primary rounded-none h-12 px-6 font-label-md text-label-md uppercase tracking-wider hover:bg-primary transition-colors active:opacity-80 flex items-center justify-center" type="submit">
+                        Submit Support Request
+                    </button>
+</div>
+</form>
+</div>
+</main>
+<!-- Technical Metadata Rail -->
+<footer class="fixed bottom-0 w-full h-rail-height bg-surface border-t border-border z-50 flex items-center px-margin-mobile md:px-margin-desktop justify-between shadow-[0_-1px_2px_rgba(17,24,39,0.06)]">
+<div class="flex items-center gap-6 overflow-x-auto whitespace-nowrap scrollbar-hide w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-text-muted">memory</span>
+<span class="font-data-sm text-data-sm uppercase text-text-muted">DEVICE ID: CS-9928</span>
+</div>
+<div class="w-px h-4 bg-border hidden sm:block"></div>
+<div class="flex items-center gap-2 hidden sm:flex">
+<span class="material-symbols-outlined text-[14px] text-text-muted">terminal</span>
+<span class="font-data-sm text-data-sm uppercase text-text-muted">OS VERSION: 2.4.1-STABLE</span>
+</div>
+<div class="w-px h-4 bg-border hidden md:block"></div>
+<div class="flex items-center gap-2 ml-auto">
+<span class="material-symbols-outlined text-[14px] text-warning">priority_high</span>
+<span class="font-data-sm text-data-sm uppercase text-text-muted">TICKET PRIORITY: AUTOMATIC</span>
+</div>
+</div>
+</footer>
+<style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

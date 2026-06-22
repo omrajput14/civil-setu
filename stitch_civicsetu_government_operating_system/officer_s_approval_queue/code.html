@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Officer's Approval Queue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "warning": "#F59E0B",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#4f3300",
+                    "surface-bright": "#f9f9ff",
+                    "outline-variant": "#c3c6cf",
+                    "on-tertiary-container": "#c49b5f",
+                    "on-surface-variant": "#43474e",
+                    "primary-fixed-dim": "#abc9f2",
+                    "on-secondary-container": "#663500",
+                    "tertiary-fixed-dim": "#ecbf80",
+                    "secondary-container": "#fe932c",
+                    "on-primary-container": "#87a4cc",
+                    "tertiary": "#331f00",
+                    "border": "#E5E7EB",
+                    "surface-container": "#e9edff",
+                    "on-secondary-fixed": "#2f1500",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "background": "#F4F6F8",
+                    "surface-tint": "#436084",
+                    "outline": "#73777f",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdcc3",
+                    "primary-container": "#1a3a5c",
+                    "inverse-surface": "#293040",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e1e8fd",
+                    "success": "#16A34A",
+                    "surface": "#FFFFFF",
+                    "on-secondary-fixed-variant": "#6e3900",
+                    "surface-container-low": "#f1f3ff",
+                    "on-surface": "#141b2b",
+                    "surface-variant": "#dce2f7",
+                    "text-muted": "#6B7280",
+                    "surface-dim": "#d3daef",
+                    "primary-fixed": "#d2e4ff",
+                    "on-primary-fixed-variant": "#2a486b",
+                    "secondary": "#904d00",
+                    "on-tertiary-fixed": "#291800",
+                    "surface-container-highest": "#dce2f7",
+                    "inverse-on-surface": "#edf0ff",
+                    "on-tertiary-fixed-variant": "#5f410c",
+                    "inverse-primary": "#abc9f2",
+                    "primary": "#002444",
+                    "danger": "#DC2626",
+                    "secondary-fixed-dim": "#ffb77d",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#141b2b",
+                    "on-primary-fixed": "#001c37",
+                    "tertiary-fixed": "#ffddb1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "rail-height": "32px",
+                    "margin-desktop": "32px",
+                    "margin-mobile": "16px",
+                    "stack-sm": "8px",
+                    "gutter": "16px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["IBM Plex Sans"],
+                    "label-sm": ["IBM Plex Sans"],
+                    "body-md": ["IBM Plex Sans"],
+                    "label-md": ["IBM Plex Sans"],
+                    "body-lg": ["IBM Plex Sans"],
+                    "data-lg": ["IBM Plex Mono"],
+                    "headline-md": ["IBM Plex Sans"],
+                    "data-sm": ["IBM Plex Mono"],
+                    "data-md": ["IBM Plex Mono"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                    "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                    "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col h-screen bg-background overflow-hidden font-body-md text-on-surface">
+<!-- Top App Bar -->
+<header class="bg-surface border-b border-border px-margin-mobile md:px-margin-desktop h-16 flex items-center gap-4 shrink-0">
+<span class="material-symbols-outlined text-primary text-[24px]">menu</span>
+<h1 class="font-headline-md text-on-surface">Approval Queue</h1>
+</header>
+<!-- Status Rail Sub-header -->
+<div class="h-rail-height bg-surface border-b border-border px-margin-mobile md:px-margin-desktop flex items-center shrink-0">
+<p class="font-data-sm text-text-muted uppercase flex gap-4">
+<span>PENDING: 24</span>
+<span class="text-border">|</span>
+<span>URGENT: 03</span>
+<span class="text-border">|</span>
+<span>AVG TAT: 4.2h</span>
+</p>
+</div>
+<!-- Filter Bar -->
+<div class="px-margin-mobile md:px-margin-desktop py-stack-md flex gap-2 overflow-x-auto no-scrollbar shrink-0 border-b border-border bg-surface">
+<button class="px-4 py-1.5 bg-primary text-on-primary font-label-md rounded border border-primary whitespace-nowrap transition-colors">Identity</button>
+<button class="px-4 py-1.5 bg-surface text-on-surface font-label-md rounded border border-border hover:bg-surface-container-low whitespace-nowrap transition-colors">All</button>
+<button class="px-4 py-1.5 bg-surface text-on-surface font-label-md rounded border border-border hover:bg-surface-container-low whitespace-nowrap transition-colors">Certificates</button>
+<button class="px-4 py-1.5 bg-surface text-on-surface font-label-md rounded border border-border hover:bg-surface-container-low whitespace-nowrap transition-colors">Grievances</button>
+</div>
+<!-- Main Content Queue -->
+<main class="flex-1 overflow-y-auto px-margin-mobile md:px-margin-desktop py-stack-md flex flex-col gap-stack-sm bg-background">
+<!-- Task Card 1 -->
+<div class="bg-surface border border-border rounded-none p-4 flex items-center justify-between shadow-[0_1px_2px_rgba(17,24,39,0.06)] cursor-pointer hover:border-primary transition-colors">
+<div class="flex flex-col gap-1.5 w-full">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<span class="font-data-md text-primary font-semibold">REQ-8821-X</span>
+<span class="px-2.5 py-0.5 rounded-full border border-primary-fixed-dim text-on-primary-fixed-variant text-[10px] font-bold tracking-wide uppercase bg-primary-fixed bg-opacity-20">New</span>
+</div>
+<span class="text-text-muted font-label-sm">2h ago</span>
+</div>
+<div class="mt-1">
+<p class="font-label-md text-on-surface">Name Change Verification</p>
+<p class="font-body-md text-on-surface-variant">John Doe</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline ml-4">chevron_right</span>
+</div>
+<!-- Task Card 2 -->
+<div class="bg-surface border border-border rounded-none p-4 flex items-center justify-between shadow-[0_1px_2px_rgba(17,24,39,0.06)] cursor-pointer hover:border-primary transition-colors">
+<div class="flex flex-col gap-1.5 w-full">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<span class="font-data-md text-primary font-semibold">REQ-8822-Y</span>
+<span class="px-2.5 py-0.5 rounded-full border border-warning text-warning text-[10px] font-bold tracking-wide uppercase bg-warning bg-opacity-10">Under Review</span>
+</div>
+<span class="text-warning font-label-sm">4h ago</span>
+</div>
+<div class="mt-1">
+<p class="font-label-md text-on-surface">Biometric Update Validation</p>
+<p class="font-body-md text-on-surface-variant">Jane Smith</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline ml-4">chevron_right</span>
+</div>
+<!-- Task Card 3 -->
+<div class="bg-surface border border-border rounded-none p-4 flex items-center justify-between shadow-[0_1px_2px_rgba(17,24,39,0.06)] cursor-pointer hover:border-primary transition-colors">
+<div class="flex flex-col gap-1.5 w-full">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<span class="font-data-md text-primary font-semibold">REQ-8823-Z</span>
+<span class="px-2.5 py-0.5 rounded-full border border-primary-fixed-dim text-on-primary-fixed-variant text-[10px] font-bold tracking-wide uppercase bg-primary-fixed bg-opacity-20">New</span>
+</div>
+<span class="text-text-muted font-label-sm">5h ago</span>
+</div>
+<div class="mt-1">
+<p class="font-label-md text-on-surface">Address Change Verification</p>
+<p class="font-body-md text-on-surface-variant">Michael Chen</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline ml-4">chevron_right</span>
+</div>
+<!-- Task Card 4 -->
+<div class="bg-surface border border-border rounded-none p-4 flex items-center justify-between shadow-[0_1px_2px_rgba(17,24,39,0.06)] cursor-pointer hover:border-primary transition-colors">
+<div class="flex flex-col gap-1.5 w-full">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<span class="font-data-md text-primary font-semibold">REQ-8824-W</span>
+<span class="px-2.5 py-0.5 rounded-full border border-primary-fixed-dim text-on-primary-fixed-variant text-[10px] font-bold tracking-wide uppercase bg-primary-fixed bg-opacity-20">New</span>
+</div>
+<span class="text-text-muted font-label-sm">1d ago</span>
+</div>
+<div class="mt-1">
+<p class="font-label-md text-on-surface">Minor Dependent Registration</p>
+<p class="font-body-md text-on-surface-variant">Sarah Williams</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline ml-4">chevron_right</span>
+</div>
+</main>
+<!-- Shared BottomNavBar Component -->
+<div class="flex gap-2 border-t border-[#e9edf1] bg-gray-50 px-4 pb-3 pt-2 shrink-0">
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#5a728c]" href="#">
+<div class="text-[#5a728c] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">house</span>
+</div>
+<p class="text-[#5a728c] text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#101419]" href="#">
+<div class="text-[#101419] flex h-8 items-center justify-center" data-icon="Tray" data-size="24px" data-weight="fill">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">draw</span>
+</div>
+<p class="text-[#101419] text-xs font-medium leading-normal tracking-[0.015em]">Queue</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#5a728c]" href="#">
+<div class="text-[#5a728c] flex h-8 items-center justify-center" data-icon="Chat" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<p class="text-[#5a728c] text-xs font-medium leading-normal tracking-[0.015em]">Analytics</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#5a728c]" href="#">
+<div class="text-[#5a728c] flex h-8 items-center justify-center" data-icon="User" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">air</span>
+</div>
+<p class="text-[#5a728c] text-xs font-medium leading-normal tracking-[0.015em]">Profile</p>
+</a>
+</div>
+</body></html>

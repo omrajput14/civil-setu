@@ -9,7 +9,7 @@ export default function Page() {
         {/* High-Intensity Header */}
 
 {/* Main Content Area */}
-<main className="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop flex flex-col md:flex-row gap-stack-lg">
+<main className="flex-1 overflow-y-auto p-margin-mobile flex flex-col md:flex-row gap-stack-lg">
 {/* Left Column / Map & Core Data */}
 <div className="flex-1 flex flex-col gap-stack-md">
 {/* Live Map Container */}

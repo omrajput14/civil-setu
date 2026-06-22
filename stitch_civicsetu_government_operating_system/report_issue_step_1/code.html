@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report New Grievance - Step 1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "primary-fixed-dim": "#abc9f2",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "inverse-primary": "#abc9f2",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-primary-fixed": "#001c37",
+                        "surface": "#FFFFFF",
+                        "border": "#E5E7EB",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "success": "#16A34A",
+                        "on-secondary-fixed": "#2f1500",
+                        "secondary": "#904d00",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary-container": "#4f3300",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#73777f",
+                        "background": "#F4F6F8",
+                        "on-secondary-container": "#663500",
+                        "error-container": "#ffdad6",
+                        "warning": "#F59E0B",
+                        "tertiary": "#331f00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e9edff",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#1a3a5c",
+                        "inverse-on-surface": "#edf0ff",
+                        "surface-tint": "#436084",
+                        "on-surface": "#141b2b",
+                        "primary-fixed": "#d2e4ff",
+                        "on-primary-container": "#87a4cc",
+                        "on-background": "#141b2b",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#fe932c",
+                        "surface-container-low": "#f1f3ff",
+                        "primary": "#002444",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#c49b5f",
+                        "surface-container-high": "#e1e8fd",
+                        "on-tertiary-fixed": "#291800",
+                        "text-muted": "#6B7280",
+                        "surface-container-highest": "#dce2f7",
+                        "danger": "#DC2626",
+                        "outline-variant": "#c3c6cf",
+                        "surface-dim": "#d3daef",
+                        "secondary-fixed": "#ffdcc3",
+                        "inverse-surface": "#293040",
+                        "on-surface-variant": "#43474e",
+                        "surface-variant": "#dce2f7"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "stack-md": "16px",
+                        "rail-height": "32px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "24px",
+                        "gutter": "16px",
+                        "margin-desktop": "32px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "data-md": ["IBM Plex Mono"],
+                        "data-lg": ["IBM Plex Mono"],
+                        "body-md": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "data-sm": ["IBM Plex Mono"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+                        "data-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+                        "data-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-md": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "data-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar Component (Transactional/Focused Task - Hide Global Nav) -->
+<header class="bg-surface w-full top-0 border-b border-border shadow-sm flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 z-50">
+<div class="flex items-center gap-4">
+<!-- No leading icon specified in prompt for this state, but structure exists -->
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Report Issue</h1>
+<button aria-label="Close" class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-8 flex flex-col gap-stack-lg">
+<!-- Progress Module -->
+<div class="w-full flex flex-col gap-stack-sm">
+<div class="flex justify-between items-center">
+<span class="font-data-sm text-data-sm text-text-muted uppercase tracking-wider">STEP 1 OF 3</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full flex gap-2 h-2 rounded-full overflow-hidden bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-0.5">
+<div class="h-full bg-primary flex-1 rounded-sm"></div>
+<div class="h-full bg-surface-variant flex-1 rounded-sm"></div>
+<div class="h-full bg-surface-variant flex-1 rounded-sm"></div>
+</div>
+</div>
+<!-- Section Title -->
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Select Category</h2>
+<!-- Selection Form -->
+<form class="flex flex-col gap-stack-md flex-grow">
+<!-- Option 1 -->
+<label class="group relative flex items-start gap-4 p-4 bg-surface border border-border rounded-lg cursor-pointer hover:bg-surface-container-lowest transition-colors shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+<input class="mt-1 shrink-0 w-5 h-5 text-primary focus:ring-primary border-outline" name="issue_category" type="radio" value="water"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Water &amp; Sanitation</span>
+<span class="font-body-md text-body-md text-text-muted">Leaks, drainage, waste collection</span>
+</div>
+</label>
+<!-- Option 2 (Selected State) -->
+<label class="group relative flex items-start gap-4 p-4 bg-surface border-2 border-primary rounded-lg cursor-pointer shadow-[0_1px_2px_rgba(17,24,39,0.06)] overflow-hidden">
+<!-- Saffron Left Accent -->
+<div class="absolute left-0 top-0 bottom-0 w-[3px] bg-warning"></div>
+<input checked="" class="mt-1 shrink-0 w-5 h-5 text-primary focus:ring-primary border-primary" name="issue_category" type="radio" value="electricity"/>
+<div class="flex flex-col pl-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Electricity</span>
+<span class="font-body-md text-body-md text-text-muted">Street lights, power outages</span>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="group relative flex items-start gap-4 p-4 bg-surface border border-border rounded-lg cursor-pointer hover:bg-surface-container-lowest transition-colors shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+<input class="mt-1 shrink-0 w-5 h-5 text-primary focus:ring-primary border-outline" name="issue_category" type="radio" value="roads"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Roads &amp; Infrastructure</span>
+<span class="font-body-md text-body-md text-text-muted">Potholes, broken footpaths</span>
+</div>
+</label>
+<!-- Option 4 -->
+<label class="group relative flex items-start gap-4 p-4 bg-surface border border-border rounded-lg cursor-pointer hover:bg-surface-container-lowest transition-colors shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+<input class="mt-1 shrink-0 w-5 h-5 text-primary focus:ring-primary border-outline" name="issue_category" type="radio" value="health"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Public Health</span>
+<span class="font-body-md text-body-md text-text-muted">Cleanliness, vector control</span>
+</div>
+</label>
+<!-- Option 5 -->
+<label class="group relative flex items-start gap-4 p-4 bg-surface border border-border rounded-lg cursor-pointer hover:bg-surface-container-lowest transition-colors shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+<input class="mt-1 shrink-0 w-5 h-5 text-primary focus:ring-primary border-outline" name="issue_category" type="radio" value="other"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Other</span>
+<span class="font-body-md text-body-md text-text-muted">General issues</span>
+</div>
+</label>
+</form>
+</main>
+<!-- Bottom Action Area -->
+<div class="w-full bg-surface border-t border-border p-4 mt-auto">
+<div class="w-full max-w-3xl mx-auto flex">
+<button class="w-full bg-primary-container text-on-primary font-label-md text-label-md font-bold py-3 px-6 rounded-DEFAULT hover:bg-primary transition-colors flex justify-center items-center gap-2 shadow-[0_1px_2px_rgba(17,24,39,0.06)]" type="button">
+                Continue
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

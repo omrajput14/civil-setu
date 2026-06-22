@@ -20,7 +20,7 @@ export default function Page() {
 </div>
 </div>
 {/* Main Content Area */}
-<main className="flex-grow p-margin-mobile md:p-margin-desktop flex flex-col gap-stack-lg max-w-4xl mx-auto w-full pb-32">
+<main className="flex-grow p-margin-mobile flex flex-col gap-stack-lg max-w-4xl mx-auto w-full pb-32">
 {/* Document Preview Card */}
 <div className="bg-surface border border-border relative overflow-hidden flex flex-col p-8 gap-6 shadow-[0_1px_2px_rgba(17,24,39,0.06)] min-h-[600px]">
 <div className="watermark">OFFICIAL COPY</div>
@@ -86,7 +86,7 @@ export default function Page() {
 </div>
 </main>
 {/* Floating Action Button Area */}
-<div className="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-sm border-t border-border p-margin-mobile md:p-margin-desktop z-20 flex justify-center shadow-[0_-1px_2px_rgba(17,24,39,0.06)]">
+<div className="sticky bottom-0 left-0 w-full bg-surface/90 backdrop-blur-sm border-t border-border p-margin-mobile z-20 flex justify-center shadow-[0_-1px_2px_rgba(17,24,39,0.06)]">
 <button className="bg-primary-container text-on-primary w-full max-w-4xl font-label-md text-label-md uppercase h-12 flex items-center justify-center gap-2 hover:bg-primary transition-colors rounded-none">
 <span className="material-symbols-outlined" data-icon="lock">lock</span>
             SHARE SECURE LINK

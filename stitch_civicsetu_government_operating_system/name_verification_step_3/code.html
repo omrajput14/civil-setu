@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Name Verification Workflow - Final Review</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-tertiary-container": "#c49b5f",
+                        "on-secondary": "#ffffff",
+                        "text-muted": "#6B7280",
+                        "inverse-surface": "#293040",
+                        "on-tertiary-fixed": "#291800",
+                        "on-secondary-container": "#663500",
+                        "background": "#F4F6F8",
+                        "surface-variant": "#dce2f7",
+                        "tertiary-container": "#4f3300",
+                        "on-background": "#141b2b",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "warning": "#F59E0B",
+                        "surface": "#FFFFFF",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#43474e",
+                        "success": "#16A34A",
+                        "border": "#E5E7EB",
+                        "on-secondary-fixed": "#2f1500",
+                        "surface-container-low": "#f1f3ff",
+                        "on-primary-fixed": "#001c37",
+                        "danger": "#DC2626",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e1e8fd",
+                        "surface-container": "#e9edff",
+                        "surface-container-highest": "#dce2f7",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#abc9f2",
+                        "surface-tint": "#436084",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "primary-fixed-dim": "#abc9f2",
+                        "on-surface": "#141b2b",
+                        "tertiary": "#331f00",
+                        "primary": "#002444",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#73777f",
+                        "surface-dim": "#d3daef",
+                        "primary-fixed": "#d2e4ff",
+                        "primary-container": "#1a3a5c",
+                        "secondary-container": "#fe932c",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-primary-container": "#87a4cc",
+                        "secondary": "#904d00",
+                        "outline-variant": "#c3c6cf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "rail-height": "32px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "24px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "gutter": "16px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "data-md": ["IBM Plex Mono"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "data-lg": ["IBM Plex Mono"],
+                        "data-sm": ["IBM Plex Mono"],
+                        "body-md": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    },
+                    "boxShadow": {
+                        "elevation-1": "0 1px 2px rgba(17,24,39,0.06)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F4F6F8; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row">
+<!-- Sidebar Navigation (Desktop) -->
+<nav class="hidden md:flex flex-col pt-8 bg-primary text-on-primary font-label-md text-label-md fixed left-0 top-0 h-full w-[240px] border-r border-border z-40">
+<div class="px-6 pb-8 border-b border-on-primary/10">
+<h2 class="font-headline-lg text-headline-lg text-on-primary">Verification Workflow</h2>
+</div>
+<div class="flex-1 py-4 flex flex-col gap-1">
+<a class="flex items-center gap-stack-md text-on-primary/70 px-4 py-3 hover:bg-primary/20 transition-all duration-150 ease-in-out hover:text-on-primary" href="#">
+<span class="material-symbols-outlined" data-icon="edit_square">edit_square</span>
+                Request Details
+            </a>
+<a class="flex items-center gap-stack-md text-on-primary/70 px-4 py-3 hover:bg-primary/20 transition-all duration-150 ease-in-out hover:text-on-primary" href="#">
+<span class="material-symbols-outlined" data-icon="upload_file">upload_file</span>
+                Document Upload
+            </a>
+<a class="flex items-center gap-stack-md border-l-4 border-secondary-container bg-primary-container text-on-primary-container px-4 py-3 transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+                Final Review
+            </a>
+<a class="flex items-center gap-stack-md text-on-primary/70 px-4 py-3 hover:bg-primary/20 transition-all duration-150 ease-in-out hover:text-on-primary" href="#">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+                Submission Status
+            </a>
+</div>
+<div class="h-rail-height bg-primary border-t border-on-primary/10 flex items-center px-4">
+<span class="font-data-sm text-data-sm text-on-primary/50 uppercase tracking-widest">SYS.VER.3.4.1</span>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[240px] flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center h-[64px] px-margin-mobile md:px-margin-desktop w-full z-50 bg-surface border-b border-border sticky top-0">
+<div class="flex items-center gap-stack-md">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 active:bg-surface-container-high p-2 rounded-DEFAULT flex items-center justify-center md:hidden">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Name Change Request</h1>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 active:bg-surface-container-high p-2 rounded-DEFAULT flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 p-margin-mobile md:p-margin-desktop max-w-4xl mx-auto w-full flex flex-col gap-stack-lg">
+<!-- Progress Rail -->
+<div class="w-full bg-surface border border-border rounded-DEFAULT overflow-hidden shadow-elevation-1">
+<div class="flex">
+<div class="flex-1 bg-success h-2"></div>
+<div class="flex-1 bg-success h-2"></div>
+<div class="flex-1 bg-primary h-2 relative">
+<div class="absolute right-0 top-0 bottom-0 w-2 bg-secondary-container"></div>
+</div>
+</div>
+<div class="px-gutter py-stack-sm flex justify-between items-center bg-surface">
+<span class="font-data-sm text-data-sm text-text-muted uppercase tracking-widest">Step 3 of 3: Final Review</span>
+<span class="font-data-sm text-data-sm text-primary uppercase tracking-widest">Req ID: 899-AX-24B</span>
+</div>
+</div>
+<!-- Summary Card -->
+<section class="bg-surface border border-border rounded-DEFAULT shadow-elevation-1 p-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md border-b border-border pb-stack-sm">Identity Verification Summary</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<!-- Current Name -->
+<div class="bg-surface-container-low p-gutter rounded-DEFAULT border border-border">
+<span class="font-label-sm text-label-sm text-text-muted block mb-stack-sm uppercase">Current Legal Name (On Record)</span>
+<div class="font-data-lg text-data-lg text-on-surface break-words">
+                            Jonathan Edward Doe
+                        </div>
+</div>
+<!-- Requested Name -->
+<div class="bg-primary-fixed p-gutter rounded-DEFAULT border border-primary/20">
+<span class="font-label-sm text-label-sm text-primary-container block mb-stack-sm uppercase">Requested Legal Name</span>
+<div class="font-data-lg text-data-lg text-primary break-words">
+                            Jonathan E. Doe-Smith
+                        </div>
+</div>
+</div>
+</section>
+<!-- Document List -->
+<section class="bg-surface border border-border rounded-DEFAULT shadow-elevation-1">
+<div class="px-stack-lg py-stack-md border-b border-border bg-surface-container-lowest">
+<h3 class="font-label-md text-label-md text-on-surface uppercase">Uploaded Documentation</h3>
+</div>
+<div class="divide-y divide-border">
+<div class="px-stack-lg py-stack-md flex justify-between items-center bg-surface">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-text-muted" data-icon="description">description</span>
+<div>
+<span class="font-body-md text-body-md text-on-surface block">Court Order - Name Change</span>
+<span class="font-data-sm text-data-sm text-text-muted">DOC_8832_v1.pdf</span>
+</div>
+</div>
+<div class="bg-success/10 text-success px-3 py-1 border border-success/20 rounded-full font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] fill" data-icon="check_circle">check_circle</span>
+                            Ready
+                        </div>
+</div>
+<div class="px-stack-lg py-stack-md flex justify-between items-center bg-surface">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-text-muted" data-icon="badge">badge</span>
+<div>
+<span class="font-body-md text-body-md text-on-surface block">State Issued ID</span>
+<span class="font-data-sm text-data-sm text-text-muted">ID_FRONT_SCAN_HQ.jpg</span>
+</div>
+</div>
+<div class="bg-success/10 text-success px-3 py-1 border border-success/20 rounded-full font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] fill" data-icon="check_circle">check_circle</span>
+                            Ready
+                        </div>
+</div>
+</div>
+</section>
+<!-- Legal Declaration -->
+<section class="bg-surface border border-border rounded-DEFAULT shadow-elevation-1 p-stack-lg mt-auto">
+<label class="flex items-start gap-stack-md cursor-pointer group">
+<div class="flex-shrink-0 pt-1">
+<input class="form-checkbox h-5 w-5 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-surface focus:ring-2 cursor-pointer" type="checkbox"/>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block mb-1">Legal Declaration &amp; Acknowledgment</span>
+<p class="font-body-md text-body-md text-text-muted">
+                            I declare under penalty of perjury that the information provided in this request is true and correct. I understand that submitting false documentation constitutes a federal offense punishable by law.
+                        </p>
+</div>
+</label>
+<!-- Actions -->
+<div class="mt-stack-lg pt-stack-lg border-t border-border flex justify-end gap-stack-md">
+<button class="px-6 py-3 border border-border text-primary bg-surface hover:bg-surface-container-low font-label-md text-label-md rounded-DEFAULT transition-colors">
+                        Cancel
+                    </button>
+<button class="px-6 py-3 bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md rounded-DEFAULT transition-colors shadow-elevation-1 flex items-center gap-2">
+                        Submit Request
+                        <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Bottom Status Rail -->
+<div class="h-rail-height bg-surface border-t border-border mt-auto flex items-center justify-between px-margin-mobile md:px-margin-desktop w-full">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">Connection: Secure</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">Last Saved: Just Now</span>
+</div>
+</main>
+</body></html>

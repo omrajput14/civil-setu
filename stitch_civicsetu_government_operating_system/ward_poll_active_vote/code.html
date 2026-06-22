@@ -1,0 +1,338 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CIVICSETU - Ward 4 Poll</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#141b2b",
+                      "secondary-fixed": "#ffdcc3",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#6e3900",
+                      "on-primary-fixed": "#001c37",
+                      "on-tertiary-container": "#c49b5f",
+                      "on-primary-fixed-variant": "#2a486b",
+                      "on-primary-container": "#87a4cc",
+                      "error": "#ba1a1a",
+                      "background": "#F4F6F8",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#4f3300",
+                      "surface-bright": "#f9f9ff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#291800",
+                      "inverse-surface": "#293040",
+                      "on-surface-variant": "#43474e",
+                      "inverse-on-surface": "#edf0ff",
+                      "on-secondary-fixed": "#2f1500",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#fe932c",
+                      "on-background": "#141b2b",
+                      "surface-container-low": "#f1f3ff",
+                      "secondary": "#904d00",
+                      "inverse-primary": "#abc9f2",
+                      "surface-variant": "#dce2f7",
+                      "tertiary-fixed-dim": "#ecbf80",
+                      "surface": "#FFFFFF",
+                      "primary": "#002444",
+                      "tertiary": "#331f00",
+                      "on-error": "#ffffff",
+                      "border": "#E5E7EB",
+                      "text-muted": "#6B7280",
+                      "surface-tint": "#436084",
+                      "tertiary-fixed": "#ffddb1",
+                      "outline": "#73777f",
+                      "on-secondary-container": "#663500",
+                      "surface-container": "#e9edff",
+                      "warning": "#F59E0B",
+                      "primary-fixed": "#d2e4ff",
+                      "danger": "#DC2626",
+                      "secondary-fixed-dim": "#ffb77d",
+                      "surface-container-highest": "#dce2f7",
+                      "outline-variant": "#c3c6cf",
+                      "error-container": "#ffdad6",
+                      "surface-dim": "#d3daef",
+                      "success": "#16A34A",
+                      "primary-fixed-dim": "#abc9f2",
+                      "on-tertiary-fixed-variant": "#5f410c",
+                      "primary-container": "#1a3a5c",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-high": "#e1e8fd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-lg": "24px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "margin-desktop": "32px",
+                      "margin-mobile": "16px",
+                      "rail-height": "32px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "data-md": [
+                              "IBM Plex Mono"
+                      ],
+                      "label-sm": [
+                              "IBM Plex Sans"
+                      ],
+                      "body-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "body-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "data-lg": [
+                              "IBM Plex Mono"
+                      ],
+                      "headline-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "headline-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "data-sm": [
+                              "IBM Plex Mono"
+                      ]
+              },
+              "fontSize": {
+                      "data-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "data-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #F4F6F8;
+            color: #141b2b;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile h-[64px] bg-surface dark:bg-on-surface border-b border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] md:px-margin-desktop">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary text-headline-md cursor-pointer active:opacity-80">account_balance</span>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">CIVICSETU</span>
+</div>
+<div class="flex items-center gap-stack-md hidden md:flex">
+<nav class="flex items-center gap-stack-lg h-full">
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors duration-150 px-3 py-2 rounded" href="#">Dashboard</a>
+<a class="text-primary font-bold font-label-md text-label-md flex flex-col items-center border-b-2 border-secondary-container px-3 py-2" href="#">Polls</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors duration-150 px-3 py-2 rounded" href="#">Town Hall</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors duration-150 px-3 py-2 rounded" href="#">Works</a>
+</nav>
+</div>
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary text-headline-md cursor-pointer active:opacity-80">signal_cellular_alt</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[80px] pb-[80px] md:pb-[32px] px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto w-full flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<div class="bg-surface border border-border rounded shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-lg flex flex-col gap-stack-md">
+<div>
+<div class="flex justify-between items-start mb-stack-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Ward 4: Neighborhood Park Renovation</h1>
+<span class="bg-primary-container text-on-primary px-2 py-1 rounded text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">how_to_vote</span> Active Poll
+                    </span>
+</div>
+<p class="text-on-surface-variant font-body-lg text-body-lg">Select the proposed renovation plan for Centennial Park. This decision will determine the allocation of municipal funds for the next fiscal year.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter border-t border-border pt-stack-md mt-stack-sm">
+<div>
+<span class="text-text-muted font-data-sm text-data-sm uppercase block mb-1">Estimated Budget</span>
+<span class="font-data-lg text-data-lg text-on-surface">$250,000</span>
+</div>
+<div>
+<span class="text-text-muted font-data-sm text-data-sm uppercase block mb-1">Voting Deadline</span>
+<span class="font-data-lg text-data-lg text-on-surface">OCT 24, 18:00 EST</span>
+</div>
+</div>
+</div>
+<!-- Impact Analysis Section -->
+<div class="bg-surface border border-border rounded shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Impact Analysis</h2>
+<div class="bg-surface-container-low border border-border rounded p-stack-md font-data-md text-data-md text-on-surface-variant overflow-x-auto">
+<pre class="m-0">METRIC                 OPTION A    OPTION B    ABSTAIN
+------------------------------------------------------
+Maintenance Cost/Yr    $12k        $18k        N/A
+Green Space Increase   15%         5%          0%
+New Play Equipment     Basic       Advanced    None
+Timeline (Months)      3           5           0
+Risk Assessment        Low         Med         N/A
+                 </pre>
+</div>
+</div>
+<!-- Voting Form -->
+<form class="flex flex-col gap-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<!-- Option A -->
+<label class="relative flex flex-col bg-surface border border-border rounded p-stack-md cursor-pointer hover:bg-surface-container-low transition-colors group">
+<input class="peer sr-only" name="vote_option" type="radio" value="option_a">
+<div class="absolute inset-0 border-2 border-transparent peer-checked:border-primary rounded pointer-events-none transition-colors"></div>
+<div class="flex justify-between items-center mb-stack-md">
+<span class="font-label-md text-label-md text-primary">Option A</span>
+<div class="w-5 h-5 rounded-full border border-border flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary transition-colors">
+<span class="material-symbols-outlined text-[14px] text-surface hidden peer-checked:block">check</span>
+</div>
+</div>
+<div class="mb-stack-sm flex-grow">
+<h3 class="font-body-md text-body-md font-bold mb-1">Eco-Focus Plan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Prioritizes native plant landscaping, walking trails, and basic playground updates.</p>
+</div>
+<img class="w-full h-32 object-cover border border-border rounded" data-alt="A modern architectural rendering of a small city park focusing on green spaces. The design is utilitarian and clean, featuring native plants, simple concrete walking paths, and minimalist playground equipment. The lighting is bright daylight, creating a sharp, functional, and modern civic aesthetic in light mode colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQUkVhP3FmY4WPfk1zKyhZF-MpNHI39Jr51QHAHqKUDnudE5RrbQweNKwT1MLHH7XTUOzPG-vOwf10ibCSez6Fg2mk0KXLMjFe52vrqUvllpmwrcnkJ3OnMIwVhgc0U8iV8aLSP3U2fD8NYEK_aN7B2ioC3JEsUCkQG_cm-hbhPGLtjhARLRvNy1rxVlTfBTFESK4ULKmaEc-ETeMlVvBtNrCmvBYAiBImDWLc5Ha1OpvqCcPlBQWsxaUGDPMY_vwSgr3v6PV_XZZm">
+</label>
+<!-- Option B -->
+<label class="relative flex flex-col bg-surface border border-border rounded p-stack-md cursor-pointer hover:bg-surface-container-low transition-colors group">
+<input class="peer sr-only" name="vote_option" type="radio" value="option_b">
+<div class="absolute inset-0 border-2 border-transparent peer-checked:border-primary rounded pointer-events-none transition-colors"></div>
+<div class="flex justify-between items-center mb-stack-md">
+<span class="font-label-md text-label-md text-primary">Option B</span>
+<div class="w-5 h-5 rounded-full border border-border flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary transition-colors">
+<span class="material-symbols-outlined text-[14px] text-surface hidden peer-checked:block">check</span>
+</div>
+</div>
+<div class="mb-stack-sm flex-grow">
+<h3 class="font-body-md text-body-md font-bold mb-1">Recreation Plan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Focuses on extensive playground structures, a splash pad, and a basketball court.</p>
+</div>
+<img class="w-full h-32 object-cover border border-border rounded" data-alt="A detailed architectural rendering of a city park designed for active recreation. The image shows a complex playground structure, a splash pad area, and a fenced basketball court. The style is highly structured, geometric, and functional, resembling a professional urban planning document. Bright, flat lighting with a light mode color palette emphasizing high-contrast utility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnEoKtG6LVZJuvn1uFpwgt8HWDO4o3PZ3pKBFYZOrF_ouBM7L_OjEhilgOly52FtliGSZ5zIj51sI3hpY_8Hs5IeGeROfXMJcbi6LGfVEtWgNTFA_6wj3YRLZctT7WMFDC06pDYQwfn0OSoraVnsNr4TpbSeFm7jyyPtVRGnL7qsgmEen7L-rsd4A-d-YOlNgRisQyw6VdMXccnlJ93O-jwd95F5y4U0kytgpa_TFc-TEq5sT7NvWPTHfuNoTQ5EdWY5nX4sWZCZoN">
+</label>
+<!-- Abstain -->
+<label class="relative flex flex-col bg-surface border border-border rounded p-stack-md cursor-pointer hover:bg-surface-container-low transition-colors group">
+<input class="peer sr-only" name="vote_option" type="radio" value="abstain">
+<div class="absolute inset-0 border-2 border-transparent peer-checked:border-primary rounded pointer-events-none transition-colors"></div>
+<div class="flex justify-between items-center mb-stack-md">
+<span class="font-label-md text-label-md text-text-muted">Abstain</span>
+<div class="w-5 h-5 rounded-full border border-border flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary transition-colors">
+<span class="material-symbols-outlined text-[14px] text-surface hidden peer-checked:block">check</span>
+</div>
+</div>
+<div class="flex-grow flex items-center justify-center py-stack-lg">
+<p class="font-body-md text-body-md text-on-surface-variant text-center">I choose not to vote on this particular issue, but acknowledge my participation.</p>
+</div>
+</label>
+</div>
+<!-- Action Area -->
+<div class="flex flex-col md:flex-row justify-between items-center bg-surface border border-border rounded p-stack-md shadow-[0_1px_2px_rgba(17,24,39,0.06)] mt-stack-md">
+<div class="flex items-center gap-2 mb-4 md:mb-0">
+<span class="material-symbols-outlined text-success filled-icon">verified_user</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">Blockchain Verified Connection</span>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-8 py-3 rounded transition-colors w-full md:w-auto shadow-[0_1px_2px_rgba(17,24,39,0.06)] border border-transparent" type="button">
+                    SECURE VOTE
+                </button>
+</div>
+</form>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[56px] bg-surface dark:bg-on-surface border-t border-border md:hidden"><a class="flex flex-col items-center justify-center text-on-surface-variant h-full w-full hover:bg-surface-container transition-all duration-100 active:scale-95" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-sm text-label-sm mt-1 uppercase">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary border-t-4 border-secondary-container bg-surface-container-low h-full w-full active:scale-95" href="#">
+<span class="material-symbols-outlined filled-icon">how_to_vote</span>
+<span class="font-label-sm text-label-sm mt-1 font-bold uppercase">Polls</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant h-full w-full hover:bg-surface-container transition-all duration-100 active:scale-95" href="#">
+<span class="material-symbols-outlined">event_seat</span>
+<span class="font-label-sm text-label-sm mt-1 uppercase">Town Hall</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant h-full w-full hover:bg-surface-container transition-all duration-100 active:scale-95" href="#">
+<span class="material-symbols-outlined">construction</span>
+<span class="font-label-sm text-label-sm mt-1 uppercase">Works</span>
+</a></nav>
+
+
+</body></html>

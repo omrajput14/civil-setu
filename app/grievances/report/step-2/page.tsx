@@ -83,7 +83,7 @@ export default function Page() {
           </section>
         </main>
         
-        <div className="fixed bottom-0 left-0 w-full bg-surface border-t border-border p-margin-mobile shadow-[0_-1px_2px_rgba(17,24,39,0.06)] z-40">
+        <div className="sticky bottom-0 left-0 w-full bg-surface border-t border-border p-margin-mobile shadow-[0_-1px_2px_rgba(17,24,39,0.06)] z-40">
           <button 
             onClick={handleNext}
             className="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 rounded-sys hover:bg-on-primary-fixed transition-colors active:scale-[0.98] shadow-sm flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" 

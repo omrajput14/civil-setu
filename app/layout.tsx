@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description: "Citizen Service Dashboard",
 };
 
+import { ToastProvider } from "@/components/ui/ToastProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,9 +35,13 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${ibmPlexSans.variable} ${ibmPlexMono.variable} font-body-md text-body-md antialiased`}
+        className={`${ibmPlexSans.variable} ${ibmPlexMono.variable} font-body-md text-body-md antialiased bg-[#0a0a0a] min-h-screen flex justify-center`}
       >
-        {children}
+        <div className="w-full max-w-[430px] min-h-screen bg-background relative shadow-2xl overflow-hidden flex flex-col">
+          <ToastProvider>
+            {children}
+          </ToastProvider>
+        </div>
       </body>
     </html>
   );

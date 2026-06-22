@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SOS ACTIVE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#331f00",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d2e4ff",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-primary-fixed": "#001c37",
+                        "background": "#F4F6F8",
+                        "tertiary-container": "#4f3300",
+                        "success": "#16A34A",
+                        "secondary": "#904d00",
+                        "primary": "#002444",
+                        "on-background": "#141b2b",
+                        "outline": "#73777f",
+                        "danger": "#DC2626",
+                        "on-surface-variant": "#43474e",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "surface-dim": "#d3daef",
+                        "inverse-primary": "#abc9f2",
+                        "on-secondary-fixed": "#2f1500",
+                        "surface-container": "#e9edff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#1a3a5c",
+                        "surface-bright": "#f9f9ff",
+                        "surface-tint": "#436084",
+                        "on-surface": "#141b2b",
+                        "secondary-fixed": "#ffdcc3",
+                        "inverse-surface": "#293040",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "surface-variant": "#dce2f7",
+                        "outline-variant": "#c3c6cf",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "on-primary-container": "#87a4cc",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fe932c",
+                        "on-tertiary-container": "#c49b5f",
+                        "surface-container-highest": "#dce2f7",
+                        "on-tertiary-fixed": "#291800",
+                        "inverse-on-surface": "#edf0ff",
+                        "surface": "#FFFFFF",
+                        "on-secondary-container": "#663500",
+                        "border": "#E5E7EB",
+                        "warning": "#F59E0B",
+                        "surface-container-low": "#f1f3ff",
+                        "primary-fixed-dim": "#abc9f2",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "surface-container-high": "#e1e8fd",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "text-muted": "#6B7280"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "rail-height": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "body-md": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "data-lg": ["IBM Plex Mono"],
+                        "data-sm": ["IBM Plex Mono"],
+                        "data-md": ["IBM Plex Mono"],
+                        "body-lg": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pulse-bg {
+            animation: pulse-danger 2s infinite;
+        }
+        @keyframes pulse-danger {
+            0% { background-color: rgba(220, 38, 38, 0.1); }
+            50% { background-color: rgba(220, 38, 38, 0.3); }
+            100% { background-color: rgba(220, 38, 38, 0.1); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background h-full flex flex-col font-body-md overflow-hidden">
+<!-- High-Intensity Header -->
+<header class="bg-danger text-on-error w-full px-margin-mobile md:px-margin-desktop py-stack-md flex flex-col items-center justify-center text-center pulse-bg shrink-0">
+<span class="material-symbols-outlined text-[48px] mb-stack-sm" style="font-variation-settings: 'FILL' 1;">warning</span>
+<h1 class="font-headline-lg text-headline-lg uppercase tracking-wider">Distress Signal Broadcasting</h1>
+<p class="font-data-md text-data-md mt-stack-sm opacity-90">SYSTEM ACTIVE - DO NOT CLOSE APPLICATION</p>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop flex flex-col md:flex-row gap-stack-lg">
+<!-- Left Column / Map & Core Data -->
+<div class="flex-1 flex flex-col gap-stack-md">
+<!-- Live Map Container -->
+<div class="relative w-full h-[300px] md:h-full min-h-[300px] bg-surface border border-border rounded shadow-[0_1px_2px_rgba(17,24,39,0.06)] overflow-hidden">
+<div class="absolute inset-0 bg-surface-variant flex items-center justify-center" data-alt="A highly detailed, technical satellite map view showing a precise urban grid. The map is overlaid with stark, geometric interface elements, including a bright red pulsing beacon at the center indicating distress. The visual style is strict modern corporate, using purely technical colors, sharp vectors, and no decorative fluff. The mood is tense, precise, and mission-critical." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpjgrTKVLwr2owmgfq3_AWn_7ujUbM5EeUhC8nW8zYP8_t5sJfbCflodJdWRqVEAGoV8QZKj5mPc-Vsxx3Dwo-VQ8V_znTaTCbqBqf46UP2jVcPvzITbCzmjicoraO1n1PEBx6qH44fRhTYKrY9mXL8-QFVPLP_-H1SZphafxGrxSnP8hB70AQWojxu60IlzNSoJOFvzSSUMzikQ0Bon3fzRf3-Qk0K56IAbA7j-bg5l35btAEDtPDKy5YoT5Sre1xFvNicAQhK1he')"></div>
+<!-- Map Overlay Data -->
+<div class="absolute top-stack-sm left-stack-sm bg-surface/90 border border-border px-stack-sm py-1 rounded shadow-[0_1px_2px_rgba(17,24,39,0.06)] backdrop-blur-sm">
+<span class="font-data-sm text-data-sm text-danger flex items-center gap-1 font-bold">
+<span class="w-2 h-2 rounded-full bg-danger animate-pulse"></span>
+                        LIVE TRACKING
+                    </span>
+</div>
+<!-- Status Rail Bottom -->
+<div class="absolute bottom-0 left-0 w-full h-rail-height bg-surface border-t border-border flex items-center px-stack-md justify-between">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">GPS PRECISION: 3M</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">LAT: 34.0522, LNG: -118.2437</span>
+</div>
+</div>
+</div>
+<!-- Right Column / Status & Actions -->
+<div class="w-full md:w-[400px] flex flex-col gap-stack-md shrink-0">
+<!-- Responder Status Panel -->
+<section class="bg-surface border border-border rounded shadow-[0_1px_2px_rgba(17,24,39,0.06)] p-stack-md">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md border-b border-border pb-stack-sm">Responder Status</h2>
+<div class="flex flex-col gap-stack-sm">
+<div class="flex justify-between items-center bg-surface-container-lowest border border-border p-stack-sm rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Signal Type</span>
+<span class="font-data-md text-data-md text-primary">Satellite/Cellular Hybrid</span>
+</div>
+<div class="flex flex-col bg-surface-container-lowest border border-border p-stack-sm rounded gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Recipients Alerted</span>
+<span class="font-data-md text-data-md text-primary">Police HQ, Local Fire, Emergency Contacts</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-lowest border border-border p-stack-sm rounded mt-stack-sm">
+<span class="font-label-md text-label-md text-primary">Estimated Arrival (ETA)</span>
+<span class="font-data-lg text-data-lg text-danger">08:22 MIN</span>
+</div>
+</div>
+</section>
+<!-- Technical Logs -->
+<section class="bg-surface border border-border rounded shadow-[0_1px_2px_rgba(17,24,39,0.06)] flex-1 min-h-[150px] flex flex-col">
+<div class="h-rail-height border-b border-border flex items-center px-stack-sm bg-surface-container-low">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">System Event Log</span>
+</div>
+<div class="p-stack-sm flex flex-col gap-1 overflow-y-auto font-data-sm text-data-sm text-on-surface-variant">
+<p>[14:32:01] <span class="text-success">SOS Initiated manually.</span></p>
+<p>[14:32:03] <span class="text-primary">Attempting cellular uplink... Success.</span></p>
+<p>[14:32:05] <span class="text-primary">Broadcasting coordinates: 34.0522, -118.2437.</span></p>
+<p>[14:32:08] <span class="text-warning">Awaiting responder confirmation...</span></p>
+<p>[14:32:15] <span class="text-success">Police HQ acknowledged. Units dispatched.</span></p>
+</div>
+</section>
+<!-- Action Area -->
+<div class="mt-auto pt-stack-md border-t border-border">
+<p class="font-label-sm text-label-sm text-text-muted mb-stack-sm text-center">To cancel this alert, you must provide your Safe PIN.</p>
+<button class="w-full bg-surface border border-border text-primary font-label-md text-label-md py-stack-md rounded flex items-center justify-center gap-2 hover:bg-surface-container-low active:bg-surface-variant transition-colors" onclick="document.getElementById('cancel-modal').classList.remove('hidden')">
+<span class="material-symbols-outlined">cancel</span>
+                    CANCEL SOS
+                </button>
+</div>
+</div>
+</main>
+<!-- Cancel Modal (Hidden by default) -->
+<div class="hidden fixed inset-0 z-50 bg-inverse-surface/80 flex items-center justify-center p-margin-mobile backdrop-blur-sm" id="cancel-modal">
+<div class="bg-surface w-full max-w-sm rounded border border-border shadow-lg flex flex-col">
+<div class="p-stack-md border-b border-border bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md text-primary">Verify Safe PIN</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Enter your 4-digit PIN to deactivate distress broadcast.</p>
+</div>
+<div class="p-stack-md flex flex-col gap-stack-md">
+<input class="w-full text-center font-data-lg text-data-lg tracking-[1em] border border-border rounded focus:border-primary focus:ring-1 focus:ring-primary h-16 bg-surface" maxlength="4" placeholder="****" type="password"/>
+<div class="flex gap-stack-sm">
+<button class="flex-1 border border-border text-primary font-label-md text-label-md py-stack-sm rounded hover:bg-surface-container-low" onclick="document.getElementById('cancel-modal').classList.add('hidden')">Return</button>
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-stack-sm rounded hover:opacity-90">Confirm</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

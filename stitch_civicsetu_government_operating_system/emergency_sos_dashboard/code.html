@@ -1,0 +1,333 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Emergency Dashboard - CIVICSETU</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#331f00",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d2e4ff",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-primary-fixed": "#001c37",
+                        "background": "#F4F6F8",
+                        "tertiary-container": "#4f3300",
+                        "success": "#16A34A",
+                        "secondary": "#904d00",
+                        "primary": "#002444",
+                        "on-background": "#141b2b",
+                        "outline": "#73777f",
+                        "danger": "#DC2626",
+                        "on-surface-variant": "#43474e",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "surface-dim": "#d3daef",
+                        "inverse-primary": "#abc9f2",
+                        "on-secondary-fixed": "#2f1500",
+                        "surface-container": "#e9edff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#1a3a5c",
+                        "surface-bright": "#f9f9ff",
+                        "surface-tint": "#436084",
+                        "on-surface": "#141b2b",
+                        "secondary-fixed": "#ffdcc3",
+                        "inverse-surface": "#293040",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "surface-variant": "#dce2f7",
+                        "outline-variant": "#c3c6cf",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "on-primary-container": "#87a4cc",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fe932c",
+                        "on-tertiary-container": "#c49b5f",
+                        "surface-container-highest": "#dce2f7",
+                        "on-tertiary-fixed": "#291800",
+                        "inverse-on-surface": "#edf0ff",
+                        "surface": "#FFFFFF",
+                        "on-secondary-container": "#663500",
+                        "border": "#E5E7EB",
+                        "warning": "#F59E0B",
+                        "surface-container-low": "#f1f3ff",
+                        "primary-fixed-dim": "#abc9f2",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "surface-container-high": "#e1e8fd",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "text-muted": "#6B7280"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "rail-height": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "body-md": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "data-lg": ["IBM Plex Mono"],
+                        "data-sm": ["IBM Plex Mono"],
+                        "data-md": ["IBM Plex Mono"],
+                        "body-lg": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined[data-weight="fill"] { font-variation-settings: 'FILL' 1; }
+        
+        /* Emergency Pulse Animation */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .sos-pulse::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: inherit;
+            background-color: theme('colors.danger');
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+            z-index: -1;
+        }
+
+        /* Hold to activate styles */
+        .hold-btn { position: relative; overflow: hidden; }
+        .hold-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: theme('colors.on-error');
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+        .hold-btn.holding::after { width: 100%; transition: width 3s linear; }
+
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-[64px] pb-[56px] md:pb-0 md:pl-[240px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-[64px] bg-error dark:bg-error-container border-b border-error dark:border-on-error-container shadow-[0_1px_2px_rgba(17,24,39,0.06)] md:pl-[calc(240px+32px)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-error dark:text-on-error-container cursor-pointer" data-icon="warning" data-weight="fill">warning</span>
+<span class="font-headline-md text-headline-md font-bold text-on-error dark:text-on-error-container tracking-tight uppercase">EMERGENCY MODE</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-data-sm text-data-sm text-on-error/80 uppercase hidden md:inline-block">SYS.STAT: CRITICAL</span>
+<span class="material-symbols-outlined text-on-error dark:text-on-error-container cursor-pointer" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+</div>
+</header>
+<!-- SideNav (Desktop) -->
+<nav class="hidden md:flex flex-col fixed top-0 left-0 w-[240px] h-screen bg-primary border-r border-border z-40 pt-[64px]">
+<div class="flex flex-col h-full py-stack-md">
+<div class="px-stack-lg pb-stack-lg mb-stack-md border-b border-primary-container">
+<span class="font-headline-md text-headline-md font-bold text-on-primary tracking-tight">CIVICSETU</span>
+</div>
+<ul class="flex flex-col flex-grow gap-2 px-stack-sm">
+<li class="flex items-center gap-3 px-stack-md py-3 bg-danger/20 text-danger border-l-4 border-danger cursor-pointer font-label-md text-label-md transition-colors duration-150 rounded-r-DEFAULT">
+<span class="material-symbols-outlined" data-icon="sos">sos</span>
+<span class="">SOS Dashboard</span>
+</li>
+<li class="flex items-center gap-3 px-stack-md py-3 text-on-primary/70 hover:bg-primary-container/50 cursor-pointer font-label-md text-label-md transition-colors duration-150 border-l-4 border-transparent rounded-r-DEFAULT">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="">Active Alerts</span>
+</li>
+<li class="flex items-center gap-3 px-stack-md py-3 text-on-primary/70 hover:bg-primary-container/50 cursor-pointer font-label-md text-label-md transition-colors duration-150 border-l-4 border-transparent rounded-r-DEFAULT">
+<span class="material-symbols-outlined" data-icon="home_work">home_work</span>
+<span class="">Shelters</span>
+</li>
+<li class="flex items-center gap-3 px-stack-md py-3 text-on-primary/70 hover:bg-primary-container/50 cursor-pointer font-label-md text-label-md transition-colors duration-150 border-l-4 border-transparent rounded-r-DEFAULT">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="">First Aid</span>
+</li>
+</ul>
+</div>
+</nav>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[56px] bg-surface dark:bg-on-surface border-t border-border dark:border-outline-variant"><div class="flex flex-col items-center justify-center text-primary-container h-full w-full hover:bg-surface-container transition-all duration-100 active:scale-95 cursor-pointer border-t-4 border-secondary-container">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill">home</span>
+<span class="font-label-sm text-label-sm mt-1 uppercase">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary-container h-full w-full hover:bg-surface-container transition-all duration-100 active:scale-95 cursor-pointer border-t-4 border-transparent">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+<span class="font-label-sm text-label-sm mt-1 uppercase">Services</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary-container h-full w-full hover:bg-surface-container transition-all duration-100 active:scale-95 cursor-pointer border-t-4 border-transparent">
+<span class="material-symbols-outlined" data-icon="how_to_vote">how_to_vote</span>
+<span class="font-label-sm text-label-sm mt-1 uppercase">Polls</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary-container h-full w-full hover:bg-surface-container transition-all duration-100 active:scale-95 cursor-pointer border-t-4 border-transparent">
+<span class="material-symbols-outlined" data-icon="meeting_room">meeting_room</span>
+<span class="font-label-sm text-label-sm mt-1 uppercase">Town Hall</span>
+</div></nav>
+<!-- Main Canvas -->
+<main class="flex-grow p-margin-mobile md:p-margin-desktop max-w-7xl mx-auto w-full">
+<!-- Top Status Rail -->
+<div class="h-rail-height bg-surface border border-border flex items-center px-stack-md justify-between mb-stack-lg shadow-[0_1px_2px_rgba(17,24,39,0.06)] rounded-none">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-danger animate-pulse"></div>
+<span class="font-data-sm text-data-sm text-text-muted uppercase tracking-wider">System Alert Level: RED</span>
+</div>
+<span class="font-data-sm text-data-sm text-text-muted uppercase tracking-wider">Sync: Live</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg">
+<!-- SOS Trigger Module (Spans full width on mobile, 4 cols on desktop) -->
+<section class="lg:col-span-4 flex flex-col gap-stack-md">
+<div class="bg-surface border border-danger p-stack-lg shadow-[0_1px_2px_rgba(17,24,39,0.06)] rounded-none flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden">
+<div class="absolute inset-0 bg-danger/5 pattern-diagonal-lines pattern-danger pattern-bg-transparent pattern-size-4 pattern-opacity-20 z-0"></div>
+<h2 class="font-headline-md text-headline-md text-danger mb-stack-lg z-10 text-center">EMERGENCY TRIGGER</h2>
+<button class="hold-btn sos-pulse relative w-40 h-40 rounded-full bg-danger text-on-error flex flex-col items-center justify-center shadow-lg hover:bg-error transition-colors duration-200 z-10 cursor-pointer active:scale-95 group" id="sos-trigger">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="sos">sos</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Hold 3s</span>
+</button>
+<p class="font-data-md text-data-md text-text-muted text-center mt-stack-lg z-10">Hold to broadcast coordinates to all emergency units.</p>
+</div>
+<!-- Quick Actions Grid within the left column -->
+<div class="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] rounded-none">
+<div class="border-b border-border p-stack-sm px-stack-md bg-surface-container-low">
+<h3 class="font-label-md text-label-md uppercase text-text-muted">Quick Actions</h3>
+</div>
+<div class="grid grid-cols-2 gap-px bg-border">
+<button class="bg-surface p-stack-md flex flex-col items-center justify-center gap-2 hover:bg-surface-container transition-colors cursor-pointer min-h-[100px]">
+<span class="material-symbols-outlined text-danger" data-icon="local_hospital">local_hospital</span>
+<span class="font-label-sm text-label-sm text-center">Medical</span>
+</button>
+<button class="bg-surface p-stack-md flex flex-col items-center justify-center gap-2 hover:bg-surface-container transition-colors cursor-pointer min-h-[100px]">
+<span class="material-symbols-outlined text-warning" data-icon="electric_bolt">electric_bolt</span>
+<span class="font-label-sm text-label-sm text-center">Power Outage</span>
+</button>
+<button class="bg-surface p-stack-md flex flex-col items-center justify-center gap-2 hover:bg-surface-container transition-colors cursor-pointer min-h-[100px]">
+<span class="material-symbols-outlined text-primary" data-icon="water_drop">water_drop</span>
+<span class="font-label-sm text-label-sm text-center">Blood Need</span>
+</button>
+<button class="bg-surface p-stack-md flex flex-col items-center justify-center gap-2 hover:bg-surface-container transition-colors cursor-pointer min-h-[100px]">
+<span class="material-symbols-outlined text-secondary" data-icon="fire_truck">fire_truck</span>
+<span class="font-label-sm text-label-sm text-center">Fire / Rescue</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Active Alerts Feed (Spans 8 cols on desktop) -->
+<section class="lg:col-span-8 flex flex-col gap-stack-md">
+<div class="flex items-center justify-between border-b border-border pb-stack-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">ACTIVE ALERTS</h2>
+<span class="font-data-md text-data-md text-text-muted">Loc: Ward 7 &amp; Surroundings</span>
+</div>
+<!-- High Priority Alert Card -->
+<div class="bg-surface border border-danger shadow-[0_1px_2px_rgba(17,24,39,0.06)] rounded-none flex flex-col">
+<div class="bg-danger p-stack-sm px-stack-md flex justify-between items-center text-on-error">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="flood" data-weight="fill">flood</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">CRITICAL ALERT</span>
+</div>
+<span class="font-data-sm text-data-sm uppercase">Last Update: 2m ago</span>
+</div>
+<div class="p-stack-lg flex flex-col md:flex-row gap-stack-lg">
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm leading-tight">Flash Flood Warning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Severe water logging reported in low-lying areas of Ward 7. Immediate evacuation recommended for sectors A and B. Emergency shelters are open.</p>
+</div>
+<div class="flex gap-stack-md mt-stack-md">
+<button class="bg-danger text-on-error px-stack-lg py-2 font-label-md text-label-md border border-danger hover:bg-error transition-colors rounded-none">View Evac Route</button>
+<button class="bg-surface text-danger px-stack-lg py-2 font-label-md text-label-md border border-danger hover:bg-danger/10 transition-colors rounded-none">Mark Safe</button>
+</div>
+</div>
+<!-- Map Visual Placeholder -->
+<div class="w-full md:w-1/3 h-48 md:h-auto bg-surface-container border border-border relative overflow-hidden flex items-center justify-center">
+<!-- In a real app this would be a map, simulating it structurally -->
+<div class="absolute inset-0 bg-primary/5 flex items-center justify-center" data-location="Ward 7">
+<span class="material-symbols-outlined text-danger text-4xl" data-icon="location_on" data-weight="fill">location_on</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full bg-surface/90 border-t border-border p-2">
+<span class="font-data-sm text-data-sm text-text-muted">Map Data © CivicSetu GIS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Alert Card -->
+<div class="bg-surface border border-warning shadow-[0_1px_2px_rgba(17,24,39,0.06)] rounded-none flex flex-col">
+<div class="bg-warning/20 border-b border-warning p-stack-sm px-stack-md flex justify-between items-center text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-warning" data-icon="power_off">power_off</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-warning">HIGH PRIORITY</span>
+</div>
+<span class="font-data-sm text-data-sm text-text-muted uppercase">Last Update: 15m ago</span>
+</div>
+<div class="p-stack-md flex justify-between items-center">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Grid Failure - Sector C</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Restoration ETA: 4 Hours. Utility crews dispatched.</p>
+</div>
+<button class="bg-surface text-on-surface px-stack-md py-2 font-label-md text-label-md border border-border hover:bg-surface-container transition-colors rounded-none">Details</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<script>
+        // Simple script to handle the hold-to-activate interaction
+        const sosTrigger = document.getElementById('sos-trigger');
+        let holdTimer;
+        
+        sosTrigger.addEventListener('mousedown', startHold);
+        sosTrigger.addEventListener('touchstart', startHold);
+        
+        sosTrigger.addEventListener('mouseup', endHold);
+        sosTrigger.addEventListener('mouseleave', endHold);
+        sosTrigger.addEventListener('touchend', endHold);
+        
+        function startHold(e) {
+            e.preventDefault(); // Prevent text selection
+            sosTrigger.classList.add('holding');
+            holdTimer = setTimeout(() => {
+                alert('SOS TRIGGERED! Broadcasting coordinates.');
+                sosTrigger.classList.remove('holding');
+            }, 3000); // 3 seconds hold
+        }
+        
+        function endHold() {
+            clearTimeout(holdTimer);
+            sosTrigger.classList.remove('holding');
+        }
+    </script>
+
+
+</body></html>

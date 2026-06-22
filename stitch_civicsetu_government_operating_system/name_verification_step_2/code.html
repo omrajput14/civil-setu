@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Name Verification Workflow - Document Upload</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#ffb77d",
+                      "on-tertiary-container": "#c49b5f",
+                      "on-secondary": "#ffffff",
+                      "text-muted": "#6B7280",
+                      "inverse-surface": "#293040",
+                      "on-tertiary-fixed": "#291800",
+                      "on-secondary-container": "#663500",
+                      "background": "#F4F6F8",
+                      "surface-variant": "#dce2f7",
+                      "tertiary-container": "#4f3300",
+                      "on-background": "#141b2b",
+                      "inverse-on-surface": "#edf0ff",
+                      "on-tertiary-fixed-variant": "#5f410c",
+                      "tertiary-fixed-dim": "#ecbf80",
+                      "warning": "#F59E0B",
+                      "surface": "#FFFFFF",
+                      "on-secondary-fixed-variant": "#6e3900",
+                      "error-container": "#ffdad6",
+                      "on-surface-variant": "#43474e",
+                      "success": "#16A34A",
+                      "border": "#E5E7EB",
+                      "on-secondary-fixed": "#2f1500",
+                      "surface-container-low": "#f1f3ff",
+                      "on-primary-fixed": "#001c37",
+                      "danger": "#DC2626",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#e1e8fd",
+                      "surface-container": "#e9edff",
+                      "surface-container-highest": "#dce2f7",
+                      "on-tertiary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-bright": "#f9f9ff",
+                      "secondary-fixed": "#ffdcc3",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#abc9f2",
+                      "surface-tint": "#436084",
+                      "on-primary-fixed-variant": "#2a486b",
+                      "primary-fixed-dim": "#abc9f2",
+                      "on-surface": "#141b2b",
+                      "tertiary": "#331f00",
+                      "primary": "#002444",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#73777f",
+                      "surface-dim": "#d3daef",
+                      "primary-fixed": "#d2e4ff",
+                      "primary-container": "#1a3a5c",
+                      "secondary-container": "#fe932c",
+                      "tertiary-fixed": "#ffddb1",
+                      "on-primary-container": "#87a4cc",
+                      "secondary": "#904d00",
+                      "outline-variant": "#c3c6cf"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "rail-height": "32px",
+                      "margin-mobile": "16px",
+                      "stack-lg": "24px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "gutter": "16px",
+                      "margin-desktop": "32px"
+              },
+              "fontFamily": {
+                      "data-md": [
+                              "IBM Plex Mono"
+                      ],
+                      "body-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "data-lg": [
+                              "IBM Plex Mono"
+                      ],
+                      "data-sm": [
+                              "IBM Plex Mono"
+                      ],
+                      "body-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "headline-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-sm": [
+                              "IBM Plex Sans"
+                      ],
+                      "headline-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-md": [
+                              "IBM Plex Sans"
+                      ]
+              },
+              "fontSize": {
+                      "data-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "data-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body { background-color: #F4F6F8; }
+        .shadow-elevation { box-shadow: 0 1px 2px rgba(17,24,39,0.06); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md text-on-background">
+<!-- TopAppBar JSON Structure Applied -->
+<header class="flex justify-between items-center h-[64px] px-margin-mobile md:px-margin-desktop w-full z-50 bg-surface border-b border-border shadow-elevation">
+<div class="flex items-center gap-stack-md text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 active:bg-surface-container-high p-2 rounded-DEFAULT cursor-pointer">
+<span class="material-symbols-outlined" data-icon="arrow_back" data-weight="fill" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Name Change Request</h1>
+<div class="flex items-center gap-stack-md text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 active:bg-surface-container-high p-2 rounded-DEFAULT cursor-pointer">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</div>
+</header>
+<!-- Main Layout with NavDrawer -->
+<div class="flex flex-1 overflow-hidden">
+<!-- NavigationDrawer JSON Structure Applied -->
+<nav class="hidden md:flex flex-col pt-8 fixed left-0 top-0 h-full w-[240px] bg-primary border-r border-border text-on-primary font-label-md text-label-md z-40 transition-all duration-150 ease-in-out mt-[64px]">
+<div class="px-4 py-4 mb-4">
+<h2 class="font-headline-lg text-headline-lg text-on-primary">Verification Workflow</h2>
+</div>
+<ul class="flex flex-col w-full">
+<li class="flex items-center gap-stack-md text-on-primary/70 px-4 py-3 hover:bg-primary-fixed-dim/10 hover:text-on-primary transition-all duration-150 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined" data-icon="edit_square">edit_square</span>
+                    Request Details
+                </li>
+<!-- Active State -->
+<li class="flex items-center gap-stack-md border-l-4 border-secondary-container bg-primary-container text-on-primary-container px-4 py-3 transition-all duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="upload_file" data-weight="fill" style="font-variation-settings: 'FILL' 1;">upload_file</span>
+                    Document Upload
+                </li>
+<li class="flex items-center gap-stack-md text-on-primary/70 px-4 py-3 hover:bg-primary-fixed-dim/10 hover:text-on-primary transition-all duration-150 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+                    Final Review
+                </li>
+<li class="flex items-center gap-stack-md text-on-primary/70 px-4 py-3 hover:bg-primary-fixed-dim/10 hover:text-on-primary transition-all duration-150 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+                    Submission Status
+                </li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[240px] p-margin-mobile md:p-margin-desktop overflow-y-auto">
+<div class="max-w-4xl mx-auto space-y-stack-lg">
+<!-- Header & Progress -->
+<div class="space-y-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold">Document Upload</h2>
+<!-- Segmented Progress Bar -->
+<div class="w-full flex items-center gap-1">
+<div class="h-2 flex-1 bg-success rounded-l-full"></div>
+<div class="h-2 flex-1 bg-secondary-container"></div>
+<div class="h-2 flex-1 bg-surface-variant rounded-r-full"></div>
+</div>
+<div class="flex justify-between font-data-sm text-data-sm text-text-muted uppercase">
+<span>Step 1: Details</span>
+<span class="text-secondary-container font-bold">Step 2: Uploads</span>
+<span>Step 3: Review</span>
+</div>
+</div>
+<!-- Info Banner -->
+<div class="bg-surface border border-border rounded-DEFAULT p-4 flex gap-stack-md shadow-elevation">
+<span class="material-symbols-outlined text-secondary-container" data-icon="info">info</span>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Required Documentation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Please provide clear, legible scans of the following documents to verify your name change request.</p>
+</div>
+</div>
+<!-- Upload Modules Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Document 1 -->
+<div class="bg-surface border border-border rounded-DEFAULT shadow-elevation flex flex-col">
+<div class="p-4 border-b border-border bg-surface-bright">
+<h3 class="font-label-md text-label-md text-primary font-bold">Gazette Notification</h3>
+<p class="font-data-sm text-data-sm text-text-muted uppercase mt-1">Official publication proof</p>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-center items-center">
+<!-- Dropzone -->
+<div class="w-full border-2 border-dashed border-outline-variant rounded-DEFAULT p-8 flex flex-col items-center justify-center bg-surface-bright hover:bg-surface-container-low transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-4xl mb-2" data-icon="cloud_upload">cloud_upload</span>
+<span class="font-label-md text-label-md text-primary">Drag &amp; Drop</span>
+<span class="font-data-sm text-data-sm text-text-muted uppercase mt-2">PDF, JPG up to 5MB</span>
+</div>
+</div>
+<div class="p-4 border-t border-border flex justify-end">
+<button class="bg-surface border border-border text-primary font-label-md text-label-md px-4 py-2 rounded-DEFAULT hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="attach_file">attach_file</span>
+                                Browse Files
+                            </button>
+</div>
+</div>
+<!-- Document 2 -->
+<div class="bg-surface border border-border rounded-DEFAULT shadow-elevation flex flex-col">
+<div class="p-4 border-b border-border bg-surface-bright">
+<h3 class="font-label-md text-label-md text-primary font-bold">Identity Proof (Old Name)</h3>
+<p class="font-data-sm text-data-sm text-text-muted uppercase mt-1">Passport, Driver's License, or National ID</p>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-center items-center">
+<!-- Uploaded State Example -->
+<div class="w-full border border-success rounded-DEFAULT p-4 flex items-center justify-between bg-surface-bright">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success" data-icon="description">description</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">old_passport_scan.pdf</p>
+<p class="font-data-sm text-data-sm text-text-muted uppercase">2.4 MB • Complete</p>
+</div>
+</div>
+<button class="text-danger hover:bg-error-container p-2 rounded-DEFAULT transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<div class="p-4 border-t border-border flex justify-between items-center bg-surface-container-low">
+<div class="flex items-center gap-2 text-success">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm">Verified</span>
+</div>
+<button class="text-primary font-label-md text-label-md hover:underline">Replace</button>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="mt-stack-lg pt-stack-md border-t border-border flex justify-end gap-stack-md">
+<button class="bg-surface border border-border text-primary font-label-md text-label-md px-6 py-2 rounded-DEFAULT hover:bg-surface-container-low transition-colors">
+                        Save Draft
+                    </button>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-DEFAULT font-label-md text-label-md font-bold hover:bg-primary transition-colors flex items-center gap-2">
+                        Continue
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Status Rail Bottom -->
+<div class="fixed bottom-0 left-0 w-full md:pl-[240px] h-rail-height bg-surface border-t border-border flex items-center px-4 z-30 shadow-elevation">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">System Status: Operational • Last Saved: 10:42 AM</span>
+</div>
+</main>
+</div>
+</body></html>

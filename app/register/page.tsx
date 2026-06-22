@@ -9,7 +9,7 @@ export default function Page() {
         {/* TopAppBar (Transactional - Hidden nav items) */}
 
 {/* Main Content Canvas */}
-<main className="flex-1 flex items-center justify-center p-margin-mobile md:p-margin-desktop w-full max-w-4xl mx-auto">
+<main className="flex-1 flex items-center justify-center p-margin-mobile w-full max-w-4xl mx-auto">
 {/* Registration Form Container (Instrument Panel Style) */}
 <div className="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] w-full max-w-2xl overflow-hidden rounded-[6px]">
 {/* Form Header / Status Rail */}
@@ -17,7 +17,7 @@ export default function Page() {
 <span className="font-data-sm text-data-sm text-text-muted uppercase tracking-widest">Process: UIDAI_VERIFICATION_01</span>
 <span className="font-data-sm text-data-sm text-text-muted uppercase tracking-widest">Step 1 of 3</span>
 </div>
-<div className="p-stack-lg md:p-margin-desktop space-y-stack-lg">
+<div className="p-stack-lg space-y-stack-lg">
 <div>
 <h1 className="font-headline-lg text-headline-lg text-on-surface mb-stack-sm">Citizen Registration</h1>
 <p className="font-body-md text-body-md text-on-surface-variant">Authenticate identity using Aadhaar to access government services.</p>

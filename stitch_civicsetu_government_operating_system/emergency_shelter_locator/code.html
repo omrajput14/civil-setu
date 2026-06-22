@@ -1,0 +1,333 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Emergency Shelters - CIVICSETU</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#331f00",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d2e4ff",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-primary-fixed": "#001c37",
+                        "background": "#F4F6F8",
+                        "tertiary-container": "#4f3300",
+                        "success": "#16A34A",
+                        "secondary": "#904d00",
+                        "primary": "#002444",
+                        "on-background": "#141b2b",
+                        "outline": "#73777f",
+                        "danger": "#DC2626",
+                        "on-surface-variant": "#43474e",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "surface-dim": "#d3daef",
+                        "inverse-primary": "#abc9f2",
+                        "on-secondary-fixed": "#2f1500",
+                        "surface-container": "#e9edff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#1a3a5c",
+                        "surface-bright": "#f9f9ff",
+                        "surface-tint": "#436084",
+                        "on-surface": "#141b2b",
+                        "secondary-fixed": "#ffdcc3",
+                        "inverse-surface": "#293040",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "surface-variant": "#dce2f7",
+                        "outline-variant": "#c3c6cf",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "on-primary-container": "#87a4cc",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fe932c",
+                        "on-tertiary-container": "#c49b5f",
+                        "surface-container-highest": "#dce2f7",
+                        "on-tertiary-fixed": "#291800",
+                        "inverse-on-surface": "#edf0ff",
+                        "surface": "#FFFFFF",
+                        "on-secondary-container": "#663500",
+                        "border": "#E5E7EB",
+                        "warning": "#F59E0B",
+                        "surface-container-low": "#f1f3ff",
+                        "primary-fixed-dim": "#abc9f2",
+                        "on-primary-fixed-variant": "#2a486b",
+                        "surface-container-high": "#e1e8fd",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "text-muted": "#6B7280"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "rail-height": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "body-md": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"],
+                        "data-lg": ["IBM Plex Mono"],
+                        "data-sm": ["IBM Plex Mono"],
+                        "data-md": ["IBM Plex Mono"],
+                        "body-lg": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for a cleaner industrial look */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #F4F6F8; }
+        ::-webkit-scrollbar-thumb { background: #c3c6cf; border-radius: 0; }
+        ::-webkit-scrollbar-thumb:hover { background: #73777f; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Emergency Status Rail - Red Mode -->
+<div class="h-rail-height bg-danger text-on-error flex items-center justify-between px-margin-mobile md:px-margin-desktop font-data-sm uppercase tracking-widest border-b border-[#93000a] sticky top-0 z-[60]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] fill">warning</span>
+<span class="">CRITICAL ALERT ACTIVE</span>
+</div>
+<div class="flex items-center gap-4 hidden sm:flex">
+<span class="">SYS: SECURE</span>
+<span class="">LAT: 40.7128 N, LON: 74.0060 W</span>
+<span id="live-time" class="">2026-06-21 17:34:21 UTC</span>
+</div>
+</div>
+<!-- TopAppBar -->
+<header class="fixed top-rail-height w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-[64px] bg-surface border-b border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)]">
+<div class="flex items-center gap-4 cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-primary text-[24px]">account_balance</span>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">CIVICSETU</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-6 mr-4">
+<!-- Main Nav links for desktop - intent: none match perfectly, suppress highlight as we are deep linked -->
+<a class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-primary transition-colors" href="#">Polls</a>
+<a class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-primary transition-colors" href="#">Town Hall</a>
+<a class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-primary transition-colors" href="#">Works</a>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px] cursor-pointer active:opacity-80">signal_cellular_alt</span>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow pt-[calc(32px+64px)] pb-[56px] md:pb-0 flex flex-col md:flex-row">
+<!-- Left Sidebar - Map Area -->
+<section class="w-full md:w-1/2 lg:w-3/5 h-[40vh] md:h-[calc(100vh-96px)] relative border-b md:border-b-0 md:border-r border-border bg-surface-variant">
+<!-- Simulated Map Container -->
+<div class="absolute inset-0 w-full h-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<!-- Using a placeholder image with data-location for map -->
+<img class="w-full h-full object-cover opacity-80" data-alt="A detailed, high-contrast digital map interface showing a city grid. The map uses a minimalist, modern corporate style with a strict color palette of light grays, whites, and deep navy blues for water features. Sharp geometric lines define the streets. Bright saffron amber and danger red markers are visible, indicating critical locations. The overall mood is precise, technical, and authoritative." data-location="New York City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQHJ6Tmy8-aFeiM5T2iN-SEyO9xlFXAJvBIxzuo6AAuG_SKYPX_ZH7FfkmyHcQd6xMBZL2QD9IdHCIs5R5HeDF2-PEHmeEFzoknwYLmQrqFZ-r1kN9mVojSSyv2adMlxeRhBAfYspddT9l-uh0TYADYrwehHqOkjg80stg6DrgkggRuiZQUx_Cjz4EHtwTS5rpAGfczhep_MZr0jpnSS4WYIy8ZBFoHJLdlCq-LCfP4UEPTtDhesFEg3P7JLO7k-Y44RYvYPynvb3d">
+<!-- Map Overlay UI Controls -->
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<button class="w-10 h-10 bg-surface border border-border text-primary flex items-center justify-center shadow-[0_1px_2px_rgba(17,24,39,0.06)] hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-10 h-10 bg-surface border border-border text-primary flex items-center justify-center shadow-[0_1px_2px_rgba(17,24,39,0.06)] hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+<div class="absolute bottom-4 right-4 bg-surface border border-border px-3 py-2 shadow-[0_1px_2px_rgba(17,24,39,0.06)] font-data-sm text-data-sm text-on-surface">
+                    DATA REF: SAT-COMM-99 | OFFLINE CACHE
+                </div>
+<!-- Simulated Pins -->
+<div class="absolute top-1/3 left-1/4 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-8 h-8 bg-danger border-2 border-surface flex items-center justify-center shadow-lg relative z-10 cursor-pointer animate-pulse">
+<span class="material-symbols-outlined text-surface text-[18px]">medical_services</span>
+</div>
+<div class="mt-1 bg-surface border border-border px-2 py-1 font-data-sm text-data-sm shadow-[0_1px_2px_rgba(17,24,39,0.06)] whitespace-nowrap">
+                        POINT ALPHA
+                    </div>
+</div>
+<div class="absolute top-1/2 left-2/3 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-6 h-6 bg-warning border-2 border-surface flex items-center justify-center shadow-lg relative z-10 cursor-pointer">
+<span class="material-symbols-outlined text-surface text-[14px]">pets</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Sidebar - Data Panel -->
+<section class="w-full md:w-1/2 lg:w-2/5 bg-background flex flex-col h-auto md:h-[calc(100vh-96px)] overflow-y-auto">
+<!-- Filters Header -->
+<div class="bg-surface border-b border-border p-margin-mobile md:p-margin-desktop sticky top-0 z-20">
+<h1 class="font-headline-md text-headline-md text-primary mb-4">OFFICIAL REFUGE POINTS</h1>
+<!-- Filter Chips -->
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 border border-primary text-primary font-label-sm text-label-sm uppercase hover:bg-surface-container transition-colors bg-surface-container-low">
+                        All Shelters
+                    </button>
+<button class="px-3 py-1.5 border border-border text-on-surface-variant font-label-sm text-label-sm uppercase bg-surface hover:bg-surface-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">medical_services</span>
+                        Medical Needed
+                    </button>
+<button class="px-3 py-1.5 border border-border text-on-surface-variant font-label-sm text-label-sm uppercase bg-surface hover:bg-surface-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pets</span>
+                        Pet Friendly
+                    </button>
+<button class="px-3 py-1.5 border border-border text-on-surface-variant font-label-sm text-label-sm uppercase bg-surface hover:bg-surface-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">family_restroom</span>
+                        Family Units
+                    </button>
+</div>
+</div>
+<!-- List Container -->
+<div class="p-margin-mobile md:p-margin-desktop flex flex-col gap-stack-lg">
+<!-- Primary Shelter Card -->
+<div class="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] flex flex-col">
+<div class="p-4 border-b border-border flex justify-between items-start">
+<div>
+<div class="font-data-sm text-data-sm text-text-muted mb-1">ID: SHLT-001</div>
+<h2 class="font-headline-md text-[20px] text-primary leading-tight mb-2">Central High School Gymnasium</h2>
+<div class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                1240 Main St, Downtown Dist.
+                            </div>
+</div>
+<div class="bg-success text-surface font-data-sm text-data-sm px-2 py-1 uppercase tracking-wider">
+                            OPEN
+                        </div>
+</div>
+<div class="grid grid-cols-2 border-b border-border">
+<div class="p-4 border-r border-border">
+<div class="font-data-sm text-data-sm text-text-muted mb-1 uppercase">Capacity</div>
+<div class="font-data-lg text-data-lg text-primary">85<span class="text-[16px] text-text-muted">/200</span></div>
+</div>
+<div class="p-4">
+<div class="font-data-sm text-data-sm text-text-muted mb-1 uppercase">Distance</div>
+<div class="font-data-lg text-data-lg text-primary">1.2<span class="text-[16px] text-text-muted">mi</span></div>
+</div>
+</div>
+<div class="p-4 border-b border-border">
+<div class="font-data-sm text-data-sm text-text-muted mb-2 uppercase">Amenities</div>
+<div class="flex flex-wrap gap-2 font-label-sm text-label-sm text-on-surface">
+<span class="bg-surface-container px-2 py-1 border border-border">Medical</span>
+<span class="bg-surface-container px-2 py-1 border border-border">Food</span>
+<span class="bg-surface-container px-2 py-1 border border-border">Power</span>
+<span class="bg-surface-container px-2 py-1 border border-border">Family Units</span>
+</div>
+</div>
+<div class="p-4 bg-background flex flex-col sm:flex-row gap-3">
+<button class="flex-1 bg-primary-container text-on-primary font-label-md text-label-md uppercase py-3 px-4 flex items-center justify-center gap-2 hover:bg-primary transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+                            GET DIRECTIONS
+                        </button>
+<button class="flex-1 bg-surface border border-primary text-primary font-label-md text-label-md uppercase py-3 px-4 flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+                            REPORT ARRIVAL
+                        </button>
+</div>
+</div>
+<!-- Secondary Shelter Card (Warning state) -->
+<div class="bg-surface border border-border shadow-[0_1px_2px_rgba(17,24,39,0.06)] flex flex-col opacity-90">
+<div class="p-4 border-b border-border flex justify-between items-start">
+<div>
+<div class="font-data-sm text-data-sm text-text-muted mb-1">ID: SHLT-042</div>
+<h2 class="font-headline-md text-[20px] text-primary leading-tight mb-2">Westside Community Center</h2>
+<div class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                890 Oak Ave, West Dist.
+                            </div>
+</div>
+<div class="bg-warning text-on-tertiary font-data-sm text-data-sm px-2 py-1 uppercase tracking-wider">
+                            AT CAPACITY
+                        </div>
+</div>
+<div class="grid grid-cols-2 border-b border-border">
+<div class="p-4 border-r border-border">
+<div class="font-data-sm text-data-sm text-text-muted mb-1 uppercase">Capacity</div>
+<div class="font-data-lg text-data-lg text-warning">150<span class="text-[16px] text-text-muted">/150</span></div>
+</div>
+<div class="p-4">
+<div class="font-data-sm text-data-sm text-text-muted mb-1 uppercase">Distance</div>
+<div class="font-data-lg text-data-lg text-primary">3.4<span class="text-[16px] text-text-muted">mi</span></div>
+</div>
+</div>
+<div class="p-4 border-b border-border">
+<div class="font-data-sm text-data-sm text-text-muted mb-2 uppercase">Amenities</div>
+<div class="flex flex-wrap gap-2 font-label-sm text-label-sm text-on-surface">
+<span class="bg-surface-container px-2 py-1 border border-border">Food</span>
+<span class="bg-surface-container px-2 py-1 border border-border">Pet Friendly</span>
+</div>
+</div>
+<div class="p-4 bg-background flex flex-col sm:flex-row gap-3">
+<button class="flex-1 bg-surface border border-border text-on-surface-variant font-label-md text-label-md uppercase py-3 px-4 flex items-center justify-center gap-2 cursor-not-allowed opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+                            REDIRECTING
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) - Suppressed per task intent (Linear/Transactional/Dead End relative to global nav) -->
+<!-- The user is looking at a specific emergency locator map. -->
+<script>
+        // Simple live time update for the status rail
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+            document.getElementById('live-time').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+
+
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-border flex justify-around items-center h-[56px] z-50">
+  <a href="#" class="flex flex-col items-center justify-center flex-1 h-full hover:text-primary transition-colors text-primary" style="border-top: 3px solid rgb(255, 165, 0);">
+    <span class="material-symbols-outlined text-[24px]">grid_view</span>
+    <span class="font-label-sm text-label-sm uppercase">Dashboard</span>
+  </a>
+  <a href="#" class="flex flex-col items-center justify-center flex-1 h-full text-on-surface-variant hover:text-primary transition-colors">
+    <span class="material-symbols-outlined text-[24px]">how_to_vote</span>
+    <span class="font-label-sm text-label-sm uppercase">Polls</span>
+  </a>
+  <a href="#" class="flex flex-col items-center justify-center flex-1 h-full text-on-surface-variant hover:text-primary transition-colors">
+    <span class="material-symbols-outlined text-[24px]">event_seat</span>
+    <span class="font-label-sm text-label-sm uppercase">Town Hall</span>
+  </a>
+  <a href="#" class="flex flex-col items-center justify-center flex-1 h-full text-on-surface-variant hover:text-primary transition-colors">
+    <span class="material-symbols-outlined text-[24px]">construction</span>
+    <span class="font-label-sm text-label-sm uppercase">Works</span>
+  </a>
+</nav></body></html>

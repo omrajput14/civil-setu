@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>New Application - Step 1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "success": "#16A34A",
+                    "surface-container-high": "#e1e8fd",
+                    "surface-container-low": "#f1f3ff",
+                    "tertiary-fixed": "#ffddb1",
+                    "surface-tint": "#436084",
+                    "on-primary": "#ffffff",
+                    "primary": "#002444",
+                    "on-error": "#ffffff",
+                    "warning": "#F59E0B",
+                    "inverse-surface": "#293040",
+                    "primary-container": "#1a3a5c",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c3c6cf",
+                    "surface": "#FFFFFF",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#663500",
+                    "secondary-fixed": "#ffdcc3",
+                    "on-background": "#141b2b",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#43474e",
+                    "tertiary-fixed-dim": "#ecbf80",
+                    "background": "#F4F6F8",
+                    "surface-container-highest": "#dce2f7",
+                    "primary-fixed": "#d2e4ff",
+                    "on-surface": "#141b2b",
+                    "on-secondary-fixed": "#2f1500",
+                    "on-primary-fixed": "#001c37",
+                    "secondary-fixed-dim": "#ffb77d",
+                    "on-secondary-fixed-variant": "#6e3900",
+                    "surface-container": "#e9edff",
+                    "border": "#E5E7EB",
+                    "on-primary-container": "#87a4cc",
+                    "primary-fixed-dim": "#abc9f2",
+                    "on-tertiary-container": "#c49b5f",
+                    "tertiary-container": "#4f3300",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#edf0ff",
+                    "outline": "#73777f",
+                    "tertiary": "#331f00",
+                    "danger": "#DC2626",
+                    "surface-bright": "#f9f9ff",
+                    "on-primary-fixed-variant": "#2a486b",
+                    "on-tertiary-fixed": "#291800",
+                    "surface-dim": "#d3daef",
+                    "secondary": "#904d00",
+                    "text-muted": "#6B7280",
+                    "surface-variant": "#dce2f7",
+                    "secondary-container": "#fe932c",
+                    "on-tertiary-fixed-variant": "#5f410c",
+                    "inverse-primary": "#abc9f2",
+                    "accent": "#D97706"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "rail-height": "32px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "stack-lg": "24px"
+            },
+            "fontFamily": {
+                    "data-sm": ["IBM Plex Mono"],
+                    "data-md": ["IBM Plex Mono"],
+                    "label-sm": ["IBM Plex Sans"],
+                    "data-lg": ["IBM Plex Mono"],
+                    "body-lg": ["IBM Plex Sans"],
+                    "headline-lg": ["IBM Plex Sans"],
+                    "body-md": ["IBM Plex Sans"],
+                    "headline-md": ["IBM Plex Sans"],
+                    "label-md": ["IBM Plex Sans"]
+            },
+            "fontSize": {
+                    "data-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                    "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                    "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                    "data-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #F4F6F8;
+            color: #141b2b;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-elevation {
+            box-shadow: 0 1px 2px rgba(17,24,39,0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-sans">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full z-50 bg-surface dark:bg-inverse-surface border-b border-border dark:border-outline shadow-sm top-0 fixed">
+<div class="flex items-center gap-4">
+<!-- No leading icon requested -->
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-on-primary-fixed tracking-tight">New Application</h1>
+</div>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-primary-container p-2 rounded-DEFAULT transition-colors duration-200">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-24 px-margin-mobile md:px-margin-desktop pb-24 max-w-3xl mx-auto w-full flex flex-col gap-stack-lg">
+<!-- Step Indicator -->
+<div class="flex flex-col gap-stack-sm w-full">
+<span class="font-data-sm text-data-sm text-text-muted uppercase">STEP 1 OF 3</span>
+<div class="flex gap-2 w-full h-2">
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-border rounded-full"></div>
+<div class="flex-1 bg-border rounded-full"></div>
+</div>
+</div>
+<!-- Title -->
+<div>
+<h2 class="font-body-md text-body-md font-semibold text-on-surface">Select certificate type</h2>
+</div>
+<!-- List of Rows -->
+<div class="flex flex-col gap-stack-sm w-full">
+<!-- Unselected Row: Residence -->
+<button class="flex items-center justify-between w-full p-4 bg-surface border border-border rounded-DEFAULT shadow-elevation hover:bg-surface-container-low transition-colors text-left group">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface">Residence Certificate</span>
+</div>
+<div class="w-5 h-5 rounded-full border border-outline flex items-center justify-center group-hover:border-primary">
+</div>
+</button>
+<!-- Selected Row: Income -->
+<button class="flex items-center justify-between w-full p-4 bg-surface border-2 border-primary rounded-DEFAULT shadow-elevation text-left relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-[3px] bg-accent"></div>
+<div class="flex flex-col gap-1 pl-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">Income Certificate</span>
+<span class="font-label-sm text-label-sm text-text-muted">Used for tax, scholarships, and legal verification</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+</div>
+</button>
+<!-- Unselected Row: Birth -->
+<button class="flex items-center justify-between w-full p-4 bg-surface border border-border rounded-DEFAULT shadow-elevation hover:bg-surface-container-low transition-colors text-left group">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface">Birth Certificate</span>
+</div>
+<div class="w-5 h-5 rounded-full border border-outline flex items-center justify-center group-hover:border-primary">
+</div>
+</button>
+<!-- Unselected Row: Death -->
+<button class="flex items-center justify-between w-full p-4 bg-surface border border-border rounded-DEFAULT shadow-elevation hover:bg-surface-container-low transition-colors text-left group">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface">Death Certificate</span>
+</div>
+<div class="w-5 h-5 rounded-full border border-outline flex items-center justify-center group-hover:border-primary">
+</div>
+</button>
+<!-- Unselected Row: Character -->
+<button class="flex items-center justify-between w-full p-4 bg-surface border border-border rounded-DEFAULT shadow-elevation hover:bg-surface-container-low transition-colors text-left group">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface">Character Certificate</span>
+</div>
+<div class="w-5 h-5 rounded-full border border-outline flex items-center justify-center group-hover:border-primary">
+</div>
+</button>
+<!-- Unselected Row: Caste -->
+<button class="flex items-center justify-between w-full p-4 bg-surface border border-border rounded-DEFAULT shadow-elevation hover:bg-surface-container-low transition-colors text-left group">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface">Caste Certificate</span>
+</div>
+<div class="w-5 h-5 rounded-full border border-outline flex items-center justify-center group-hover:border-primary">
+</div>
+</button>
+</div>
+<div class="flex-grow"></div>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 w-full bg-surface border-t border-border px-margin-mobile md:px-margin-desktop py-4 z-40 shadow-elevation">
+<div class="max-w-3xl mx-auto w-full">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 px-4 rounded-DEFAULT hover:bg-primary-container transition-colors active:scale-95 font-bold uppercase tracking-wide">
+                Continue
+            </button>
+</div>
+</div>
+</body></html>

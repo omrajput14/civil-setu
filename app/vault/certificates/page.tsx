@@ -114,31 +114,3 @@ export default function Page() {
 </section>
 </main>
 {/* SideNav (Web) */}
-<nav className="hidden md:flex flex-col fixed top-0 left-0 w-[240px] h-screen bg-primary border-r border-border z-40 pt-20">
-<div className="px-6 pb-6">
-<span className="font-headline-md text-headline-md font-bold text-on-primary">Brand A</span>
-</div>
-<div className="flex flex-col gap-1 w-full mt-4">
-<a className="flex items-center px-6 py-3 text-on-primary/70 hover:bg-primary-container hover:text-on-primary transition-colors" href="#">
-<span className="material-symbols-outlined mr-4" data-icon="home">home</span>
-<span className="font-label-md text-label-md">Home</span>
-</a>
-<a className="flex items-center px-6 py-3 bg-primary-container text-on-primary border-l-4 border-warning" href="#">
-<span className="material-symbols-outlined mr-4" data-icon="apps">apps</span>
-<span className="font-label-md text-label-md">Services</span>
-</a>
-<a className="flex items-center px-6 py-3 text-on-primary/70 hover:bg-primary-container hover:text-on-primary transition-colors" href="#">
-<span className="material-symbols-outlined mr-4" data-icon="description">description</span>
-<span className="font-label-md text-label-md">Schemes</span>
-</a>
-<a className="flex items-center px-6 py-3 text-on-primary/70 hover:bg-primary-container hover:text-on-primary transition-colors" href="#">
-<span className="material-symbols-outlined mr-4" data-icon="person">person</span>
-<span className="font-label-md text-label-md">Profile</span>
-</a>
-</div>
-</nav>
-{/* BottomNavBar (Mobile) */}
-      </div>
-    </AppLayout>
-  );
-}

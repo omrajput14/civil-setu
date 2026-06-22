@@ -60,7 +60,7 @@ export default function Page() {
 </div>
 </main>
 {/* Technical Metadata Rail */}
-<footer className="fixed bottom-0 w-full h-rail-height bg-surface border-t border-border z-50 flex items-center px-margin-mobile md:px-margin-desktop justify-between shadow-[0_-1px_2px_rgba(17,24,39,0.06)]">
+<footer className="sticky bottom-0 w-full h-rail-height bg-surface border-t border-border z-50 flex items-center px-margin-mobile md:px-margin-desktop justify-between shadow-[0_-1px_2px_rgba(17,24,39,0.06)]">
 <div className="flex items-center gap-6 overflow-x-auto whitespace-nowrap scrollbar-hide w-full">
 <div className="flex items-center gap-2">
 <span className="material-symbols-outlined text-[14px] text-text-muted">memory</span>
